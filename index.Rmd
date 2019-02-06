@@ -1,0 +1,73 @@
+---
+title: "Hack your data beautiful"
+subtitle: "Coding to creatively and credibly communicate complex ideas "
+---
+
+Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.
+
+With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
+
+```{r, include = FALSE}
+
+library(plotly)
+library(dplyr)
+
+dogs <- data.frame(
+  breed = rep(c("beagle", "boxer", "bulldog"), each = 100),
+  weight = c(
+    rnorm(100, 24, 6),
+    rnorm(100, 62.5, 12.5),
+    rnorm(100, 45, 5)
+  ),
+  height = c(
+    rnorm(100, 30, 5),
+    rnorm(100, 40, 6),
+    rnorm(100, 35, 5.5)
+  )
+)
+```
+
+
+```{r, fig.width=10, fig.height=5, fig.cap="Figure: Interactive plot created with the 4 lines of R code above"}
+dog_plot <- dogs %>%
+  ggplot(aes(weight, height, fill=breed)) +
+  geom_point(size = 2)
+
+ggplotly(dog_plot)
+```
+
+
+
+## Details
+
+15-17 April 2019
+
+Sign up at the [Scottish Graduate School of Social Science](https://www.sgsss.ac.uk/training/spring-into-methods/).
+
+## Aims, objectives and learning outcomes
+
+* Foster a supportive exchange between PhD students across disciplines in Scotland who work with quantitative and qualitative data to facilitate interdisciplinary collaboration and peer empowerment
+* Give PGRs in the Arts & Humanities and Social Sciences an introduction to the vast capabilities of coding in R for both quantitative and qualitative data using topical, current and fun examples 
+* Highlight the flexibility, rigour and open nature of R and showcasing its diverse areas of application: qualitative stats, online surveys in FormR, building a website, web scraping, text mining and data visualisation.
+* Demonstrate a variety of dissemination techniques for cascading good scientific techniques and practices to different audiences in ways that are open, inclusive and transparent
+* To take the fear out of coding
+* Showcase progress over the sessions and solidify learning and future intentions by producing a blog, podcast, or research poster
+
+## About the Workshop
+
+### Format
+
+This event will be an opportunity for people who are brand new to coding  (or want to learn more) to learn how the open source (and free to download) coding platform R is useful in research communication. 
+
+Each day there will be brief input from researchers from different disciplines demonstrating how they use R to make powerful, accessible data visualizations. But the workshop will predominantly focus on hands-on experience of working with data directly related to concrete, topical real life examples. 
+
+Day one will be spent covering the basics - how to get up and started. Day two will demonstrate the  powerful practical applications of R data visualisation in communicating complex ideas and provide participants with the opportunity to develop these skills in the context of their own data and research.  Day three will focus on community building and sharing good practice activities. 
+
+### Prior learning required by participants 
+
+No prior experience of coding or any other software is needed. The event has been designed with absolute beginners in mind.  
+
+### Learning materials
+
+All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
+

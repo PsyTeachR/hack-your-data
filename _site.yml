@@ -1,0 +1,13 @@
+name: "hack-your-data"
+author: "psyTeachR"
+output_dir: "docs"
+exclude: ["*.xls", "*.csv"]
+output:
+  html_document:
+    toc: no
+    toc_float: yes
+    toc_depth: 4
+    df_print: paged
+    theme: flatly
+    highlight: tango
+    css: style.css
