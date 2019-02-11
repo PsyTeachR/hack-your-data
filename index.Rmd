@@ -3,37 +3,62 @@ title: "Hack your data beautiful"
 subtitle: "Coding to creatively and credibly communicate complex ideas "
 ---
 
+```{r, include = FALSE}
+library(tidyverse)
+
+## palette with psyTeachR logo colour
+psyteachr_colours <- function(vals = 1:6) {
+  ptrc <- c(
+    "pink" = "#983E82",
+    "orange" = "#E2A458",
+    "yellow" = "#F5DC70",
+    "green" = "#59935B",
+    "blue" = "#467AAC",
+    "purple" = "#61589C"
+  )
+  
+  unname(ptrc[vals])
+}
+psyteachr_colors <- psyteachr_colours
+
+
+```
+
+```{r, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
+
+n <- 1e6
+means <- c(40, 60, 80, 100, 120, 140)
+sds <- c(10, 7.5, 5, 5, 7.5, 10)
+
+tibble(
+  grp = rep(LETTERS[1:6], each = n),
+  val = rep(means, each = n) +
+        rnorm(n*6, 0, rep(sds, each = n))
+) %>%
+  ggplot(aes(val, fill = grp)) +
+  geom_density(alpha = 0.5, show.legend = F, trim = FALSE) +
+  scale_fill_manual(values = psyteachr_colours()) +
+  xlim(-20,200) +
+  theme_void()
+```
+
 Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.
 
 With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
 
-```{r, include = FALSE}
+```{r, out.width="100%", fig.width=9, fig.height=4.5}
 
-library(plotly)
-library(dplyr)
+library(tidyverse)
 
-dogs <- data.frame(
-  breed = rep(c("beagle", "boxer", "bulldog"), each = 100),
-  weight = c(
-    rnorm(100, 24, 6),
-    rnorm(100, 62.5, 12.5),
-    rnorm(100, 45, 5)
-  ),
-  height = c(
-    rnorm(100, 30, 5),
-    rnorm(100, 40, 6),
-    rnorm(100, 35, 5.5)
-  )
-)
-```
+map_data("world") %>%
+  mutate(startsA = substring(region, 1, 1) == "A") %>%
+  ggplot(aes(x=long, y=lat, group=group, fill=startsA)) + 
+  geom_polygon(show.legend=FALSE) +
+  labs(title = "Countries starting with the letter A",
+       caption = "A plot made with the 9 lines of code above.",
+       x = "Longitude", y = "Latitude") +
+  scale_fill_manual(values = c("grey", "dodgerblue"))
 
-
-```{r, fig.width=10, fig.height=5, fig.cap="Figure: Interactive plot created with the 4 lines of R code above"}
-dog_plot <- dogs %>%
-  ggplot(aes(weight, height, fill=breed)) +
-  geom_point(size = 2)
-
-ggplotly(dog_plot)
 ```
 
 
