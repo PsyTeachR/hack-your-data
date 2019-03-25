@@ -67,7 +67,7 @@ map_data("world") %>%
 
 15-17 April 2019
 
-Sign up at the [Scottish Graduate School of Social Science](https://www.sgsss.ac.uk/training/spring-into-methods/).
+More information at [Scottish Graduate School of Social Science](https://www.sgsss.ac.uk/training/spring-into-methods/).
 
 ## Aims, objectives and learning outcomes
 
