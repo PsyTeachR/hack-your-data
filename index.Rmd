@@ -96,3 +96,7 @@ No prior experience of coding or any other software is needed. The event has bee
 
 All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
 
+### Podcast
+[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg) interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
+
+<audio controls><source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
