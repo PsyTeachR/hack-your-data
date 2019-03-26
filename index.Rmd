@@ -24,6 +24,11 @@ psyteachr_colors <- psyteachr_colours
 
 ```
 
+### Podcast
+[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
+
+<audio controls><source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
+
 ```{r, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
 
 n <- 1e6
@@ -42,6 +47,7 @@ tibble(
   theme_void()
 ```
 
+### Introduction
 Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.
 
 With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
@@ -95,8 +101,3 @@ No prior experience of coding or any other software is needed. The event has bee
 ### Learning materials
 
 All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
-
-### Podcast
-[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg) interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
-
-<audio controls><source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
