@@ -44,7 +44,7 @@ psyteachr_colors <- psyteachr_colours
 9.45 - Coding and reproducible workflows (Professor Lisa DeBruine)  
 11.30 - Visualizing the headlines (Shannon McNee)   
 14.00 - Scraping and visualizing Twitter data (Anna Henschel)   
-15.45 - R Markdown 2 (Rebecca Lai)  
+15.45 - R Markdown Websites (Rebecca Lai)  
 
 #### Wednesday, the 17th of April (third day)
 
