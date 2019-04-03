@@ -29,6 +29,27 @@ psyteachr_colors <- psyteachr_colours
 
 <audio controls><source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
 
+### Schedule
+
+#### Monday, the 15th of April (first day)
+
+9.45 - Thinking like a computer (Carolyn Saund)  
+10.30 - Introduction to tidy data (Shannon McNee)   
+11.30 - R Markdown (Rebecca Lai)   
+14.00 - Quantitative data visualization (Jack Taylor)  
+15.15 - Qualitative data visualization (Stephanie Allan)  
+
+#### Tuesday, the 16th of April (second day)
+
+9.45 - Coding and reproducible workflows (Professor Lisa DeBruine)  
+11.30 - Visualizing the headlines (Shannon McNee)   
+14.00 - Scraping and visualizing Twitter data (Anna Henschel)   
+15.45 - R Markdown 2 (Rebecca Lai)  
+
+#### Wednesday, the 17th of April (third day)
+
+9.45 - Your data and visualizations (Lovisa Sundin)  
+
 ```{r, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
 
 n <- 1e6

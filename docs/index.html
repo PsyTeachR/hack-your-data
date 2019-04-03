@@ -25,7 +25,7 @@
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
@@ -61,7 +61,29 @@ code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Doc
 code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -98,9 +120,7 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -119,25 +139,98 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -147,7 +240,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Hack your data beautiful</h1>
-<h3 class="subtitle"><em>Coding to creatively and credibly communicate complex ideas</em></h3>
+<h3 class="subtitle">Coding to creatively and credibly communicate complex ideas</h3>
 
 </div>
 
@@ -158,7 +251,29 @@ $(document).ready(function () {
 <audio controls>
 <source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg">
 </audio>
+</div>
+<div id="schedule" class="section level3">
+<h3>Schedule</h3>
+<div id="monday-the-15th-of-april-first-day" class="section level4">
+<h4>Monday, the 15th of April (first day)</h4>
+<p>9.45 - <strong>Thinking like a computer</strong> (Carolyn Saund)<br />
+10.30 - <strong>Introduction to tidy data</strong> (Shannon McNee)<br />
+11.30 - <strong>R Markdown</strong> (Rebecca Lai)<br />
+14.00 - <strong>Quantitative data visualization</strong> (Jack Taylor)<br />
+15.00 - <strong>Qualitative data visualization</strong> (Stephanie Allan)</p>
+</div>
+<div id="tuesday-the-16th-of-april-second-day" class="section level4">
+<h4>Tuesday, the 16th of April (second day)</h4>
+<p>9.45 - <strong>Coding and reproducible workflows</strong> (Professor Lisa DeBruine)<br />
+11.30 - <strong>Visualizing the headlines</strong> (Shannon McNee)<br />
+14.00 - <strong>Scraping and visualizing Twitter data</strong> (Anna Henschel)<br />
+15.45 - <strong>R Markdown 2</strong> (Rebecca Lai)</p>
+</div>
+<div id="wednesday-the-17th-of-april-third-day" class="section level4">
+<h4>Wednesday, the 17th of April (third day)</h4>
+<p>9.45 - <strong>Your data and visualizations</strong> (Lovisa Sundin)</p>
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 <div id="introduction" class="section level3">
 <h3>Introduction</h3>
@@ -174,6 +289,11 @@ $(document).ready(function () {
        <span class="dt">caption =</span> <span class="st">&quot;A plot made with the 9 lines of code above.&quot;</span>,
        <span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;dodgerblue&quot;</span>))</code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;maps&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     map</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
 </div>
 <div id="details" class="section level2">
