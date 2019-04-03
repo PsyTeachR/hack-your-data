@@ -119,6 +119,8 @@ Day one will be spent covering the basics - how to get up and started. Day two w
 
 No prior experience of coding or any other software is needed. The event has been designed with absolute beginners in mind.  
 
+You can install R in advance by following [instructions for Installing R on Your own Machine](r_instructions.html)
+
 ### Learning materials
 
 All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
