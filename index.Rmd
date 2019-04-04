@@ -37,6 +37,7 @@ Please install R in advance by following [instructions for Installing R on Your 
 
 #### Monday, the 15th of April (first day)
 
+9.30 - Welcome (Team HYDB)
 9.45 - Thinking like a computer (Carolyn Saund)  
 10.30 - Introduction to tidy data (Shannon McNee)   
 11.30 - R Markdown (Rebecca Lai)   
@@ -53,7 +54,7 @@ Please install R in advance by following [instructions for Installing R on Your 
 #### Wednesday, the 17th of April (third day)
 
 9.45 - Your data and visualizations (Lovisa Sundin)  
-
+11.15 - Wrap up (Team HYDB)
 
 
 ```{r logo, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
