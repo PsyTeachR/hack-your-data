@@ -50,6 +50,10 @@ psyteachr_colors <- psyteachr_colours
 
 9.45 - Your data and visualizations (Lovisa Sundin)  
 
+### Install R & R Studio
+
+You can install R in advance by following [instructions for Installing R on Your own Machine](r_instructions.html)
+
 ```{r, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
 
 n <- 1e6
@@ -73,7 +77,7 @@ Coding is a skill that can be picked up by people from all backgrounds, for any 
 
 With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
 
-```{r, out.width="100%", fig.width=9, fig.height=4.5}
+```{r, out.width="100%", fig.width=9, fig.height=4.5, message=FALSE, warning = FALSE}
 
 library(tidyverse)
 
@@ -118,6 +122,7 @@ Day one will be spent covering the basics - how to get up and started. Day two w
 ### Prior learning required by participants 
 
 No prior experience of coding or any other software is needed. The event has been designed with absolute beginners in mind.  
+
 
 ### Learning materials
 
