@@ -1,7 +1,7 @@
 name: "hack-your-data"
 author: "psyTeachR"
 output_dir: "docs"
-exclude: ["*.xls", "*.csv"]
+exclude: ["*.xls", "*.csv","*.R"]
 output:
   html_document:
     toc: no
@@ -11,3 +11,12 @@ output:
     theme: flatly
     highlight: tango
     css: style.css
+navbar:
+  title: "Hack Your Data Beautiful"
+  left:
+    - text: "psyTeachR"
+      icon: fa-home
+      href: /
+  right:
+    - text: "Installing R"
+      href: r_instructions.html
