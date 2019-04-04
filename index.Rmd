@@ -1,6 +1,6 @@
 ---
 title: "Hack your data beautiful"
-subtitle: "Coding to creatively and credibly communicate complex ideas "
+subtitle: "Coding to creatively and credibly communicate complex ideas"
 ---
 
 ```{r, include = FALSE}
@@ -27,7 +27,11 @@ psyteachr_colors <- psyteachr_colours
 ### Podcast
 [Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
 
-<audio controls><source src="./files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
+<audio controls><source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
+
+### Install R & R Studio
+
+Please install R in advance by following [instructions for Installing R on Your own Machine](r_instructions.html).
 
 ### Schedule
 
@@ -50,7 +54,9 @@ psyteachr_colors <- psyteachr_colours
 
 9.45 - Your data and visualizations (Lovisa Sundin)  
 
-```{r, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
+
+
+```{r logo, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE}
 
 n <- 1e6
 means <- c(40, 60, 80, 100, 120, 140)
@@ -66,6 +72,8 @@ tibble(
   scale_fill_manual(values = psyteachr_colours()) +
   xlim(-20,200) +
   theme_void()
+
+ggsave("img/hydb.png", width=10, height=2)
 ```
 
 ### Introduction
@@ -73,7 +81,7 @@ Coding is a skill that can be picked up by people from all backgrounds, for any 
 
 With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
 
-```{r, out.width="100%", fig.width=9, fig.height=4.5}
+```{r map, out.width="100%", fig.width=9, fig.height=4.5, message=FALSE, warning = FALSE}
 
 library(tidyverse)
 
@@ -119,6 +127,7 @@ Day one will be spent covering the basics - how to get up and started. Day two w
 
 No prior experience of coding or any other software is needed. The event has been designed with absolute beginners in mind.  
 
+
 ### Learning materials
 
-All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
+All materials utilised over 2.5 days will be provided through open source webpages (https://psyteachr.github.io/hack-your-data/) to support continued learning. This will include series of podcasts discussing personal experiences of beginning coding journey with R (highs, lows, challenges, advice) developed by the PGR workshop leads and the participants together.
