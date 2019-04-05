@@ -7,46 +7,13 @@ subtitle: "Coding to creatively and credibly communicate complex ideas"
 source("R/psyteachr_setup.R")
 ```
 
-### Podcast
-[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
 
-<audio controls><source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
-
-### Install R & R Studio
-
-Please install R in advance by following [instructions for Installing R on Your own Machine](r_instructions.html).
-
-### Schedule
-
-#### Monday, the 15th of April (first day)
-
-9.30 - Welcome (Team HYDB)
-9.45 - Thinking like a computer (Carolyn Saund)  
-10.30 - Introduction to tidy data (Shannon McNee)   
-11.30 - R Markdown (Rebecca Lai)   
-14.00 - Quantitative data visualization (Jack Taylor)  
-15.15 - Qualitative data visualization (Stephanie Allan)  
-
-#### Tuesday, the 16th of April (second day)
-
-9.45 - Coding and reproducible workflows (Professor Lisa DeBruine)  
-11.30 - Visualizing the headlines (Shannon McNee)   
-14.00 - Scraping and visualizing Twitter data (Anna Henschel)   
-15.45 - R Markdown Websites (Rebecca Lai)  
-
-#### Wednesday, the 17th of April (third day)
-
-9.45 - Your data and visualizations (Lovisa Sundin)  
-11.15 - Wrap up (Team HYDB)
-
-
-```{r logo, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE, fig.cap=""}
-
+```{r, eval = FALSE, echo = FALSE}
 n <- 1e6
 means <- c(40, 60, 80, 100, 120, 140)
 sds <- c(10, 7.5, 5, 5, 7.5, 10)
 
-tibble(
+logo <- tibble(
   grp = rep(LETTERS[1:6], each = n),
   val = rep(means, each = n) +
         rnorm(n*6, 0, rep(sds, each = n))
@@ -57,13 +24,54 @@ tibble(
   xlim(-20,200) +
   theme_void()
 
-ggsave("img/hydb.png", width=10, height=2)
+ggsave(logo, "img/hydb.png", width=10, height=2)
 ```
 
-### Introduction
+```{r logo, echo=FALSE, out.width="100%", fig.align="center", fig.width = 10, fig.height = 2, warning = FALSE, fig.cap=""}
+knitr::include_graphics("img/hydb.png")
+```
+
+## Schedule
+
+Please install R in advance by following [instructions for Installing R on Your own Machine](r_instructions.html).
+
+### Monday, the 15th of April (first day)
+
+09.30 - Welcome (Team HYDB)
+09.45 - Thinking like a computer (Carolyn Saund)  
+10.30 - Introduction to tidy data (Shannon McNee)   
+11.30 - R Markdown (Rebecca Lai)   
+14.00 - Quantitative data visualization (Jack Taylor)  
+15.15 - Qualitative data visualization (Stephanie Allan)  
+
+### Tuesday, the 16th of April (second day)
+
+09.45 - [Crowdsourcing better research](https://osf.io/x629g/) (Prof Lisa DeBruine)  
+11.30 - Visualizing the headlines (Shannon McNee)   
+14.00 - Scraping and visualizing Twitter data (Anna Henschel)   
+15.45 - R Markdown Websites (Rebecca Lai)  
+
+### Wednesday, the 17th of April (third day)
+
+9.45 - Your data and visualizations (Lovisa Sundin)  
+11.15 - Wrap up (Team HYDB)
+
+
+### Podcast
+
+<audio controls style="float: right;"><source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
+
+[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
+
+
+
+## Introduction
+
 Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.
 
 With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We'll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful -- did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!
+
+This workshop is sponsored by the [Scottish Graduate School of Social Science](https://www.sgsss.ac.uk/training/spring-into-methods/).
 
 ```{r map, out.width="100%", fig.width=9, fig.height=4.5, message=FALSE, warning = FALSE}
 
@@ -81,12 +89,6 @@ map_data("world") %>%
 ```
 
 
-
-## Details
-
-15-17 April 2019
-
-More information at [Scottish Graduate School of Social Science](https://www.sgsss.ac.uk/training/spring-into-methods/).
 
 ## Aims, objectives and learning outcomes
 

@@ -358,44 +358,43 @@ $(document).ready(function () {
 </div>
 
 
-<div id="podcast" class="section level3">
-<h3>Podcast</h3>
-<p><a href="https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg" target="_blank">Amelia Hilton</a> interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.</p>
-<audio controls>
-<source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg">
-</audio>
-</div>
-<div id="install-r-r-studio" class="section level3">
-<h3>Install R &amp; R Studio</h3>
+<p><img src="img/hydb.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="schedule" class="section level2">
+<h2>Schedule</h2>
 <p>Please install R in advance by following <a href="r_instructions.html">instructions for Installing R on Your own Machine</a>.</p>
-</div>
-<div id="schedule" class="section level3">
-<h3>Schedule</h3>
-<div id="monday-the-15th-of-april-first-day" class="section level4">
-<h4>Monday, the 15th of April (first day)</h4>
-<p>9.45 - Thinking like a computer (Carolyn Saund)<br />
+<div id="monday-the-15th-of-april-first-day" class="section level3">
+<h3>Monday, the 15th of April (first day)</h3>
+<p>09.30 - Welcome (Team HYDB) 09.45 - Thinking like a computer (Carolyn Saund)<br />
 10.30 - Introduction to tidy data (Shannon McNee)<br />
 11.30 - R Markdown (Rebecca Lai)<br />
 14.00 - Quantitative data visualization (Jack Taylor)<br />
 15.15 - Qualitative data visualization (Stephanie Allan)</p>
 </div>
-<div id="tuesday-the-16th-of-april-second-day" class="section level4">
-<h4>Tuesday, the 16th of April (second day)</h4>
-<p>9.45 - Coding and reproducible workflows (Professor Lisa DeBruine)<br />
+<div id="tuesday-the-16th-of-april-second-day" class="section level3">
+<h3>Tuesday, the 16th of April (second day)</h3>
+<p>09.45 - <a href="https://osf.io/x629g/">Crowdsourcing better research</a> (Prof Lisa DeBruine)<br />
 11.30 - Visualizing the headlines (Shannon McNee)<br />
 14.00 - Scraping and visualizing Twitter data (Anna Henschel)<br />
 15.45 - R Markdown Websites (Rebecca Lai)</p>
 </div>
-<div id="wednesday-the-17th-of-april-third-day" class="section level4">
-<h4>Wednesday, the 17th of April (third day)</h4>
-<p>9.45 - Your data and visualizations (Lovisa Sundin)</p>
-<p><img src="index_files/figure-html/logo-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="wednesday-the-17th-of-april-third-day" class="section level3">
+<h3>Wednesday, the 17th of April (third day)</h3>
+<p>9.45 - Your data and visualizations (Lovisa Sundin)<br />
+11.15 - Wrap up (Team HYDB)</p>
+</div>
+<div id="podcast" class="section level3">
+<h3>Podcast</h3>
+<audio controls style="float: right;">
+<source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg">
+</audio>
+<p><a href="https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg" target="_blank">Amelia Hilton</a> interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.</p>
 </div>
 </div>
-<div id="introduction" class="section level3">
-<h3>Introduction</h3>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
 <p>Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.</p>
 <p>With the open science movement, more and more qualitative and quantitative data will become freely accessible - learning data science and visualization skills will empower you to take advantage of that! We’ll show you how R is incredibly useful (and cutting-edge) in the arts and humanities, for example allowing you to quickly gather publicly available data (like popularity of different baby names in the UK) in R, create beautiful word clouds from large numbers of twitter posts, and visualise qualitative relationships between concepts in dendrograms! Coding can be playful, fun and beautiful – did you know that there is even the possibility to create artworks, animations, and interactive 3D graphs in R? Once you have tried coding yourself, you might never want to go back to dreary Excel graphs!</p>
+<p>This workshop is sponsored by the <a href="https://www.sgsss.ac.uk/training/spring-into-methods/">Scottish Graduate School of Social Science</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
 
 <span class="kw">map_data</span>(<span class="st">&quot;world&quot;</span>) <span class="op">%&gt;%</span>
@@ -406,17 +405,7 @@ $(document).ready(function () {
        <span class="dt">caption =</span> <span class="st">&quot;A plot made with the 9 lines of code above.&quot;</span>,
        <span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;dodgerblue&quot;</span>))</code></pre></div>
-<div class="figure" style="text-align: center">
-<img src="index_files/figure-html/map-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
-<p class="caption">
-<strong>CAPTION THIS FIGURE!!</strong>
-</p>
-</div>
-</div>
-<div id="details" class="section level2">
-<h2>Details</h2>
-<p>15-17 April 2019</p>
-<p>More information at <a href="https://www.sgsss.ac.uk/training/spring-into-methods/">Scottish Graduate School of Social Science</a>.</p>
+<p><img src="index_files/figure-html/map-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="aims-objectives-and-learning-outcomes" class="section level2">
 <h2>Aims, objectives and learning outcomes</h2>
