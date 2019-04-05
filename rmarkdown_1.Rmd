@@ -1,0 +1,56 @@
+---
+title: "Introduction to R Markdown"
+output: 
+  html_document:
+    toc: true
+---
+
+# Aim of this Session 
+
+<img src="img/rmarkdown.png" align="right" width=150 style="margin:10px 20px"></img>
+
+Today has been a bit of a running start to cover the basics, so we will now have a recap and apply those skills we learned in conjunction with the R Markdown Material.
+
+This morning with Carolyn and Shannon we covered dealing with a computer, coding and tidy data. 
+
+When working with these we used scripts. Now we are going to perform some tasks which are incredibly similar, but with a new data set and doing it in an R Markdown document.
+
+R Markdown documents are used to produce documents intended for human consumption. So by placing our analyses into this type of file we can produce attractive outputs from them for direct presentation to the consumer of our research.
+
+# Getting the Materials
+
+First, download the data [Metal Bands by Nation](files/metal_bands_2017.csv). This is downloaded from [Kaggle](https://www.kaggle.com/mrpantherson/metal-by-nation), and is available under a CC0 licence. I am redistributing it here so that you are not required to create a Kaggle account.
+
+Next, right click and select "Save Link As" to download the [template R Markdown document](files/metal_bands_blank_final.Rmd).
+
+Create a new folder somewhere and put both of these files into it. 
+
+# Getting Stuck In
+
+We are going to get ourselves into groups of (ideally) around 4-6 people and work through the problems posed together on the R Markdown Template we have downloaded. Each question is in it's own chunk, with a variable name already specified. Delete the part that says `NULL` and insert the code you generate as the solution in its place.
+
+If you run into problems:
+
+- Work together to try to solve the problems. This is why we are doing this in groups- many hands make light work.
+- The [Data Wrangling Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) is a good quick reference guide you might want to look at. 
+- Consult previous code. The functions that we are using now are the same ones we have used before.
+- Use the help files, by typing `?function_name` in the console.
+- Ask Steph and Rebecca for help- we are here to support your learning.
+- Google! The R community is very active and supportive, try googling your error messages for clues on how to resolve issues.
+
+You will be given a little bit of time to do each of the tasks, and then we will move forward together. 
+
+# Extras
+
+There are some extras on the slides for this session to proide you with a little more information going forward.
+
+You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting "save link as" [here](files/metal.bib), and the APA citation style file [here](files/apa-5th-edition.csl). 
+
+Your R Markdown documents are intended for consumption by a human reader, and referencing is a huge part of any academic work, so why not practice by incorporating the reference for the data set into the document we have been making to practice? The [slides](files/RMarkdown_1.pdf) for the session have a slide dedicated to showing you how to incorporate them.
+
+## Free R Books
+
+The R community is an incredibly open, welcoming and encouraging place. You will likely never be required to actually purchase any materials to level your skills up as there are many great resources online that have been provided by experts for absolutely free. 
+
+In addition to the Cheatsheets there is a free R Markdown book [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) and [R for Data Science](https://r4ds.had.co.nz/) which covers Tidyverse, among other things. These books can provide you with a wealth of information to further develop your skills.
+
