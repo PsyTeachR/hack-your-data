@@ -14,9 +14,20 @@ output:
 navbar:
   title: "Hack Your Data Beautiful"
   left:
-    - text: "psyTeachR"
-      icon: fa-home
-      href: /
+  - text: "psyTeachR"
+    icon: fa-home
+    href: /
+  - text: "Monday"  
+    menu: 
+    - text: "Intro to R Markdown"
+      href: rmarkdown_1.html
+  - text: "Tuesday"  
+    menu: 
+    - text: "R Markdown Websites"
+      href: rmarkdown_2.html
+  - text: "Wednesday"
+    menu:
+    - text: "Your data and Viualizations" 
   right:
     - text: "Installing R"
       href: r_instructions.html
