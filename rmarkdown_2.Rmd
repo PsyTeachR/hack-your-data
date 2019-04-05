@@ -1,0 +1,199 @@
+---
+title: "Websites with R Markdown"
+output: 
+  html_document:
+    toc: true
+---
+
+# Aim of this Session
+
+<img src="img/rmarkdown.png" align="right" width=150 style="margin:0px 20px"></img>
+
+In this session we are going to be building on our skills with R Markdown to show how you can make a clean and professional looking website by using the R Markdown skills that we have been working with. This session is a starter- not a comprehensive guide- but aims to give you some of the resources you need to continue moving forward on your own after you leave us.
+
+When you come to play in R Markdown, you might want to consult the [R Markdown Cheatsheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjyl4C73bjhAhUztXEKHdaVBPsQFjAAegQIARAC&url=https%3A%2F%2Fwww.rstudio.com%2Fwp-content%2Fuploads%2F2015%2F02%2Frmarkdown-cheatsheet.pdf&usg=AOvVaw0EdaMWRMevvsxYfQzsnSR4). It is an extremely useful quick reference guide.
+
+# Setting Up
+
+We'll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them [here](files/RMarkdown_2.pdf).
+
+## Folders
+
+Create a new folder somewhere and give it and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like `images` or `media`.
+
+# Create the YAML file for the site
+
+Just like your R Markdown documents, your website needs configuration information. We do this by creating a text file in R. Copy and paste the following text into it:
+
+```{r yaml, eval = F}
+name: "mywebpage"  
+author: "YOUR NAME"  
+output_dir: "docs"  
+output:  
+  html_document:  
+    self_contained: no  
+    theme: flatly  
+navbar:  
+  title: "My First Webpage" 
+```
+
+Save it in the folder that you created before, and save it as `_site.yml`, this name is non-negotiable. Keep the file open.
+
+## Index page
+
+Open a new R Markdown file. This will be the front page of our website. Delete all of the text from the new file and insert:
+
+```{r index, eval = F}
+---
+title: "My Website Name"
+---
+```
+
+Save the file in the folder you made as `index.Rmd`. Again, the website needs this name to be this exact text.
+
+# Adding content
+
+Now that we have a (single page) website, we can see how it looks. Ensure that both `index.Rmd` and `_site.yml` are saved. Type the following into the console and run it:
+
+```{r render, eval=F}
+rmarkdown::render_site()
+```
+
+This code renders the website in its current form. For each .Rmd file you have as part of your website, it will create a corresponding `.html` file. As we currently only have `index.Rmd` we will only create `index.html`. As we add more pages we will get more HTML documents when we render the site.
+
+It does this in a file called "docs" in your original folder that will contain the website. Navigate to it and double click it to have a look. It is barren, but we will get to adding content now. 
+
+You should check what your website looks like regularly. A large part of coding is changing things and seeing what happens.
+
+Why not take this opportunity to change the part in the `index.Rmd` file after `title:`, re-render the site and see what changes?
+
+## Text and Headings
+
+We are working with an R Markdown document, so the R Markdown syntax that we were working with before is still perfectly valid. We can use the all of the same text formatting as we did before. 
+
+## Hyperlinks
+
+We can use the same R Markdown code for hyperlinks too:
+
+```{r hyperlink_1, eval = F}
+[Text That will be the link](URL of the site you want to link to)
+```
+
+You can also use the HTML code if you prefer:
+
+```{r hyperlink_2, eval = F}
+<a href="URL of the site you want to link to">Text that will be the link</a>
+```
+
+## Images
+
+If you want to include an image you need to know where that image is. This "location" can be either a web address, or if your image is not hosted online, the location within your files system. This is why I asked you to make an extra folder for them at the beginning.
+
+Again, there are two ways that you can embed images.
+
+The R Markdown way:
+
+```{r images_1, eval = F}
+![Explanatory Text](path/to/image.jpg)
+```
+
+The HTML way:
+
+```{r images_2, eval = F}
+<img src="path/to/image.jpg"></img>
+```
+
+I have gotten used to doing it the HTML way, because within the `img` tag you can make adjustments to size, alignment, margins around the image and such.
+
+# Changing the Look
+
+For this section we are going to be editing the `_site.yml` file.
+
+## The Title
+
+Under the section `navbar` there is another options for `title`. Delete the first part that says "My First Webpage" and replace it with your name surrounded by quotation marks.
+
+## Themes
+
+The colour scheme that we are currently using can be seen under the `theme` section of the `_site.yml` file (shown below). There are others built in:
+
+- `default`
+- `cerulean`
+- `journal`
+- `flatly`
+- `readable`
+- `spacelab`
+- `united`
+- `cosmo`
+- `lumen`
+- `paper`
+- `sandstone`
+- `simplex`
+- `yeti`
+
+Themes also include changes to fonts, text size etc. You might want to consider aspects such as readability of text when you are choosing a theme.
+
+You don't have to settle with these options if you don't want to, but you would need to learn a little bit of CSS to create your own theme. CSS (cascading style sheets) are used to apply the same formatting across the whole site. You would write a CSS file in a text file (as you did with the `_site.yml` file), but this time save is as a file with the extension `.css` in the same folder as your webpage.
+
+You would then call this file in the `_site.yml` file as follows:
+
+```{r css, eval = F}
+  html_document:  
+    self_contained: no  
+    theme: flatly  # if you just want to use a standard theme
+    css: style.css # this is the addition to the code, citing the CSS file I want to use
+```
+
+There are many places online to learn more about CSS. [Codeacademy](https://www.codecademy.com/catalog/language/html-css) and [W3Schools](https://www.w3schools.com/css/) are two good starting points if you want to learn some more.
+
+## Navigation
+
+Some pages can be really long (like this one), and forcing users to scroll up and down continuously is not good web design. We can add a table of contents to our pages to help avoid frustration.
+
+Just like we did in the previous session with R Markdown, we can add a table of contents by adding to the configuration info. Changing the `_site.yml` file again to:
+
+```{r toc, eval = F}
+output:  
+  html_document:  
+    self_contained: no  
+    theme: flatly  
+    toc: true # adds a table of contents
+```
+
+## Adding More Pages
+
+You can make more pages, in the same way that you created `index.Rmd`. This time you can call them whatever you want, as long as you don't violate any naming conventions (such as including special characters, not beginning them with numbers etc.).
+
+Once you have created additional pages you will need to tell the configuration file what to do with them. You do this by making the following changes to the `_site.yml` file:
+
+```{r more_pages, eval = F}
+navbar:  
+  title: "Websites with R Markdown" 
+  left: # alignment of the links on the navbar
+    - text: "Text" # text to appear on the Navbar at the top of the page
+      href: text.html # link to the new page
+```
+
+The `text` is the text for a link to be created on the nav bar at the top of the page. This is the text that will be displayed to the user. 
+
+The `href` refers to the `.html` file that will be created when we render the site, not the `.Rmd` file that we currently have. It is the new web address to navigate to when the `text` has been clicked.
+
+Remember each `.Rmd` generates a `.html` file when you render the site. The name stays the same, but te extension changes. This means you can pre-empt what will be created and you will be able to effectively link between them before rendering them.
+
+# Further Resources
+
+## Hosting
+
+You can host your website for free on [GitHub](https://github.com/) by setting up a free account. An account here also comes with a whole host of other benefits, such as code sharing, collaborative coding, version control etc. 
+
+You can do this by setting up Git integration within R (see [here](https://gupsych.github.io/acadweb/setup.html) for a short how-to) or by downloading [GitHub Desktop](https://desktop.github.com/).
+
+There are also other webhosting services available (too many to count), to which you can upload your site.
+
+## R Markdown Book
+
+Remember that there is a free R Markdown book. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) (2019), by Yihui Xie, J. J. Allaire and Garrett Grolemund.
+
+
+
+
