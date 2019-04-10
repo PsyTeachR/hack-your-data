@@ -62,7 +62,7 @@ library(viridis)
 
 Now let's load in our data...
 
-```{r prep2, echo=FALSE, message=FALSE}
+```{r realprep, echo=FALSE, message=FALSE}
 correlations_heatmap <- read_csv("files/visualising-the-headlines/correlations_heatmap.csv")
 ```
 

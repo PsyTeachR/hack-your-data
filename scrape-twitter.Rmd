@@ -36,7 +36,7 @@ lego<- get_timeline("@legogradstudent", n=3200)
 
 Let's have a look at the dataframe. You can use `view(lego)` or click on the lego object in the environment. 
 
-```{r view}
+```{r view, eval=FALSE}
 # Look at the dataframe
 view(lego)
 ```
@@ -63,7 +63,7 @@ tidy_tweets <- lego %>% # pipe data frame
 
 Check if it worked:
 
-```{r view2}
+```{r view2, eval=FALSE}
 view(tidy_tweets)
 ```
 
