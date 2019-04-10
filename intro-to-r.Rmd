@@ -105,11 +105,11 @@ where the arguments are the *parameters* of the function -- the things the funct
 ### Loading Data
 We can also interact with files outside of our R script, like loading data. Download the results of our small survey for Hack Your Data Beautiful [here](files/intro-to-r/HYDB_survey_data.csv).
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE}
 survey_data <- read_csv('files/intro-to-r/HYDB_survey_data.csv')
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, message=FALSE}
 survey_data <- read_csv('HYDB_survey_data.csv')
 ```
 Now when we click on `survey_data` in our environment section, we can see all the beautiful data we've imported! 
