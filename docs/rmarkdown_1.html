@@ -31,6 +31,7 @@
 
 
 
+
 <style type="text/css">
 h1 {
   font-size: 34px;
@@ -261,7 +262,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -387,9 +388,11 @@ div.tocify {
     <li>
       <a href="rmarkdown_1.html">Intro to R Markdown</a>
     </li>
+    <li class="dropdown-header">Intro to Tidy Data</li>
     <li>
       <a href="quant-data-vis.html">Quantitative Data Visualisation</a>
     </li>
+    <li class="dropdown-header">Qualitative Data Visualization</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -399,6 +402,8 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Visualising the Headlines</li>
+    <li class="dropdown-header">Twitter Data</li>
     <li>
       <a href="rmarkdown_2.html">R Markdown Websites</a>
     </li>
@@ -411,7 +416,7 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Your data and Viualizations</li>
+    <li class="dropdown-header">Your Data and Visualisations</li>
   </ul>
 </li>
       </ul>
@@ -435,7 +440,7 @@ div.tocify {
 
 <div id="aim-of-this-session" class="section level1">
 <h1>Aim of this Session</h1>
-<p><img src="img/rmarkdown.png" align="right" width=150 style="margin:10px 20px"></img></p>
+<p><img src="img/rmarkdown.png" class="hex"></p>
 <p>Today has been a bit of a running start to cover the basics, so we will now have a recap and apply those skills we learned in conjunction with the R Markdown Material.</p>
 <p>This morning with Carolyn and Shannon we covered dealing with a computer, coding and tidy data.</p>
 <p>When working with these we used scripts. Now we are going to perform some tasks which are incredibly similar, but with a new data set and doing it in an R Markdown document.</p>

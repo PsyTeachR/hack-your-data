@@ -1,15 +1,10 @@
 ---
 title: "Introduction to R Markdown"
-output: 
-  html_document:
-    toc: true
-    includes:
-      in_header: "favicon.html"
 ---
 
 # Aim of this Session 
 
-<img src="img/rmarkdown.png" align="right" width=150 style="margin:10px 20px"></img>
+<img src="img/rmarkdown.png" class="hex">
 
 Today has been a bit of a running start to cover the basics, so we will now have a recap and apply those skills we learned in conjunction with the R Markdown Material.
 
