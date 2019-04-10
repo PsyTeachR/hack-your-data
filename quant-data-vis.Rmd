@@ -11,7 +11,7 @@ output:
 htmltools::img(src = knitr::image_uri(file.path("img/hex.png")),
                style = 'position:absolute; top:0; right:0; padding:10px; height:150px;')
 htmltools::img(src = knitr::image_uri(file.path("img/ggplot2.png")),
-              style = 'position:absolute; top:0; right:120px; padding:10px; height:150px;')
+              style = 'position:absolute; top:0; right:125px; padding:10px; height:148px;')
 ```
 
 # Materials
@@ -343,6 +343,7 @@ Create a violinbox plot as you did in Practice Question 2, but split by music ta
 This is meant to be a tricky question, but here are some hints:
 
 * You can specify different variables as the `x` and `fill` aesthetics
+
 * By default, the boxplots won't overlay the violin plots as you might expect, but you can fix this with some googling (as I did). To work this out I did a quick google and found these links which you might find useful:
   * [A Google Search (stackoverflow results on google are always the best thing in the world)](https://www.google.com/search?rlz=1C1GCEA_en-GBGB837GB837&q=boxplot+overlay+violin+plot+ggplot&spell=1&sa=X&ved=0ahUKEwi0zZSylp3hAhUEqXEKHXbPBTwQBQgrKAA&biw=1920&bih=970)
   * [ggplot2 reference (have a look through the examples they give)](https://ggplot2.tidyverse.org/reference/position_dodge.html)
