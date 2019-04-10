@@ -40,9 +40,11 @@ If you run into problems:
 
 You will be given a little bit of time to do each of the tasks, and then we will move forward together. 
 
+When we are done I will upload the code I write here for you to refer back to in future.
+
 # Extras
 
-There are some extras on the slides for this session to proide you with a little more information going forward.
+There are some extras on the slides for this session to provide you with a little more information going forward.
 
 You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting "save link as" [here](files/metal.bib), and the APA citation style file [here](files/apa-5th-edition.csl). 
 

@@ -47,7 +47,7 @@ band_separate <- NULL
 
 The data is still not tidy, as we have multiple "observations" (more than one style descriptor) on each row.
 
-Turn the data from this wide format into long format, using the `key = "style_n"` and `value = "style"`
+Turn the data from this wide format into long format, using the `gather()` function with the arguments `key = "style_n"` and `value = "style"`.
 
 ```{r gathering}
 band_gather <- NULL
@@ -114,6 +114,8 @@ It looks messy, right?
 Open a new R Markdown file, delete the example that is given and "pipe" the results from questions 1-7 together in the first chunk, putting it into a variable called top_10_new.
 
 Compare top_10 and top_10_new, they should be the same.
+
+If we have yet to cover pipes, we will go over this as one large group.
 
 ### Question 10
 
