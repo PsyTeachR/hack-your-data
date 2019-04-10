@@ -2,14 +2,6 @@
 title: "Quantitative Data Visualisation"
 ---
 
-```{r setup, eval = FALSE, echo = FALSE}
-# This section of code positions the Hack Your Data Beautiful ggplot2 hex stickers in the top-right of the knitted html document
-htmltools::img(src = knitr::image_uri(file.path("img/hex.png")),
-               style = 'position:absolute; top:50px; right:0; padding:10px; height:150px;')
-htmltools::img(src = knitr::image_uri(file.path("img/ggplot2.png")),
-              style = 'position:absolute; top:50px; right:125px; padding:10px; height:148px;')
-```
-
 <img src="img/hex.png" class="hex">
 <img src="img/ggplot2.png" class="hex">
 
