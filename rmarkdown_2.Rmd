@@ -19,7 +19,7 @@ We'll need to do a few things before we can get started with the creation of our
 
 ## Folders
 
-Create a new folder somewhere and give it and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like `images` or `media`.
+Create a new folder somewhere and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like `images` or `media`.
 
 # Create the YAML file for the site
 
@@ -111,7 +111,7 @@ For this section we are going to be editing the `_site.yml` file.
 
 ## The Title
 
-Under the section `navbar` there is another options for `title`. Delete the first part that says "My First Webpage" and replace it with your name surrounded by quotation marks.
+Under the section `navbar` there is another option for `title`. Delete the first part that says "My First Webpage" and replace it with your name surrounded by quotation marks.
 
 ## Themes
 
@@ -183,6 +183,8 @@ Remember each `.Rmd` generates a `.html` file when you render the site. The name
 # Further Resources
 
 ## Hosting
+
+At the moment your website is living on your computer. That's not really what we were aiming for. To put your website on the web you will need to find somewhere to "host it".
 
 You can host your website for free on [GitHub](https://github.com/) by setting up a free account. An account here also comes with a whole host of other benefits, such as code sharing, collaborative coding, version control etc. 
 
