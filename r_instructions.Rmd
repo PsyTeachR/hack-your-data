@@ -1,3 +1,10 @@
+---
+output:
+  html_document:
+    includes:
+      in_header: "favicon.html"
+---
+
 ```{r setup, include = FALSE}
 source("R/psyteachr_setup.R")
 ```
