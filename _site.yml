@@ -21,6 +21,8 @@ navbar:
     menu: 
     - text: "Intro to R Markdown"
       href: rmarkdown_1.html
+    - text: "Quantitative Data Visualisation"
+      href: quant-data-vis.html
   - text: "Tuesday"  
     menu: 
     - text: "R Markdown Websites"

@@ -1,6 +1,10 @@
 ---
 title: "Hack your data beautiful"
 subtitle: "Coding to creatively and credibly communicate complex ideas"
+output:
+  html_document:
+    includes:
+      in_header: "favicon.html"
 ---
 
 ```{r setup, include = FALSE}
