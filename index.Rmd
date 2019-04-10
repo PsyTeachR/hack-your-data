@@ -1,6 +1,10 @@
 ---
 title: "Hack your data beautiful"
 subtitle: "Coding to creatively and credibly communicate complex ideas"
+output:
+  html_document:
+    includes:
+      in_header: "favicon.html"
 ---
 
 ```{r setup, include = FALSE}
@@ -53,8 +57,8 @@ Please install R in advance by following [instructions for Installing R on Your 
 
 ### Wednesday, the 17th of April (third day)
 
-9.45 - Your data and visualizations (Lovisa Sundin)  
-11.15 - Wrap up (Team HYDB)
+09.45 - Your data and visualizations (Lovisa Sundin)  
+11.15 - Wrap up (Team HYDB)  
 
 
 ### Podcast
