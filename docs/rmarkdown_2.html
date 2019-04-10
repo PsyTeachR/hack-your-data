@@ -29,7 +29,6 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="shortcut icon" href="img/hex.png">
 
-
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
@@ -92,6 +91,43 @@ code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
 
 </style>
 <script>
@@ -535,7 +571,7 @@ div.tocify {
 <p>We’ll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them <a href="files/RMarkdown_2.pdf">here</a>.</p>
 <div id="folders" class="section level2">
 <h2>Folders</h2>
-<p>Create a new folder somewhere and give it and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like <code>images</code> or <code>media</code>.</p>
+<p>Create a new folder somewhere and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like <code>images</code> or <code>media</code>.</p>
 </div>
 </div>
 <div id="create-the-yaml-file-for-the-site" class="section level1">
@@ -595,7 +631,7 @@ div.tocify {
 <p>For this section we are going to be editing the <code>_site.yml</code> file.</p>
 <div id="the-title" class="section level2">
 <h2>The Title</h2>
-<p>Under the section <code>navbar</code> there is another options for <code>title</code>. Delete the first part that says “My First Webpage” and replace it with your name surrounded by quotation marks.</p>
+<p>Under the section <code>navbar</code> there is another option for <code>title</code>. Delete the first part that says “My First Webpage” and replace it with your name surrounded by quotation marks.</p>
 </div>
 <div id="themes" class="section level2">
 <h2>Themes</h2>
@@ -652,6 +688,7 @@ div.tocify {
 <h1>Further Resources</h1>
 <div id="hosting" class="section level2">
 <h2>Hosting</h2>
+<p>At the moment your website is living on your computer. That’s not really what we were aiming for. To put your website on the web you will need to find somewhere to “host it”.</p>
 <p>You can host your website for free on <a href="https://github.com/">GitHub</a> by setting up a free account. An account here also comes with a whole host of other benefits, such as code sharing, collaborative coding, version control etc.</p>
 <p>You can do this by setting up Git integration within R (see <a href="https://gupsych.github.io/acadweb/setup.html">here</a> for a short how-to) or by downloading <a href="https://desktop.github.com/">GitHub Desktop</a>.</p>
 <p>There are also other webhosting services available (too many to count), to which you can upload your site.</p>
