@@ -21,16 +21,20 @@ navbar:
     href: /
   - text: "Monday"  
     menu: 
+    - text: "Introduction to R"
+    - href: intro-to-r.html
+    - text: "Intro to Tidy Data"
     - text: "Intro to R Markdown"
       href: rmarkdown_1.html
-    - text: "Intro to Tidy Data"
     - text: "Quantitative Data Visualisation"
       href: quant-data-vis.html
     - text: "Qualitative Data Visualization"
   - text: "Tuesday"  
     menu: 
     - text: "Visualising the Headlines"
+      href: visualising-the-headlines.html
     - text: "Twitter Data"
+      href: scrape-twitter.html
     - text: "R Markdown Websites"
       href: rmarkdown_2.html
   - text: "Wednesday"
