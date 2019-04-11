@@ -24,11 +24,13 @@ navbar:
     - text: "Introduction to R"
       href: intro-to-r.html
     - text: "Intro to Tidy Data"
+      href: intro-to-tidy-data.html
     - text: "Intro to R Markdown"
       href: rmarkdown_1.html
     - text: "Quantitative Data Visualisation"
       href: quant-data-vis.html
     - text: "Qualitative Data Visualization"
+      href: qual-data-vis.html
   - text: "Tuesday"  
     menu: 
     - text: "Visualising the Headlines"
@@ -40,6 +42,7 @@ navbar:
   - text: "Wednesday"
     menu:
     - text: "Your Data and Visualisations" 
+      href: your-data-and-vis.html
   right:
     - text: "Installing R"
       href: r_instructions.html

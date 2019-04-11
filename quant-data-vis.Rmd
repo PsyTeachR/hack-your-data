@@ -411,6 +411,30 @@ The following code saves the last plot rendered to a file called `my_pretty_plot
 ggsave("my_pretty_plot.png", width = 9, height = 7, units = "in")
 ```
 
+## Logos
 
+Here's a really cool fun fact! The logo for Hack Your Data Beautiful (as proudly displayed on the [home page](index.html)) was in fact made in `ggplot2`, with the `geom_density()` function! Here's some reproducible code that we used to generate it:
 
+```{r}
+# how many data points for each of the density plots
+n <- 1e6
+# where on the x axis each density plot will be
+means <- c(40, 60, 80, 100, 120, 140)
+# how wide each density plot will be
+sds <- c(10, 7.5, 5, 5, 7.5, 10)
+# colours from the psyTeachR colour scheme
+psyteachr_colours_vec <- c("#983E82", "#E2A458", "#F5DC70", "#59935B", "#467AAC", "#61589C")
 
+tibble(
+  grp = rep(LETTERS[1:6], each = n),
+  val = rep(means, each = n) +
+        rnorm(n*6, 0, rep(sds, each = n))
+) %>%
+  ggplot(aes(val, fill = grp)) +
+  geom_density(alpha = 0.5, show.legend = F, trim = FALSE) +
+  scale_fill_manual(values = psyteachr_colours_vec) +
+  xlim(-20,200) +
+  theme_void()
+```
+
+Is there anything `ggplot2` can't do!?

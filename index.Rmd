@@ -41,22 +41,22 @@ Please install R in advance by following [instructions for Installing R on Your 
 ### Monday, the 15th of April (first day)
 
 09.30 - Welcome (Team HYDB)  
-09.45 - Thinking like a computer (Carolyn Saund)  
-10.30 - Introduction to tidy data (Shannon McNee)   
-11.30 - R Markdown (Rebecca Lai)   
-14.00 - Quantitative data visualization (Jack Taylor)  
-15.15 - Qualitative data visualization (Stephanie Allan)  
+09.45 - [Thinking like a Computer (Carolyn Saund)](intro-to-r.html)  
+10.30 - [Introduction to Tidy Data (Shannon McNee)](intro-to-tidy-data.html)   
+11.30 - [R Markdown (Rebecca Lai)](rmarkdown_1.html)   
+14.00 - [Quantitative Data Visualisation (Jack Taylor)](quant-data-vis.html)  
+15.15 - [Qualitative Data Visualisation (Stephanie Allan)](qual-data-vis.html)  
 
 ### Tuesday, the 16th of April (second day)
 
-09.45 - [Crowdsourcing better research](https://osf.io/x629g/) (Prof Lisa DeBruine)  
-11.30 - Visualizing the headlines (Shannon McNee)   
-14.00 - Scraping and visualizing Twitter data (Anna Henschel)   
-15.45 - R Markdown Websites (Rebecca Lai)  
+09.45 - [Crowdsourcing Better Research](https://osf.io/x629g/) (Prof Lisa DeBruine)  
+11.30 - [Visualising the Headlines (Shannon McNee)](visualising-the-headlines.html)   
+14.00 - [Scraping and Visualising Twitter data (Anna Henschel)](scrape-twitter.html)   
+15.45 - [R Markdown Websites (Rebecca Lai)](rmarkdown_2.html)  
 
 ### Wednesday, the 17th of April (third day)
 
-09.45 - Your data and visualizations (Lovisa Sundin)  
+09.45 - [Your Data and Visualisations (Lovisa Sundin)](your-data-and-vis.html)  
 11.15 - Wrap up (Team HYDB)  
 
 

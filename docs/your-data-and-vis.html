@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Your Data and Visualisations</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="img/hex.png">
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Hack Your Data Beautiful</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="/">
+    <span class="fa fa-home"></span>
+     
+    psyTeachR
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Monday
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro-to-r.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="intro-to-tidy-data.html">Intro to Tidy Data</a>
+    </li>
+    <li>
+      <a href="rmarkdown_1.html">Intro to R Markdown</a>
+    </li>
+    <li>
+      <a href="quant-data-vis.html">Quantitative Data Visualisation</a>
+    </li>
+    <li>
+      <a href="qual-data-vis.html">Qualitative Data Visualization</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tuesday
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="visualising-the-headlines.html">Visualising the Headlines</a>
+    </li>
+    <li>
+      <a href="scrape-twitter.html">Twitter Data</a>
+    </li>
+    <li>
+      <a href="rmarkdown_2.html">R Markdown Websites</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Wednesday
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="your-data-and-vis.html">Your Data and Visualisations</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="r_instructions.html">Installing R</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Your Data and Visualisations</h1>
+
+</div>
+
+
+<p><img src="img/hex.png" class="hex"> <img src="img/ggplot2.png" class="hex"></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(RCurl)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(maps)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">library</span>(network)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">library</span>(sna)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">library</span>(GGally)</a></code></pre></div>
+<p>In this session, we will be thrown from one real-life dataset to another to make quick judgments about which visualisation is most appropriate and how to construct it.</p>
+<p>The datasets have been sourced from the political poll website <a href="https://data.fivethirtyeight.com/">FiveThirtyEight</a>, founded by America’s most famous data analyst, <a href="https://en.wikipedia.org/wiki/Nate_Silver">Nate Silver</a>. If you want to hone your skills further, you can find many more CC-licensed datasets there.</p>
+<p>We have cleaned the data for you and will show you a snippet of what it’s structure looks like. Based on that structure, in groups of three: * discuss <em>which</em> visualisation would be appropriate (there is no unique right answer here) * implement it in <code>ggplot2</code> by choosing the aesthetics and geom objects. * bonus points if you add sensible labels and axes</p>
+<p>Think of it as a “visualiz-athon”&quot;, but don’t stress about finishing all of them. In fact, feel free to pick and choose whichever dataset tickles your fancy.</p>
+<div id="what-predicts-hate-crimes-in-america" class="section level2">
+<h2>1. What predicts hate crimes in America?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/hate_crimes.csv">hate_crimes.csv</a></strong></p>
+<p>The US has an acute problem with hate crimes. In the week following Trump’s 2016 election night, the hate crimes famously spiked compared with the long-running average.</p>
+<p>Sociologists argue that it is not a uniformly distributed problem, however. They suspect that it could be related to factors like inequality, urban living and median income.</p>
+<p>They have data on the average number of hate crimes (per 100,000 people) in USA between 2010 and 2015 for each American state. They also have a measurement for inequality called gini_index, the proportion of people living in metro areas, and the median income of the state.</p>
+<p>As you see below, the dataframe is called <code>hatedata</code> and its columns are called <code>median_houshold_income</code>, <code>gini_index</code>, and <code>share_population_in_metro_areas</code>.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["state"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["median_household_income"],"name":[2],"type":["int"],"align":["right"]},{"label":["gini_index"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["share_population_in_metro_areas"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["avg_hatecrimes_per_100k_fbi"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Alabama","2":"42278","3":"0.472","4":"0.64","5":"1.8064105"},{"1":"Alaska","2":"67629","3":"0.422","4":"0.63","5":"1.6567001"},{"1":"Arizona","2":"49254","3":"0.455","4":"0.90","5":"3.4139280"},{"1":"Arkansas","2":"44922","3":"0.458","4":"0.69","5":"0.8692089"},{"1":"California","2":"60487","3":"0.471","4":"0.97","5":"2.3979859"},{"1":"Colorado","2":"60940","3":"0.457","4":"0.80","5":"2.8046888"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>What would be a suitable visualization for sociologists to investigate whether these three factors play a role? Is it feasible to combine them all into one or are they better split into several graphs? What possible problems do you see in your graph that could make analysis more difficult?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">ggplot</span>(hatedata, <span class="kw">aes</span>(<span class="dt">x=</span>____, <span class="dt">y=</span>_____)) <span class="op">+</span><span class="st"> </span>______</a></code></pre></div>
+</div>
+<div id="do-pulitzers-matter-for-a-newspapers-growth" class="section level2">
+<h2>2. Do Pulitzers matter for a newspaper’s growth?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/pulitzer-circulation-data.csv">pulitzer-circulation-data.csv</a></strong></p>
+<p>The finest honour any investigative journalist could aspire to is called the Pulitzer Prize. The owners of the newspaper they work for surely wouldn’t mind either, as this could lead to a boost in circulation. But is there empirical evidence to support their assumption that Pulitzers matter for sales?</p>
+<p>In the dataset below, called <code>puldata</code>, there is information on the size of their circulation in 2004 (<code>Daily.Circulation..2004</code>), the percentage by which it grew or declined between 2004 and 2013 (<code>Change.in.Daily.Circulation</code>) and finally how many Pulitzer Prize winners worked at the newspaper between those years (<code>Pulitzer.Prize.Winners.and.Finalists..2004.2014</code>).</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Daily.Circulation..2004"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Change.in.Daily.Circulation..2004.2013"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Pulitzer.Prize.Winners.and.Finalists..2004.2014"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"NA","2":"-24%","3":"1"},{"1":"NA","2":"+13%","3":"20"},{"1":"NA","2":"+67%","3":"62"},{"1":"983727","2":"-34%","3":"41"},{"1":"760034","2":"-38%","3":"48"},{"1":"712671","2":"-28%","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Is there a relationship, would you say? Is there a way to make the visualisation also show whether the initial 2004 circulation influenced the Pulitzer-fueled growth?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(puldata, <span class="kw">aes</span>(<span class="dt">x=</span>________________)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+</div>
+<div id="what-is-the-shape-of-trumps-twitter-popularity" class="section level2">
+<h2>3. What is the shape of Trump’s twitter popularity?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/realDonaldTrump.csv">realDonaldTrump.csv</a></strong></p>
+<p>Now to American politics and their principal arena: the Twitter-verse.</p>
+<p>Trump boasts an impressive following of more than 150 million accounts (perhaps with a few Russian bots included), but follower numbers never give a full story. Political scientists may want to have a closer look at the number of interactions, and specifically how many people like (or ‘favorite’) his tweets.</p>
+<p>In the <code>trumpdata</code> prepared below, there is a <code>url</code> giving the link to his tweet, <code>replies</code>, <code>retweets</code>, and <code>favorites</code>.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["url"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["replies"],"name":[2],"type":["int"],"align":["right"]},{"label":["retweets"],"name":[3],"type":["int"],"align":["right"]},{"label":["favorites"],"name":[4],"type":["int"],"align":["right"]}],"data":[{"1":"https://twitter.com/realDonaldTrump/status/922440008971292672","2":"46228","3":"10243","4":"49468"},{"1":"https://twitter.com/realDonaldTrump/status/922430688703451136","2":"31419","3":"14006","4":"62406"},{"1":"https://twitter.com/realDonaldTrump/status/922428118685581313","2":"9552","3":"13719","4":"62662"},{"1":"https://twitter.com/realDonaldTrump/status/922072236592435200","2":"56238","3":"25102","4":"112890"},{"1":"https://twitter.com/realDonaldTrump/status/922070659093671936","2":"32136","3":"21573","4":"97145"},{"1":"https://twitter.com/realDonaldTrump/status/922067676708638721","2":"11153","3":"7336","4":"42415"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>How could you show to political scientists the general tendencies of his favorite-numbers? Are they always hovering around the same number? Are some massively more popular than most?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(trumpdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+</div>
+<div id="which-politicians-are-most-rapped-about" class="section level2">
+<h2>4. Which politicians are most rapped about?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/genius_hip_hop_lyrics.csv">genius_hip_hop_lyrics.csv</a></strong></p>
+<p>On the same political note, but on a different platform, data from the musical lyrics website <a href="www.genius.com">Genius.com</a> reveals that politcians are a favourite topic in rap songs. This popularity stretches decades back.</p>
+<p>Clever social scientists studying this phenomenon have applied a technique called <em>sentiment analysis</em> to determine whether the rapper’s attitude towards the politician is positive, negative or neutral.</p>
+<p>Have a look at the <code>hiphopdata</code> set below, and its three fields <code>candidate</code>, <code>song</code>, <code>artist</code>, and <code>sentiment</code>.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["candidate"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["song"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["artist"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["sentiment"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"Mike Huckabee","2":"None Shall Pass","3":"Aesop Rock","4":"neutral"},{"1":"Mike Huckabee","2":"Wellstone","3":"Soul Khan","4":"negative"},{"1":"Jeb Bush","2":"Awe","3":"Dez & Nobs","4":"neutral"},{"1":"Jeb Bush","2":"The Truth","3":"Diabolic","4":"negative"},{"1":"Jeb Bush","2":"Money Man","3":"Gorilla Zoe","4":"negative"},{"1":"Jeb Bush","2":"Hidden Agenda","3":"K-Rino","4":"negative"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Which politicians are given the rap treatment most often, we wonder? And is there a way to visualize conveniently the proportion of different rap sentiments among the lyrical references?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">ggplot</span>(hiphopdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____)</a></code></pre></div>
+</div>
+<div id="who-cares-about-the-oxford-comma" class="section level2">
+<h2>5. Who cares about the Oxford comma?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/comma-survey.csv">comma-survey.csv</a></strong></p>
+<p>Now for a controversial, English-related debate. As you may know, the <em>Oxford comma</em> refers to whether, at the end of a listing, you should add a comma or not before the last item. For example, is it right to say <em>It’s important for a person to be honest, kind and loyal.</em> or would you rather have it as <em>It’s important for a person to be honest, kind, and loyal.</em>.</p>
+<p>To settle the matter via democratic processes, a poll was conducted that asked people which option they preferred. The pollsters also asked about their education background, thinking that perhaps postgraduates would be more pedantic in the matter.</p>
+<p>The data has been prepared below, in <code>commaperc</code>, which contains the percentages (<code>freq</code>) of people for each <code>Education</code> group who preferred one or the other.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Education"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Opinion"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[3],"type":["int"],"align":["right"]},{"label":["freq"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"","2":"It's important for a person to be honest, kind and loyal.","3":"50","4":"0.4854369"},{"1":"","2":"It's important for a person to be honest, kind, and loyal.","3":"53","4":"0.5145631"},{"1":"Bachelor degree","2":"It's important for a person to be honest, kind and loyal.","3":"145","4":"0.4215116"},{"1":"Bachelor degree","2":"It's important for a person to be honest, kind, and loyal.","3":"199","4":"0.5784884"},{"1":"Graduate degree","2":"It's important for a person to be honest, kind and loyal.","3":"104","4":"0.3768116"},{"1":"Graduate degree","2":"It's important for a person to be honest, kind, and loyal.","3":"172","4":"0.6231884"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>So, postgraduates - are we more pedantic about the Oxford commas?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">ggplot</span>(commaperc, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">y=</span> _____, <span class="dt">fill=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom____</span>(_____)</a></code></pre></div>
+</div>
+<div id="which-airlines-are-the-best-to-fly-with" class="section level2">
+<h2>6. Which airlines are the best to fly with?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/airline-safety.csv">airline-safety.csv</a></strong></p>
+<p>With the twin Boeing disasters fresh in memory, we are excused to sometimes worry a bit about the safety records of modern airlines. So let’s have a look at them.</p>
+<p>In the <code>airdata</code> dataset below, there is a number of fatalities between 2000-2014 given as a heartless statistic in <code>fatalities_00_14</code> for each <code>airline</code>. Have a look.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["airline"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["avail_seat_km_per_week"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["incidents_85_99"],"name":[3],"type":["int"],"align":["right"]},{"label":["fatal_accidents_85_99"],"name":[4],"type":["int"],"align":["right"]},{"label":["fatalities_85_99"],"name":[5],"type":["int"],"align":["right"]},{"label":["incidents_00_14"],"name":[6],"type":["int"],"align":["right"]},{"label":["fatal_accidents_00_14"],"name":[7],"type":["int"],"align":["right"]},{"label":["fatalities_00_14"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Malaysia Airlines","2":"1039171244","3":"3","4":"1","5":"34","6":"3","7":"2","8":"537"},{"1":"American*","2":"5228357340","3":"21","4":"5","5":"101","6":"17","7":"3","8":"416"},{"1":"Air France","2":"3004002661","3":"14","4":"4","5":"79","6":"6","7":"2","8":"337"},{"1":"Kenya Airways","2":"277414794","3":"2","4":"0","5":"0","6":"2","7":"2","8":"283"},{"1":"China Airlines","2":"813216487","3":"12","4":"6","5":"535","6":"2","7":"1","8":"225"},{"1":"TAM","2":"1509195646","3":"8","4":"3","5":"98","6":"7","7":"2","8":"188"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>This data has already been sorted from high-to-low. We wonder of course whether we could summarise visually which airline we should avoid in the future, assuming that their past incidents has something to say about their future safety.</p>
+<p>With so many airlines on display, is there a way to prevent it looking cluttered?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">ggplot</span>(airdata, <span class="kw">aes</span>(<span class="dt">y=</span>_____, <span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom___</span>()  </a></code></pre></div>
+</div>
+<div id="what-is-the-teenagers-drug-of-choice" class="section level2">
+<h2>7. What is the teenagers’ drug of choice?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/drug-use-by-age.csv">drug-use-by-age.csv</a></strong></p>
+<p>Many communities struggle with youth drug use, which could be carried over to later stages of life. To monitor the shares of people at different ages using drugs, authorities have collected cross-sectional data showing, for each drug, how many percent use it in each age interval.</p>
+<p>This data is found in <code>drugdata</code>, which has the fields <code>drug</code> and <code>percentage</code>.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["age"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["marijuana"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["drug"],"name":[3],"type":["chr"],"align":["left"]},{"label":["percentage"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"12","2":"1.1","3":"cocaine","4":"0.1"},{"1":"13","2":"3.4","3":"cocaine","4":"0.1"},{"1":"14","2":"8.7","3":"cocaine","4":"0.1"},{"1":"15","2":"14.5","3":"cocaine","4":"0.5"},{"1":"16","2":"22.5","3":"cocaine","4":"1.0"},{"1":"17","2":"28.0","3":"cocaine","4":"2.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>How could we look into the trends in different drugs’ popularity over the life span? How could we minimise the visual confusion in doing so?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">ggplot</span>(_____, <span class="kw">aes</span>(<span class="dt">x=</span>____ , <span class="dt">group=</span>____, <span class="dt">y=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(___________)</a></code></pre></div>
+</div>
+<div id="where-are-all-the-women-in-biopics" class="section level2">
+<h2>8. Where are all the women in biopics?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/biopics.csv">biopics.csv</a></strong></p>
+<p>Abraham Lincoln, Winston Churchill, and Freddie Mercury have all been the subject of a biographical motion picture, also known as <em>biopic</em>. Every Great Man of History seems to have led a Hollywood actor to an Oscar. But where are all the Women of History?</p>
+<p>Film nerds have collected the following data <code>biopics</code> which shows the year of release (<code>year_release</code>), the gender of the subject (<code>subject_sex</code>), the <code>title</code>, the <code>subject</code> name and the <code>lead_actor_actress</code> who played them.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["year_release"],"name":[1],"type":["int"],"align":["right"]},{"label":["subject_sex"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["title"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["subject"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["lead_actor_actress"],"name":[5],"type":["fctr"],"align":["left"]}],"data":[{"1":"1971","2":"Male","3":"10 Rillington Place","4":"John Christie","5":"Richard Attenborough"},{"1":"2013","2":"Male","3":"12 Years a Slave","4":"Solomon Northup","5":"Chiwetel Ejiofor"},{"1":"2010","2":"Male","3":"127 Hours","4":"Aron Ralston","5":"James Franco"},{"1":"2014","2":"Male","3":"1987","4":"Ricardo Trogi","5":"Jean-Carl Boucher"},{"1":"1998","2":"Male","3":"20 Dates","4":"Myles Berkowitz","5":"Myles Berkowitz"},{"1":"2008","2":"Male","3":"21","4":"Jeff Ma","5":"Jim Sturgess"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Is there a convenient way for us to visualize how this proportion in gender has changed over the last decades? Are female biopics on the rise or has it stayed constant?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">ggplot</span>(_______, <span class="kw">aes</span>(<span class="dt">x=</span>_______, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____) </a></code></pre></div>
+</div>
+<div id="where-do-people-marry-their-second-cousins" class="section level2">
+<h2>9. Where do people marry their second cousins?</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/cousin-marriage-data.csv">cousin-marriage-data.csv</a></strong></p>
+<p>People born and bred in UK may be surprised to learn that marrying second cousins is a common practice. There are many reasons for doing so: staying close to the family and community, minimising the disruption of marriage, keeping property among consanguines…</p>
+<p>We would therefore expect this to have a relationship with factors like poverty. In the data below, a dataframe containing the (<code>long</code>,<code>lat</code>) coordinates that define the corners of some countries has been merged with data that gives the <code>Percent</code> of how many people marry their second cousins.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["long"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["lat"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["group"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["order"],"name":[4],"type":["int"],"align":["right"]},{"label":["region"],"name":[5],"type":["chr"],"align":["left"]},{"label":["subregion"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Percent"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"-69.89912","2":"12.45200","3":"1","4":"1","5":"Aruba","6":"NA","7":"NA"},{"1":"-69.89571","2":"12.42300","3":"1","4":"2","5":"Aruba","6":"NA","7":"NA"},{"1":"-69.94219","2":"12.43853","3":"1","4":"3","5":"Aruba","6":"NA","7":"NA"},{"1":"-70.00415","2":"12.50049","3":"1","4":"4","5":"Aruba","6":"NA","7":"NA"},{"1":"-70.06612","2":"12.54697","3":"1","4":"5","5":"Aruba","6":"NA","7":"NA"},{"1":"-70.05088","2":"12.59707","3":"1","4":"6","5":"Aruba","6":"NA","7":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Moving into the territory of geospatial data visualization, could you figure out a way of showing in an overlay of the world map, how many people in each country engage in this practice?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">ggplot</span>(map2, <span class="kw">aes</span>(<span class="dt">x=</span>___, <span class="dt">y=</span>____, <span class="dt">group=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+</div>
+<div id="beyond-ggplot2-extension" class="section level1">
+<h1>Beyond ggplot2 (extension)</h1>
+<div id="network-data" class="section level2">
+<h2>10. Network data:</h2>
+<p><strong>Dataset: <a href="files/your-data-and-vis/love_actually_adjacencies.csv">love_actually_adjacencies.csv</a></strong></p>
+<p>If you ever found yourself watching the romcom <em>Love, Actually</em> on Christmas, then you may have marvelled at how the screenwriters managed to weave together such a complex ensemble script. You may wonder if they ever used some kind of network visualization to map out all the character interactions.</p>
+<p>Unfortunately, <code>ggplot</code> does not provide convenient support for networks, but via a set of libraries called <code>networks</code>, <code>sna</code> and <code>GGally</code> we could nevertheless cobble together a dataframe where the two first columns (<code>actor</code> and <code>actors</code>) give the characters in an interaction, and the third (<code>number</code>) gives the interaction frequency.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["actors"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["actor"],"name":[2],"type":["chr"],"align":["left"]},{"label":["number"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"bill_nighy","2":"bill_nighy","3":"9"},{"1":"keira_knightley","2":"bill_nighy","3":"2"},{"1":"andrew_lincoln","2":"bill_nighy","3":"2"},{"1":"hugh_grant","2":"bill_nighy","3":"2"},{"1":"colin_firth","2":"bill_nighy","3":"1"},{"1":"alan_rickman","2":"bill_nighy","3":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Using the function <code>ggnet2</code> we could simply feed the network to it. Now you know! (no exercise for this one :) )</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">ggnet2</span>(lanet, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">label.size =</span> <span class="dv">5</span>)</a></code></pre></div>
+<p><img src="your-data-and-vis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

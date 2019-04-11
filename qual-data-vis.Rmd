@@ -1,0 +1,298 @@
+---
+title: "Qualitative Data Visualisation"
+---
+
+<img src="img/hex.png" class="hex">
+<img src="img/ggplot2.png" class="hex">
+
+# Setting Up
+
+## Packages
+
+```{r setup, include=TRUE, warning=FALSE, message=FALSE}
+
+library(tidytext) # for transforming data
+library(tidyverse) # for data wrangling
+library(Cairo) # for ggwordcloud package to run
+library(ggwordcloud) # to render wordclouds
+library(DiagrammeR) # to make qual coding
+library(rgexf) #To create graph files
+
+```
+
+## Opening File
+
+Firstly, we need to open up the text file. We have opened .csv before, opening a text file is slightly different using the read.table function. Once the file is loaded... let's have a peek at some of the data. 
+
+```{r opening_file_real, warning=FALSE, echo=FALSE}
+glasgowData <- read.table("files/qual-data-vis/Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
+
+print(head(glasgowData), 1)
+
+```
+
+```{r opening_file, warning=FALSE, eval=FALSE}
+glasgowData <- read.table("Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
+
+print(head(glasgowData), 1)
+
+```
+
+# Preparing Data 
+
+I think we can agree this is very messy indeed! But let us think about questions raised during session one as a way to move forward.
+
+* How can I **organise** this data?
+* How can I make this data **meaningful**?
+* How can I make this data **tidy**? 
+
+To make the data **meangingful** we could create a word cloud image, showing what words are most commonly used
+
+To **organise** and **tidy** the data in a format for building a word cloud, we can use tidy text. 
+
+The tidy text format is defined by Julia Silge and David Robinson as data being in a table format with one-token-per-row. A token is a meaningful unit of text, such as a word. We are interested in words for our analysis so we would like to split this overall text file down into tokens. This process is called tokenization. 
+
+To make tidy text, we will use some data wrangling tricks that we have covered already, and introduce some new ones.
+
+Firstly, we will use `gather()` as before to change our messy data to a tidy format.This creates two columns. We have named the first column key but you can call it anything you like as we are only selecting the word column to create the tidy_glasgow dataframe that we will be working with.
+
+How many unique words do we have? 
+
+`unique(tidy_glasgow$word) %>% 
+length()` 
+
+Breaking the code snippet above down, we can see it is performing two key things:
+
+`unique(tidy_glasgow$word)` picks out each unique word. 
+
+However, we are not interested in what the words are - just the number
+
+Pipe (%>%) and then the `length()` function to discover we have 5120 unique words in total. **Note** if you are using windows it might read as 5123 because of how some characters are rendered.
+
+```{r tidying_file, warning=FALSE}
+
+tidy_glasgow <- gather(glasgowData, key, word) %>% 
+  select(word)
+
+#checks how many unique words there are in total
+
+unique(tidy_glasgow$word) %>%
+  length()
+```
+
+## Tidying Data - Tidytext
+
+
+Now that we have our words in long format we can tokenize, reduce our dataframe down down to only unique observations (in this case, words), and count the number of each observation.
+
+`unnest_tokens(word, word)` transforms our data to be one word per row. Also strips punctuation.
+`count(word, sort = TRUE)` counts up the total amount of each word, sort = TRUE then places them in order.
+`ungroup()` count has grouped the data by word, we have now ungrouped so tokens is not grouped by word.
+
+```{r cleaning _file, warning=FALSE}
+
+
+tokens <- tidy_glasgow %>% 
+  unnest_tokens(word, word) %>% 
+  count(word, sort = TRUE) %>% 
+  ungroup()
+
+
+```
+
+## Exploring what words are most frequent.
+
+Now we have cleaned the document up, let us see what words are the most frequent. 
+
+`head()` is a handy function built into R, which lets us peek at the top values. Let's see what the top ten are.
+
+```{r viewing_frequent_words, warning=FALSE}
+
+top_10 <- tokens %>% 
+  head(10)
+
+knitr::kable(top_10, caption = "Top ten all words table")
+```
+
+## Removing Unwanted Words
+
+Success, we have a word list. However, there are some common words that we might want to remove. Tidytext has a built in stop_words package that we can call on to remove frequent words such as "the" "and" etc.
+
+We would like to be able to remove our own custom words. This is particularly useful for qualitative research where some words may be confidential. We can define what words we want to remove. 
+
+There is no numeric data within the top ten words, but we will remove numbers anyway to keep the focus simply on words.
+
+We will need the following:
+
+`data("stop_words")` to load the common stop words.
+
+ `data.frame(word = c("glasgow's", "scottish"))` to create a dataframe with custom stop words that we want removed. You can include anything you like.
+
+`str_detect` to detect pre-defined strings (again, telling R to look in the word column). In this case we are filtering out numbers and returning a dataframe with all the rows containing all the unique numbers in the data set.
+
+`anti_join` to return all rows that do not feature the data we want to remove. We will use it three times to remove common stopwords, numbers and also our unique words.
+
+Then we can look at the top ten words again and see how it looks compared to before. Much better. 
+
+```{r removing_custom_words, warning=FALSE, message=FALSE}
+
+# removing stop words with built in tidytext package
+
+data("stop_words")
+tokens_clean <- tokens %>%
+  anti_join(stop_words)
+
+# removing numbers
+
+nums <- tokens_clean %>% filter(str_detect(word, "^[0-9]")) %>% select(word) %>% unique()
+
+tokens_clean <- tokens_clean %>% 
+  anti_join(nums, by = "word")
+
+unique_stopwords <- data.frame(word = c("glasgow's","city's", "scottish"))
+
+tokens_clean <- tokens_clean %>% 
+  anti_join(unique_stopwords, by = "word")
+
+top_10_clean <- tokens_clean %>% 
+  head(10) 
+
+knitr::kable(top_10_clean, caption = "Top ten clean table")
+
+```
+
+
+# Data Visualisation
+
+## Creating a Wordcloud 
+
+We can now create a wordcloud using the ggwordcloud package. 
+
+Success, a word cloud with a title. We have chosen to show the top 50 words.
+
+
+```{r wordscloud, warning=FALSE, results="hide"}
+
+wordcloudplot <- head(tokens_clean, 50) %>%
+    ggplot(aes(label = word, color = word, size = n)) +
+    geom_text_wordcloud_area() +
+    scale_size_area(max_size = 20) +
+    theme_minimal() + ggtitle("Glasgow Word Cloud") 
+
+wordcloudplot
+
+```
+
+## Task 1 
+
+ Have a go at creating a word cloud with the top 200 words. 
+
+
+<details>
+<summary>Show Solution...</summary>
+```{r, message=FALSE}
+head(tokens_clean, 200) %>%
+    ggplot(aes(label = word, color = word, size = n)) +
+    geom_text_wordcloud_area() +
+    scale_size_area(max_size = 20) +
+    theme_minimal() + ggtitle("Glasgow Word Cloud")
+```
+
+## Reminder
+
+If you're new to coding, something that you will pick up fast is the fact that we often use the internet to search for information that we need, or to help us out when we get stuck. 
+
+Remember that you are **not** expected to remember code and it is perfectly ok (assuming you have internet access) to google any of the functions we have covered at anytime. 
+
+# Making Qual Code Diagrams
+
+The `library(DiagrammeR)` package has been specifically created so that standardised syntax can be used to create diagrams in R.
+
+## Opening Text File
+
+Here, we can open up a raw text file containing key themes from an interview with people about peanut butter. 
+
+First we will open the raw text file. `scan` opens up the file as a list which is useful here.
+
+## Subsetting
+
+During our rigerous (and fake) thematic analysis, we constructed peanut butter as an overarching key theme. However, we also justified some other subthemes. In total we have five themes which we can view by **subsetting** the data as follows:
+
+`x[1]` is Peanut Butter
+`x[2]` is Jelly Time (and so on)
+
+## Key DiagrammeR Syntax
+
+DiagrammeR works by plotting diagrams as **journeys** (edges) going **from** and **to** (nodes). As you can see in the code below because Peanut Butter x[1] is the overarching theme, all journeys start with it.
+
+
+`nodesn=c(x[1],x[2],x[3],x[4])` defines our node names direct from text
+
+`create_node_df` creates our themes as 'nodes' (destinations)
+
+`create_edge_df` defines theme relationships as 'edges' (journeys)
+
+`create_graph` creates a graph which we can render.
+
+`layout = "tree"` is important because it creates the hierarchal nature, if you are curious - try removing it and see what happens.
+
+There is a transparent audit trail for this diagram, we chose not to plot `x[5]` "Hate it" because a minority of participants conversations clustered around this. Visualiasing qualitative data in this way helps us to be more transparent about decisions that we make at different steps along the research journey. 
+
+```{r qual1_real, warning=FALSE, message=FALSE, echo=FALSE}
+
+x <- scan("files/qual-data-vis/peanut.txt", what="", sep="\n", quiet = TRUE)
+
+
+from=c(x[1], x[1], x[1])
+to=c(x[2],x[3],x[4])
+nodesn=c(x[1],x[2],x[3],x[4])
+nodes <- create_node_df(n=length(nodesn), label=nodesn,  width=0.9, shape = "rectangle", color = "#983E82", fillcolor = "white") 
+edges <- create_edge_df(from = factor(from, levels=nodesn), to = factor(to, levels=nodesn), arrowhead = "arrow", color = "black")   
+graph <- create_graph(nodes_df = nodes, edges_df = edges, directed = FALSE) 
+graph %>% 
+render_graph(title = "Themes From Interviews", layout = "tree")
+
+```
+
+```{r qual1, warning=FALSE, message=FALSE, eval=FALSE}
+
+x <- scan("peanut.txt", what="", sep="\n", quiet = TRUE)
+
+
+from=c(x[1], x[1], x[1])
+to=c(x[2],x[3],x[4])
+nodesn=c(x[1],x[2],x[3],x[4])
+nodes <- create_node_df(n=length(nodesn), label=nodesn,  width=0.9, shape = "rectangle", color = "#983E82", fillcolor = "white") 
+edges <- create_edge_df(from = factor(from, levels=nodesn), to = factor(to, levels=nodesn), arrowhead = "arrow", color = "black")   
+graph <- create_graph(nodes_df = nodes, edges_df = edges, directed = FALSE) 
+graph %>% 
+render_graph(title = "Themes From Interviews", layout = "tree")
+
+```
+
+## Task 2
+
+Add in "Hate it" to the coding diagram. **Hint** remember if there are four "journeys" then there need to be four defined places to start from.
+
+<details>
+<summary>Show Solution...</summary>
+```{r, message=FALSE}
+
+from=c(x[1], x[1], x[1], x[1])
+to=c(x[2],x[3],x[4], x[5])
+nodesn=c(x[1],x[2],x[3],x[4], x[5])
+nodes <- create_node_df(n=length(nodesn), label=nodesn,  width=0.9, shape = "rectangle", color = "#983E82", fillcolor = "white") 
+edges <- create_edge_df(from = factor(from, levels=nodesn), to = factor(to, levels=nodesn), arrowhead = "arrow", color = "black")   
+graph <- create_graph(nodes_df = nodes, edges_df = edges, directed = FALSE) 
+graph %>% 
+render_graph(title = "Themes From Interviews", layout = "tree")
+
+```
+
+# References
+
+[HackYourDataBeautiful](https://psyteachr.github.io/hack-your-data/)
+
+[tidytext textbook](https://www.tidytextmining.com/)
+
+[DiagrammeR Guide](http://rich-iannone.github.io/DiagrammeR/)

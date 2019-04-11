@@ -478,14 +478,18 @@ div.tocify {
     <li>
       <a href="intro-to-r.html">Introduction to R</a>
     </li>
-    <li class="dropdown-header">Intro to Tidy Data</li>
+    <li>
+      <a href="intro-to-tidy-data.html">Intro to Tidy Data</a>
+    </li>
     <li>
       <a href="rmarkdown_1.html">Intro to R Markdown</a>
     </li>
     <li>
       <a href="quant-data-vis.html">Quantitative Data Visualisation</a>
     </li>
-    <li class="dropdown-header">Qualitative Data Visualization</li>
+    <li>
+      <a href="qual-data-vis.html">Qualitative Data Visualization</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -513,7 +517,9 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Your Data and Visualisations</li>
+    <li>
+      <a href="your-data-and-vis.html">Your Data and Visualisations</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -850,6 +856,31 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <p>When we’ve finished crafting our beautful <code>ggplot2</code> figure, we can save the plot to file with the <code>ggsave()</code> function. This lets us save our figure as a <code>.png</code> image file, with the desired height in mm, cm, or inches.</p>
 <p>The following code saves the last plot rendered to a file called <code>my_pretty_plot.png</code>.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">ggsave</span>(<span class="st">&quot;my_pretty_plot.png&quot;</span>, <span class="dt">width =</span> <span class="dv">9</span>, <span class="dt">height =</span> <span class="dv">7</span>, <span class="dt">units =</span> <span class="st">&quot;in&quot;</span>)</a></code></pre></div>
+</div>
+<div id="logos" class="section level2">
+<h2>Logos</h2>
+<p>Here’s a really cool fun fact! The logo for Hack Your Data Beautiful (as proudly displayed on the <a href="index.html">home page</a>) was in fact made in <code>ggplot2</code>, with the <code>geom_density()</code> function! Here’s some reproducible code that we used to generate it:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># how many data points for each of the density plots</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">n &lt;-<span class="st"> </span><span class="fl">1e6</span></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co"># where on the x axis each density plot will be</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>)</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co"># how wide each density plot will be</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6">sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">7.5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co"># colours from the psyTeachR colour scheme</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8">psyteachr_colours_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#983E82&quot;</span>, <span class="st">&quot;#E2A458&quot;</span>, <span class="st">&quot;#F5DC70&quot;</span>, <span class="st">&quot;#59935B&quot;</span>, <span class="st">&quot;#467AAC&quot;</span>, <span class="st">&quot;#61589C&quot;</span>)</a>
+<a class="sourceLine" id="cb27-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb27-11" data-line-number="11">  <span class="dt">grp =</span> <span class="kw">rep</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">each =</span> n),</a>
+<a class="sourceLine" id="cb27-12" data-line-number="12">  <span class="dt">val =</span> <span class="kw">rep</span>(means, <span class="dt">each =</span> n) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="st">        </span><span class="kw">rnorm</span>(n<span class="op">*</span><span class="dv">6</span>, <span class="dv">0</span>, <span class="kw">rep</span>(sds, <span class="dt">each =</span> n))</a>
+<a class="sourceLine" id="cb27-14" data-line-number="14">) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(val, <span class="dt">fill =</span> grp)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">show.legend =</span> F, <span class="dt">trim =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> psyteachr_colours_vec) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="st">  </span><span class="kw">xlim</span>(<span class="op">-</span><span class="dv">20</span>,<span class="dv">200</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Is there anything <code>ggplot2</code> can’t do!?</p>
 </div>
 </div>
 

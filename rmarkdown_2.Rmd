@@ -4,6 +4,7 @@ title: "Websites with R Markdown"
 
 # Aim of this Session
 
+<img src="img/hex.png" class="hex">
 <img src="img/rmarkdown.png" class="hex">
 
 In this session we are going to be building on our skills with R Markdown to show how you can make a clean and professional looking website by using the R Markdown skills that we have been working with. This session is a starter- not a comprehensive guide- but aims to give you some of the resources you need to continue moving forward on your own after you leave us.
@@ -12,7 +13,7 @@ When you come to play in R Markdown, you might want to consult the [R Markdown C
 
 # Setting Up
 
-We'll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them [here](files/RMarkdown_2.pdf).
+We'll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them [here](files/rmarkdown_2/RMarkdown_2.pdf).
 
 ## Folders
 
