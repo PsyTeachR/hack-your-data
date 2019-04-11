@@ -22,7 +22,7 @@ navbar:
   - text: "Monday"  
     menu: 
     - text: "Introduction to R"
-    - href: intro-to-r.html
+      href: intro-to-r.html
     - text: "Intro to Tidy Data"
     - text: "Intro to R Markdown"
       href: rmarkdown_1.html
