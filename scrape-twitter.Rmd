@@ -202,6 +202,8 @@ If you want to save the wordcloud, click on **export**, then **save as image** a
 
 ## Emojis
 
+**IMPORTANT NOTE**: Through some trouble shooting we have noticed that there are some issues with rendering emojis on Windows machines. The below steps will only render the emojis if running R on a Mac (or possibly Linux).
+
 Installing packages.
 
 ```{r get emoji}
