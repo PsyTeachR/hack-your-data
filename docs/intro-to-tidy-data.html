@@ -25,96 +25,48 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="img/hex.png">
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 </style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -151,7 +103,9 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -170,14 +124,8 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
-.html-widget {
-  margin-bottom: 20px;
-}
 button.code-folding-btn:focus {
   outline: none;
-}
-summary {
-  display: list-item;
 }
 </style>
 
@@ -193,6 +141,7 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
+
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -212,43 +161,6 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -270,75 +182,18 @@ $(document).ready(function () {
 });
 </script>
 
+
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -426,16 +281,6 @@ div.tocify {
 
 
 </style>
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -544,7 +389,7 @@ div.tocify {
 <p><img src="img/hex.png" class="hex"> <img src="img/tidyverse.png" class="hex"></p>
 <div id="loading-libraries" class="section level2">
 <h2>Loading Libraries</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
 </div>
 <div id="introduction-to-tidyverse" class="section level2">
 <h2>Introduction to Tidyverse</h2>
@@ -555,7 +400,7 @@ div.tocify {
 <h2>Our Messy Data</h2>
 <p><strong>Dataset: <a href="files/intro-to-tidy-data/eye_descriptions.csv">eye_descriptions.csv</a></strong></p>
 <p>So, let’s have a look at what a messy dataset can often look like.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">eye_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;eye_descriptions.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eye_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;eye_descriptions.csv&quot;</span>)</code></pre></div>
 <p>Here, we have loaded in a .csv file which contains 220 participants descriptions of 50 different eye regions (columns t1 through to t50). There’s a lot of information here, we have: user_id (a unique, anonymised identification number), the participant’s sex, their age, and their description of each eye region (t1:t50).</p>
 <p>If we have a look at these descriptions, we can see that there’s a lot of variation. Some participants provided one word descriptions whilst others provided multiple word descriptions. Some wrote their descriptions in lower case, whilst others wrote in upper case and used punctuation (e.g. commas, hyphens, slashes). As a result, this data isn’t organised in a clear, logical way.</p>
 <p>Being faced with such complex data can be daunting, we may feel overwhelmed and ask ourselves:</p>
@@ -606,48 +451,48 @@ div.tocify {
 <p>Let’s take a look at our dataset…</p>
 <p>This data is not tidy. Although each row belongs to a unique subject id, each face id has its own column rather than being grouped with descriptions spread across these 50 columns. This data is arranged in what is called WIDE format. Variables are spread across columns, rather than gathered.</p>
 <p>Let’s have a go at tidying this up by gathering our face_ids into one column in order to get our data into LONG format.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">gathered_eyes &lt;-<span class="st"> </span><span class="kw">gather</span>(eye_data, <span class="st">&quot;face_id&quot;</span>, <span class="st">&quot;description&quot;</span>, t1<span class="op">:</span>t50)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gathered_eyes &lt;-<span class="st"> </span><span class="kw">gather</span>(eye_data, <span class="st">&quot;face_id&quot;</span>, <span class="st">&quot;description&quot;</span>, t1<span class="op">:</span>t50)</code></pre></div>
 <p>Great! So now our data is in long format. Our face ids are in one column (face id) rather than being spread across 50. Now, each row has one observation - meaning that we firstly have all participants descriptions of face t1, followed by all participants descriptions of face t2, and so on…</p>
 <p>But we’re not done yet! Some participants didn’t just provide one description per face. In our description column, we’re met with lots of extra characters that are going to throw a wrench into our data analysis (e.g. hyphens, commas, slashes). Luckily, though, there’s a way around this.</p>
 </div>
 <div id="separate" class="section level2">
 <h2>Separate</h2>
 <p>Separate allows us to split apart a given column into multiple columns. Say we’re interested in breaking apart the descriptions that people have given into three different columns, one per description.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">separated_eyes &lt;-<span class="st"> </span><span class="kw">separate</span>(gathered_eyes, description, <span class="kw">c</span>(<span class="st">&quot;d1&quot;</span>,<span class="st">&quot;d2&quot;</span>,<span class="st">&quot;d3&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;(,|;|</span><span class="ch">\\</span><span class="st">/)+&quot;</span>, <span class="dt">extra =</span> <span class="st">&quot;merge&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">separated_eyes &lt;-<span class="st"> </span><span class="kw">separate</span>(gathered_eyes, description, <span class="kw">c</span>(<span class="st">&quot;d1&quot;</span>,<span class="st">&quot;d2&quot;</span>,<span class="st">&quot;d3&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;(,|;|</span><span class="ch">\\</span><span class="st">/)+&quot;</span>, <span class="dt">extra =</span> <span class="st">&quot;merge&quot;</span>)</code></pre></div>
 <pre><code>## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 10645
 ## rows [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 ## 20, ...].</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">gathered_separated_eyes &lt;-<span class="st"> </span><span class="kw">gather</span>(separated_eyes,<span class="st">&quot;desc_n&quot;</span>, <span class="st">&quot;description&quot;</span>, d1<span class="op">:</span>d3)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gathered_separated_eyes &lt;-<span class="st"> </span><span class="kw">gather</span>(separated_eyes,<span class="st">&quot;desc_n&quot;</span>, <span class="st">&quot;description&quot;</span>, d1<span class="op">:</span>d3)</code></pre></div>
 <p>But, not everyone provided three descriptions so we have some missing values (NAs). We also have some nonsense descriptions (e.g. “f” and “.”). How do we get rid of these?</p>
 </div>
 <div id="filter" class="section level2">
 <h2>Filter</h2>
 <p>Filter finds rows/cases where conditions are true. Here, let’s use filter to get rid of NAs and any nonsense descriptions.</p>
 <p>The <code>!</code> inverts a statement, so in the case of <code>!is.na()</code> we are telling R to keep an item as long as it “is not NA”.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">filtered_eyes &lt;-<span class="st"> </span><span class="kw">filter</span>(gathered_separated_eyes,</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">                        <span class="op">!</span><span class="kw">is.na</span>(description),</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">                        <span class="kw">nchar</span>(description) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filtered_eyes &lt;-<span class="st"> </span><span class="kw">filter</span>(gathered_separated_eyes,
+                        <span class="op">!</span><span class="kw">is.na</span>(description),
+                        <span class="kw">nchar</span>(description) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>)</code></pre></div>
 <p>Are we done? Let’s have a look…</p>
 <p>We still have some white space around descriptions as well as some descriptions in capitals. Here’s where mutate comes in.</p>
 </div>
 <div id="mutate" class="section level2">
 <h2>Mutate</h2>
 <p>Mutate helps to transform existing columns in order to make the data easier to work with.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">mutate_eyes &lt;-<span class="st"> </span><span class="kw">mutate</span>(filtered_eyes,</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">                      <span class="dt">description =</span> <span class="kw">trimws</span>(description), </a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">                      <span class="dt">description =</span> <span class="kw">tolower</span>(description))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mutate_eyes &lt;-<span class="st"> </span><span class="kw">mutate</span>(filtered_eyes,
+                      <span class="dt">description =</span> <span class="kw">trimws</span>(description), 
+                      <span class="dt">description =</span> <span class="kw">tolower</span>(description))</code></pre></div>
 <p>Great - so now we’re in a position to find out something about our data. What are the most common descriptions?</p>
 </div>
 <div id="group_by" class="section level2">
 <h2>Group_by</h2>
 <p>Group_by takes an existing data table and turns it into a grouped table so that all later operations are performed on each group.</p>
 <p>So, let’s try grouping our data by description so that we can find out how many of each description we have.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">grouped_eyes &lt;-<span class="st"> </span><span class="kw">group_by</span>(mutate_eyes, description)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grouped_eyes &lt;-<span class="st"> </span><span class="kw">group_by</span>(mutate_eyes, description)</code></pre></div>
 <p>We can see here that grouping doesn’t do much on the surface, but if we use head()…</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">head</span>(grouped_eyes)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(grouped_eyes)</code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["user_id"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["age"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["face_id"],"name":[4],"type":["chr"],"align":["left"]},{"label":["desc_n"],"name":[5],"type":["chr"],"align":["left"]},{"label":["description"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"508844","2":"male","3":"19.0","4":"t1","5":"d1","6":"empty"},{"1":"508966","2":"female","3":"20.4","4":"t1","5":"d1","6":"bored"},{"1":"508976","2":"female","3":"24.8","4":"t1","5":"d1","6":"dark high on drugs"},{"1":"509196","2":"female","3":"14.6","4":"t1","5":"d1","6":"soft brown"},{"1":"509286","2":"female","3":"16.7","4":"t1","5":"d1","6":"brown"},{"1":"509400","2":"male","3":"NA","4":"t1","5":"d1","6":"wide"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["user_id"],"name":[1],"type":["int"],"align":["right"]},{"label":["sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["age"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["face_id"],"name":[4],"type":["chr"],"align":["left"]},{"label":["desc_n"],"name":[5],"type":["chr"],"align":["left"]},{"label":["description"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"508844","2":"male","3":"19.0","4":"t1","5":"d1","6":"empty"},{"1":"508966","2":"female","3":"20.4","4":"t1","5":"d1","6":"bored"},{"1":"508976","2":"female","3":"24.8","4":"t1","5":"d1","6":"dark high on drugs"},{"1":"509196","2":"female","3":"14.6","4":"t1","5":"d1","6":"soft brown"},{"1":"509286","2":"female","3":"16.7","4":"t1","5":"d1","6":"brown"},{"1":"509400","2":"male","3":"NA","4":"t1","5":"d1","6":"wide"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>We can see that our data is now grouped by description, awaiting further instruction. So, let’s see how many of each description we have.</p>
@@ -655,7 +500,7 @@ div.tocify {
 <div id="summarise" class="section level2">
 <h2>Summarise</h2>
 <p>Summarise takes a data table and provides summary statistics (in this case the total number of each description) in a new table.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">sum_eyes &lt;-<span class="st"> </span><span class="kw">summarise</span>(grouped_eyes, <span class="dt">n =</span> <span class="kw">n</span>())</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sum_eyes &lt;-<span class="st"> </span><span class="kw">summarise</span>(grouped_eyes, <span class="dt">n =</span> <span class="kw">n</span>())</code></pre></div>
 <p>Now we actually have some interesting information about our data! We can see how common each description is.</p>
 <p>Let’s see what the top 10 descriptions are…</p>
 </div>
@@ -663,11 +508,11 @@ div.tocify {
 <h2>Arrange</h2>
 <p>Here, we can use the arrange function to sort our descriptions in descending order (most common description to least common). We can then use filter to only keep rows 1:10 to give us our top 10 most common descriptions.</p>
 <p><code>desc()</code> tells <code>arrange()</code> to sort our variable in descending order (largest to smallest).</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">arranged_eyes &lt;-<span class="st"> </span><span class="kw">arrange</span>(sum_eyes, <span class="kw">desc</span>(n)) </a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">top_<span class="dv">10</span>_descriptions &lt;-<span class="st"> </span><span class="kw">filter</span>(arranged_eyes, <span class="kw">row_number</span>() <span class="op">&lt;</span><span class="st"> </span><span class="dv">11</span>)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">knitr<span class="op">::</span><span class="kw">kable</span>(top_<span class="dv">10</span>_descriptions)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">arranged_eyes &lt;-<span class="st"> </span><span class="kw">arrange</span>(sum_eyes, <span class="kw">desc</span>(n)) 
+
+top_10_descriptions &lt;-<span class="st"> </span><span class="kw">filter</span>(arranged_eyes, <span class="kw">row_number</span>() <span class="op">&lt;</span><span class="st"> </span><span class="dv">11</span>)
+
+knitr<span class="op">::</span><span class="kw">kable</span>(top_10_descriptions)</code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -730,7 +575,7 @@ div.tocify {
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
-##   user_id = col_double(),
+##   user_id = col_integer(),
 ##   age = col_double()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
@@ -787,39 +632,39 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">eyes &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;eye_descriptions.csv&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">gather</span>(<span class="st">&quot;face_id&quot;</span>, <span class="st">&quot;description&quot;</span>, t1<span class="op">:</span>t50) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">separate</span>(description,</a>
-<a class="sourceLine" id="cb16-4" data-line-number="4">           <span class="kw">c</span>(<span class="st">&quot;d1&quot;</span>,<span class="st">&quot;d2&quot;</span>,<span class="st">&quot;d3&quot;</span>),</a>
-<a class="sourceLine" id="cb16-5" data-line-number="5">           <span class="dt">sep =</span> <span class="st">&quot;(,|;|</span><span class="ch">\\</span><span class="st">/)+&quot;</span>,</a>
-<a class="sourceLine" id="cb16-6" data-line-number="6">           <span class="dt">extra =</span> <span class="st">&quot;merge&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="st">  </span><span class="kw">gather</span>(<span class="st">&quot;desc_n&quot;</span>, <span class="st">&quot;description&quot;</span>, d1<span class="op">:</span>d3) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(description), <span class="kw">nchar</span>(description) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">description =</span> <span class="kw">trimws</span>(description),</a>
-<a class="sourceLine" id="cb16-10" data-line-number="10">         <span class="dt">description =</span> <span class="kw">tolower</span>(description)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="st">  </span><span class="kw">group_by</span>(description) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-12" data-line-number="12"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-14" data-line-number="14"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">&lt;</span><span class="st"> </span><span class="dv">11</span>)</a>
-<a class="sourceLine" id="cb16-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb16-16" data-line-number="16">knitr<span class="op">::</span><span class="kw">kable</span>(eyes)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eyes &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;eye_descriptions.csv&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="st">&quot;face_id&quot;</span>, <span class="st">&quot;description&quot;</span>, t1<span class="op">:</span>t50) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">separate</span>(description,
+           <span class="kw">c</span>(<span class="st">&quot;d1&quot;</span>,<span class="st">&quot;d2&quot;</span>,<span class="st">&quot;d3&quot;</span>),
+           <span class="dt">sep =</span> <span class="st">&quot;(,|;|</span><span class="ch">\\</span><span class="st">/)+&quot;</span>,
+           <span class="dt">extra =</span> <span class="st">&quot;merge&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="st">&quot;desc_n&quot;</span>, <span class="st">&quot;description&quot;</span>, d1<span class="op">:</span>d3) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(description), <span class="kw">nchar</span>(description) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">description =</span> <span class="kw">trimws</span>(description),
+         <span class="dt">description =</span> <span class="kw">tolower</span>(description)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(description) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">&lt;</span><span class="st"> </span><span class="dv">11</span>)
+
+knitr<span class="op">::</span><span class="kw">kable</span>(eyes)</code></pre></div>
 </div>
 <div id="visualising-this-data" class="section level2">
 <h2>Visualising this data</h2>
 <p>Now, we have informative data that is capable of being plotted! Don’t worry if you struggle to understand data visualisation at the moment as later in the workshop we will be covering lots more on data visualisation.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">eyes <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">description =</span> <span class="kw">factor</span>(description, <span class="dt">levels =</span> description)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(description,n, <span class="dt">fill =</span> description)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Top 10 descriptors for eye region expressions&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eyes <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">description =</span> <span class="kw">factor</span>(description, <span class="dt">levels =</span> description)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(description,n, <span class="dt">fill =</span> description)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Top 10 descriptors for eye region expressions&quot;</span>)</code></pre></div>
 <p><img src="intro-to-tidy-data_files/figure-html/eye%20descriptions-1.png" width="672" /></p>
 <p>Through using powerful tools within the Tidyverse we have been able to tidy our messy dataset in order to create a clear, accessible visualisation which provides us with interesting information about our data.</p>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>Data cleaning doesnâ€™t have to be time consuming and stressful - with the right tools, you are more than capable of hacking your data tidy which has a range of benefits for your productivity, your stress levels, and your ability to communicate your research clearly and effectively.</p>
+<p>Data cleaning doesn’t have to be time consuming and stressful - with the right tools, you are more than capable of hacking your data tidy which has a range of benefits for your productivity, your stress levels, and your ability to communicate your research clearly and effectively.</p>
 </div>
 <div id="resources" class="section level2">
 <h2>Resources</h2>

@@ -25,96 +25,48 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="img/hex.png">
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 </style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -151,7 +103,9 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -170,14 +124,8 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
-.html-widget {
-  margin-bottom: 20px;
-}
 button.code-folding-btn:focus {
   outline: none;
-}
-summary {
-  display: list-item;
 }
 </style>
 
@@ -193,6 +141,7 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
+
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -212,43 +161,6 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -270,75 +182,18 @@ $(document).ready(function () {
 });
 </script>
 
+
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -426,16 +281,6 @@ div.tocify {
 
 
 </style>
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -545,8 +390,8 @@ div.tocify {
 <div id="materials" class="section level1">
 <h1>Materials</h1>
 <ul>
-<li><p><a href="files/quant-data-vis/haggis.csv">The data</a> - the data which we’ll be using for the exercises in this session</p></li>
-<li><p><a href="files/quant-data-vis/Quantitative_Data_Visualisation.pptx">The powerpoint</a> - this page includes the same information, but you might prefer to follow along with the slides</p></li>
+<li><p><strong><a href="files/quant-data-vis/haggis.csv">The data</a></strong> - the data which we’ll be using for the exercises in this session</p></li>
+<li><p><strong><a href="files/quant-data-vis/Quantitative_Data_Visualisation.pptx">The powerpoint</a></strong> - this page includes the same information, but you might prefer to follow along with the slides</p></li>
 </ul>
 </div>
 <div id="aim-of-this-session" class="section level1">
@@ -566,14 +411,14 @@ div.tocify {
 <div id="setting-up" class="section level2">
 <h2>Setting Up</h2>
 <p>Since <code>ggplot2</code> is part of the <code>tidyverse</code>, we can load it in like so:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
 </div>
 <div id="ggplot2-syntax" class="section level2">
 <h2>ggplot2 Syntax</h2>
 <p>Here’s an example <code>ggplot2</code> command, and associated output:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <ul>
 <li><p><code>iris</code> is the dataset. This is an example dataset built into R, with data from the Fisher (1936) paper, <a href="https://doi.org/10.1111/j.1469-1809.1936.tb02137.x">The use of multiple measurements in taxonomic problems</a>. The data consists of measurements on the width and length of different iris flowers’ sepals and petals, as well as their species. Each row refers to a different flower.</p></li>
@@ -586,23 +431,23 @@ div.tocify {
 <h2>Geom Objects</h2>
 <p>Ggplot2’s “geom” objects say what features to actually add to the plot. As well as the <code>geom_point()</code> object above, there are many other possible geom objects. A full list of possible geoms is available on the ggplot2 <a href="https://ggplot2.tidyverse.org/reference/#section-layer-geoms">function reference page</a>, though most useful geoms can be seen on the <a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf">ggplot2 cheatsheet</a>.</p>
 <p>Another nice geom we could use here is <code>geom_smooth()</code>. By default, this geom draws a smooth line estimated using the LOESS method (basically a curvy line of best fit). Other methods can be specified with the <code>methods</code> argument (see the <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">ggplot documentation</a>), but for now we’ll keep this default. Ggplot2 will also draw a grey shaded area showing the 95% confidence intervals (essentially, the certainty with which we can be sure the fit is correct across the x axis).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>()</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Here’s where it gets really cool! Geoms are additive, which means we can put multiple geom objects in one plot. Let’s superimpose our data points on top of the line we just fit.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>And finally, to visualise this relationship with a straight line (fit with a linear model), we can just add <code>method = &quot;lm&quot;</code> to the <code>geom_smooth()</code> function.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="aesthetics" class="section level2">
@@ -616,22 +461,22 @@ div.tocify {
 <li><p><code>shape</code></p></li>
 </ul>
 <p>As an example, let’s colour the points from our original plot by which species the flowers belong to, with the <code>colour</code> argument.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>If we add other geom objects, you’ll notice that these features are also now coloured by Species.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>()</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Finally, we can again add <code>method = &quot;lm&quot;</code> to the <code>geom_smooth()</code> object to visualise these relationships with straight lines.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">y =</span> Petal.Length, <span class="dt">colour =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="visualising-distributions" class="section level2">
@@ -641,29 +486,29 @@ div.tocify {
 <h4>Histograms</h4>
 <p>We can easily visualise what these distributions look like, for example with a histogram. A histogram simply breaks up a numerical variable into “bins”, and counts how many observations are in each bin. For instance, we might break up participants’ ages into bins of 5 years, and find that 4 participants were aged 20-24, 13 participants were aged 25-29, and so on.</p>
 <p>Ggplot2 has a handy geom for this - <code>geom_histogram()</code>. Note that this function does not require a y variable, as this is automatically calculated. We can say how big we would like our bins to be with the <code>binwidth</code> argument.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Width)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.1</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Width)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.1</span>)</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Here we can see that the bin from 3 to 3.1 contains the most flowers. The mean sepal width (3.06) is also in this bin.</p>
 </div>
 <div id="density-plots" class="section level4">
 <h4>Density Plots</h4>
 <p>Another way of visualising distributions is by plotting the variable’s density. Here, the y axis will reflect the likelihood that any observation, if chosen at random, will belong to that point on the x axis. A density plot of the irises’ sepal length would look like this:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_density</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Here we can see that most of the flowers have a sepal length towards the middle of the range.</p>
 <p>We can also separate this distribution by the irises’ species using the <code>fill</code> aesthetic.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_density</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Like this, it can be hard to see what’s going on when our distributions overlap. For instance, we don’t know much about the likelihood of finding a versicolor iris with a sepal length of 6.5. We can overcome this by making our density geom transparent, with the <code>alpha</code> argument. Here, the alpha value can range from 0 to 1, where 0 is invisible, and 1 is entirely opaque.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># 50% transparency</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)  <span class="co"># 50% transparency</span></code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>This shows us that while there is overlap, different species of iris have different sepal lengths. If we found a flower with a sepal of 5cm, we could say it’s most likely to be a setosa.</p>
 </div>
@@ -685,10 +530,10 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <p>One nice alternative is the <strong>violinbox plot</strong>.</p>
 <div id="the-violinbox-plot" class="section level4">
 <h4>The Violinbox Plot</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Species, <span class="dt">y =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Species, <span class="dt">y =</span> Sepal.Length, <span class="dt">fill =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>)</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>This consists of a boxplot, superimposed on a violin plot.</p>
 <p>In the boxplot:</p>
@@ -710,24 +555,19 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <div id="import-data" class="section level2">
 <h2>1. Import Data</h2>
 <p>Once you’re in the correct working directory, the first step is to import the data from the file, <code>haggis.csv</code> (Hint: <code>read_csv()</code>).</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">haggis &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;haggis.csv&quot;</span>)</a></code></pre></div>
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;haggis.csv&quot;</span>)</code></pre></div>
+<p></details>   </p>
 </div>
 <div id="visualise-height-by-breakfast-group" class="section level2">
 <h2>2. Visualise Height by Breakfast Group</h2>
 <p>Create a violinbox plot, showing how height differs between haggis and porridge eaters.</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> group)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.1</span>)</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-15-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> group)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.1</span>)</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-15-1.png" width="672" /> </details>   </p>
 </div>
 <div id="check-the-distributions" class="section level2">
 <h2>3. Check the Distributions</h2>
@@ -736,53 +576,41 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <ol style="list-style-type: lower-alpha">
 <li>How the distribution of height differs between pop fans and classical fans.</li>
 </ol>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-16-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-16-1.png" width="672" /> </details>   </p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>How the distribution of age differs between pop fans and classical fans.</li>
 </ol>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">fill =</span> music_taste)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-17-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">fill =</span> music_taste)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-17-1.png" width="672" /> </details>   </p>
 </div>
 <div id="does-age-predict-height" class="section level2">
 <h2>4. Does Age predict Height?</h2>
 <p>So, it looks like height differs slightly between our pop lovers and classical aficionados, but even more clearly, pop fans seem to be <em>much</em> younger than classical fans. We might wonder, therefore, whether age predicts height.</p>
 <p>Draw a scatter plot to see how age predicts height. Add a line showing the linear relationship between age and height.</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> height)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-18-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> height)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-18-1.png" width="672" /> </details>   </p>
 </div>
 <div id="does-age-interact-with-music-taste" class="section level2">
 <h2>5. Does Age interact with Music Taste?</h2>
 <p>Okay, there’s some degree of relationship. Now, if age explains the weird distribution of heights we saw for porridge eaters, we might see a difference in the age-height relationship between haggis and porridge eaters.</p>
 <p>Recreate the previous graph, but colour the points and line by participants’ breakfast habits.</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> height, <span class="dt">colour =</span> group)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-19-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> height, <span class="dt">colour =</span> group)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-19-1.png" width="672" /> </details>   </p>
 </div>
 <div id="does-music-taste-interact-with-breakfast" class="section level2">
 <h2>6. Does Music Taste interact with Breakfast</h2>
@@ -791,21 +619,16 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <p>This is meant to be a tricky question, but here are some hints:</p>
 <ul>
 <li><p>You can specify different variables as the <code>x</code> and <code>fill</code> aesthetics</p></li>
-<li>By default, the boxplots won’t overlay the violin plots as you might expect, but you can fix this with some googling (as I did). To work this out I did a quick google and found these links which you might find useful:
-<ul>
+<li>By default, the boxplots won’t overlay the violin plots as you might expect, but you can fix this with some googling (as I did). To work this out I did a quick google and found these links which you might find useful:</li>
 <li><a href="https://www.google.com/search?rlz=1C1GCEA_en-GBGB837GB837&amp;q=boxplot+overlay+violin+plot+ggplot&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwi0zZSylp3hAhUEqXEKHXbPBTwQBQgrKAA&amp;biw=1920&amp;bih=970">A Google Search (stackoverflow results on google are always the best thing in the world)</a></li>
-<li><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">ggplot2 reference (have a look through the examples they give)</a></li>
-</ul></li>
+<li><p><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">ggplot2 reference (have a look through the examples they give)</a></p></li>
 </ul>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>))</a></code></pre></div>
-<img src="quant-data-vis_files/figure-html/unnamed-chunk-20-1.png" width="672" />
-</details>
-<p>  </p>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>))</code></pre></div>
+<p><img src="quant-data-vis_files/figure-html/unnamed-chunk-20-1.png" width="672" /> </details>   </p>
 </div>
 </div>
 <div id="conclusion" class="section level1">
@@ -827,27 +650,27 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <li>caption</li>
 </ul>
 <p>Labels can be added to a plot with the <code>labs()</code> function like so:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="st">  </span><span class="kw">labs</span>(</a>
-<a class="sourceLine" id="cb24-6" data-line-number="6">    <span class="dt">title =</span> <span class="st">&quot;Eat Yer Porridge&quot;</span>,</a>
-<a class="sourceLine" id="cb24-7" data-line-number="7">    <span class="dt">subtitle =</span> <span class="st">&quot;The Effect of Breakfast Habits on Height&quot;</span>,</a>
-<a class="sourceLine" id="cb24-8" data-line-number="8">    <span class="dt">x =</span> <span class="st">&quot;Breakfast Group&quot;</span>,</a>
-<a class="sourceLine" id="cb24-9" data-line-number="9">    <span class="dt">y =</span> <span class="st">&quot;Height (cm)&quot;</span>,</a>
-<a class="sourceLine" id="cb24-10" data-line-number="10">    <span class="dt">caption =</span> <span class="st">&quot;Based on 2019 Data from the Silver Spoon Porridge Company Survey&quot;</span></a>
-<a class="sourceLine" id="cb24-11" data-line-number="11">  )</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(
+    <span class="dt">title =</span> <span class="st">&quot;Eat Yer Porridge&quot;</span>,
+    <span class="dt">subtitle =</span> <span class="st">&quot;The Effect of Breakfast Habits on Height&quot;</span>,
+    <span class="dt">x =</span> <span class="st">&quot;Breakfast Group&quot;</span>,
+    <span class="dt">y =</span> <span class="st">&quot;Height (cm)&quot;</span>,
+    <span class="dt">caption =</span> <span class="st">&quot;Based on 2019 Data from the Silver Spoon Porridge Company Survey&quot;</span>
+  )</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="themes" class="section level2">
 <h2>Themes</h2>
 <p><code>ggplot2</code> allows the use of various themes, which can be used to quickly change the appearance of your plots. Themes can be added to a plot by simply adding a <code>theme_...</code> function to the code. For example, to apply the dark theme to your plot, you could use <code>theme_dark()</code>:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">haggis <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_dark</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haggis <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> group, <span class="dt">y =</span> height, <span class="dt">fill =</span> music_taste)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">0.9</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_dark</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>A full list of <code>ggplot2</code> themes is available <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">here</a>.</p>
 </div>
@@ -855,30 +678,30 @@ Note: I’ve not even given you the code for this graph, because I think you sho
 <h2>Saving to file</h2>
 <p>When we’ve finished crafting our beautful <code>ggplot2</code> figure, we can save the plot to file with the <code>ggsave()</code> function. This lets us save our figure as a <code>.png</code> image file, with the desired height in mm, cm, or inches.</p>
 <p>The following code saves the last plot rendered to a file called <code>my_pretty_plot.png</code>.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">ggsave</span>(<span class="st">&quot;my_pretty_plot.png&quot;</span>, <span class="dt">width =</span> <span class="dv">9</span>, <span class="dt">height =</span> <span class="dv">7</span>, <span class="dt">units =</span> <span class="st">&quot;in&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;my_pretty_plot.png&quot;</span>, <span class="dt">width =</span> <span class="dv">9</span>, <span class="dt">height =</span> <span class="dv">7</span>, <span class="dt">units =</span> <span class="st">&quot;in&quot;</span>)</code></pre></div>
 </div>
 <div id="logos" class="section level2">
 <h2>Logos</h2>
 <p>Here’s a really cool fun fact! The logo for Hack Your Data Beautiful (as proudly displayed on the <a href="index.html">home page</a>) was in fact made in <code>ggplot2</code>, with the <code>geom_density()</code> function! Here’s some reproducible code that we used to generate it:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># how many data points for each of the density plots</span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">n &lt;-<span class="st"> </span><span class="fl">1e6</span></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co"># where on the x axis each density plot will be</span></a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>)</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co"># how wide each density plot will be</span></a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">7.5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co"># colours from the psyTeachR colour scheme</span></a>
-<a class="sourceLine" id="cb27-8" data-line-number="8">psyteachr_colours_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#983E82&quot;</span>, <span class="st">&quot;#E2A458&quot;</span>, <span class="st">&quot;#F5DC70&quot;</span>, <span class="st">&quot;#59935B&quot;</span>, <span class="st">&quot;#467AAC&quot;</span>, <span class="st">&quot;#61589C&quot;</span>)</a>
-<a class="sourceLine" id="cb27-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb27-11" data-line-number="11">  <span class="dt">grp =</span> <span class="kw">rep</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">each =</span> n),</a>
-<a class="sourceLine" id="cb27-12" data-line-number="12">  <span class="dt">val =</span> <span class="kw">rep</span>(means, <span class="dt">each =</span> n) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="st">        </span><span class="kw">rnorm</span>(n<span class="op">*</span><span class="dv">6</span>, <span class="dv">0</span>, <span class="kw">rep</span>(sds, <span class="dt">each =</span> n))</a>
-<a class="sourceLine" id="cb27-14" data-line-number="14">) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(val, <span class="dt">fill =</span> grp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">show.legend =</span> F, <span class="dt">trim =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> psyteachr_colours_vec) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="st">  </span><span class="kw">xlim</span>(<span class="op">-</span><span class="dv">20</span>,<span class="dv">200</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># how many data points for each of the density plots</span>
+n &lt;-<span class="st"> </span><span class="fl">1e6</span>
+<span class="co"># where on the x axis each density plot will be</span>
+means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>)
+<span class="co"># how wide each density plot will be</span>
+sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">7.5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>)
+<span class="co"># colours from the psyTeachR colour scheme</span>
+psyteachr_colours_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#983E82&quot;</span>, <span class="st">&quot;#E2A458&quot;</span>, <span class="st">&quot;#F5DC70&quot;</span>, <span class="st">&quot;#59935B&quot;</span>, <span class="st">&quot;#467AAC&quot;</span>, <span class="st">&quot;#61589C&quot;</span>)
+
+<span class="kw">tibble</span>(
+  <span class="dt">grp =</span> <span class="kw">rep</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">each =</span> n),
+  <span class="dt">val =</span> <span class="kw">rep</span>(means, <span class="dt">each =</span> n) <span class="op">+</span>
+<span class="st">        </span><span class="kw">rnorm</span>(n<span class="op">*</span><span class="dv">6</span>, <span class="dv">0</span>, <span class="kw">rep</span>(sds, <span class="dt">each =</span> n))
+) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(val, <span class="dt">fill =</span> grp)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">show.legend =</span> F, <span class="dt">trim =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> psyteachr_colours_vec) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlim</span>(<span class="op">-</span><span class="dv">20</span>,<span class="dv">200</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_void</span>()</code></pre></div>
 <p><img src="quant-data-vis_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Is there anything <code>ggplot2</code> can’t do!?</p>
 </div>

@@ -25,96 +25,48 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="img/hex.png">
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 </style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -151,7 +103,9 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -170,14 +124,8 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
-.html-widget {
-  margin-bottom: 20px;
-}
 button.code-folding-btn:focus {
   outline: none;
-}
-summary {
-  display: list-item;
 }
 </style>
 
@@ -193,6 +141,7 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
+
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -212,43 +161,6 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -270,75 +182,18 @@ $(document).ready(function () {
 });
 </script>
 
+
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -426,16 +281,6 @@ div.tocify {
 
 
 </style>
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -554,6 +399,17 @@ div.tocify {
 </ul>
 <p>Think of it as a “visualiz-athon”, but don’t stress about finishing all of them. In fact, feel free to pick and choose whichever dataset tickles your fancy.</p>
 <p>First, however, we will need to install and attach the following libraries. We install using, for example, <code>install.packages(&quot;tidyverse&quot;)</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(RCurl) <span class="co">#Case-sensitive</span></code></pre></div>
+<pre><code>## Warning: package &#39;RCurl&#39; was built under R version 3.4.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggmap)</code></pre></div>
+<pre><code>## Warning: package &#39;ggmap&#39; was built under R version 3.4.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
+<span class="kw">library</span>(network)</code></pre></div>
+<pre><code>## Warning: package &#39;network&#39; was built under R version 3.4.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sna)
+<span class="kw">library</span>(GGally)</code></pre></div>
+<pre><code>## Warning: package &#39;GGally&#39; was built under R version 3.4.4</code></pre>
 <div id="what-predicts-hate-crimes-in-america" class="section level2">
 <h2>1. What predicts hate crimes in America?</h2>
 <p><strong>Dataset: <a href="files/your-data-and-vis/hate_crimes.csv">hate_crimes.csv</a></strong></p>
@@ -619,7 +475,7 @@ div.tocify {
 </tbody>
 </table>
 <p>What would be a suitable visualization for sociologists to investigate whether these three factors play a role? Is it feasible to combine them all into one or are they better split into several graphs? What possible problems do you see in your graph that could make analysis more difficult?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">ggplot</span>(hatedata, <span class="kw">aes</span>(<span class="dt">x=</span>____, <span class="dt">y=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom___</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(hatedata, <span class="kw">aes</span>(<span class="dt">x=</span>____, <span class="dt">y=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom___</span>()</code></pre></div>
 </div>
 <div id="do-pulitzers-matter-for-a-newspapers-growth" class="section level2">
 <h2>2. Do Pulitzers matter for a newspaper’s growth?</h2>
@@ -670,7 +526,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Is there a relationship, would you say? Is there a way to make the visualisation also show whether the initial 2004 circulation influenced the Pulitzer-fueled growth?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">ggplot</span>(puldata, <span class="kw">aes</span>(<span class="dt">x=</span>________________)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(puldata, <span class="kw">aes</span>(<span class="dt">x=</span>________________)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</code></pre></div>
 </div>
 <div id="what-is-the-shape-of-trumps-twitter-popularity" class="section level2">
 <h2>3. What is the shape of Trump’s twitter popularity?</h2>
@@ -729,7 +585,7 @@ div.tocify {
 </tbody>
 </table>
 <p>How could you show to political scientists the general tendencies of his favorite-numbers? Are they always hovering around the same number? Are some massively more popular than most?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(trumpdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(trumpdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</code></pre></div>
 </div>
 <div id="which-politicians-are-most-rapped-about" class="section level2">
 <h2>4. Which politicians are most rapped about?</h2>
@@ -788,7 +644,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Which politicians are given the rap treatment most often, we wonder? And is there a way to visualize conveniently the proportion of different rap sentiments among the lyrical references?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(hiphopdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(hiphopdata, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____)</code></pre></div>
 </div>
 <div id="who-cares-about-the-oxford-comma" class="section level2">
 <h2>5. Who cares about the Oxford comma?</h2>
@@ -847,7 +703,7 @@ div.tocify {
 </tbody>
 </table>
 <p>So, postgraduates - are we more pedantic about the Oxford commas?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">ggplot</span>(commaperc, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">y=</span> _____, <span class="dt">fill=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom____</span>(_____)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(commaperc, <span class="kw">aes</span>(<span class="dt">x=</span>_____, <span class="dt">y=</span> _____, <span class="dt">fill=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom____</span>(_____)</code></pre></div>
 </div>
 <div id="which-airlines-are-the-best-to-fly-with" class="section level2">
 <h2>6. Which airlines are the best to fly with?</h2>
@@ -933,7 +789,7 @@ div.tocify {
 </table>
 <p>This data has already been sorted from high-to-low. We wonder of course whether we could summarise visually which airline we should avoid in the future, assuming that their past incidents has something to say about their future safety.</p>
 <p>With so many airlines on display, is there a way to prevent it looking cluttered?</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">ggplot</span>(airdata, <span class="kw">aes</span>(<span class="dt">y=</span>_____, <span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom___</span>()  </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(airdata, <span class="kw">aes</span>(<span class="dt">y=</span>_____, <span class="dt">x=</span>_____)) <span class="op">+</span><span class="st"> </span><span class="kw">geom___</span>()  </code></pre></div>
 </div>
 <div id="what-is-the-teenagers-drug-of-choice" class="section level2">
 <h2>7. What is the teenagers’ drug of choice?</h2>
@@ -991,7 +847,7 @@ div.tocify {
 </tbody>
 </table>
 <p>How could we look into the trends in different drugs’ popularity over the life span? How could we minimise the visual confusion in doing so?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">ggplot</span>(drugdata, <span class="kw">aes</span>(<span class="dt">x=</span>____ , <span class="dt">group=</span>____, <span class="dt">y=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(___________)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(drugdata, <span class="kw">aes</span>(<span class="dt">x=</span>____ , <span class="dt">group=</span>____, <span class="dt">y=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(___________)</code></pre></div>
 </div>
 <div id="where-are-all-the-women-in-biopics" class="section level2">
 <h2>8. Where are all the women in biopics?</h2>
@@ -1056,7 +912,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Is there a convenient way for us to visualize how this proportion in gender has changed over the last decades? Are female biopics on the rise or has it stayed constant?</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">ggplot</span>(biopicdata, <span class="kw">aes</span>(<span class="dt">x=</span>_______, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____) </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(biopicdata, <span class="kw">aes</span>(<span class="dt">x=</span>_______, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_____</span>(____) </code></pre></div>
 </div>
 <div id="where-do-people-marry-their-second-cousins" class="section level2">
 <h2>9. Where do people marry their second cousins?</h2>
@@ -1135,7 +991,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Moving into the territory of geospatial data visualization, could you figure out a way of showing in an overlay of the world map, how many people in each country engage in this practice?</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">ggplot</span>(map2, <span class="kw">aes</span>(<span class="dt">x=</span>___, <span class="dt">y=</span>____, <span class="dt">group=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(map2, <span class="kw">aes</span>(<span class="dt">x=</span>___, <span class="dt">y=</span>____, <span class="dt">group=</span>_____, <span class="dt">fill=</span>______)) <span class="op">+</span><span class="st"> </span><span class="kw">geom______</span>()</code></pre></div>
 </div>
 </div>
 <div id="beyond-ggplot2-extension" class="section level1">
@@ -1189,7 +1045,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Using the function <code>ggnet2</code> we could simply feed the network to it. Now you know! (no exercise for this one :) )</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">ggnet2</span>(lanet, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">label.size =</span> <span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(lanet, <span class="dt">label =</span> <span class="ot">TRUE</span>, <span class="dt">label.size =</span> <span class="dv">5</span>)</code></pre></div>
 <p><img src="your-data-and-vis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
