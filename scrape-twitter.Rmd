@@ -3,7 +3,7 @@ title: "Scraping and Visualising Twitter Data"
 ---
 
 <img src="img/hex.png" class="hex">
-<img src="img/tweetr.png" class="hex">
+<img src="img/rtweet.png" class="hex">
 
 ## Packages
 
@@ -127,7 +127,7 @@ One form of text analysis that is particularly interesting for Twitter data is s
 Let's first have a look at the lexicon we will be using: `nrc`.
 
 ```{r get sentiments}
-nrc<- get_sentiments("nrc") # get specific sentiment lexicons in a tidy format
+nrc <- get_sentiments("nrc") # get specific sentiment lexicons in a tidy format
 ```
 
 Have a look at the dataframe by using either `view(nrc)` or by clicking on the object in the environment on the right hand side. 
@@ -248,7 +248,7 @@ Rtweet has many useful functions - with `search_tweets()` you can look up hashta
 <details>
 <summary>Show Solution...</summary>
 ```{r search tweets}
-rstats<- search_tweets("rstats", n=100, type = "recent", include_rts = FALSE) # search for all tweets containing the hashtag 'rstats'
+rstats <- search_tweets("rstats", n=100, type = "recent", include_rts = FALSE) # search for all tweets containing the hashtag 'rstats'
 ```
 </details>
 &nbsp;&nbsp;
@@ -260,7 +260,7 @@ Tip: Look at which variables you are getting.
 <details>
 <summary>Show Solution...</summary>
 ```{r count faves, echo=FALSE, include=TRUE}
-faves<- rstats%>%
+faves <- rstats%>%
   select(text, favorite_count)%>% # select columns
   arrange(desc(favorite_count)) # arrange in descending order
 
