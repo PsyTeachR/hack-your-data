@@ -19,6 +19,8 @@ Data can be messy and often times we need to clean our data before we can make a
 
 ## Our Messy Data 
 
+**Dataset: [eye_descriptions.csv](files/intro-to-tidy-data/eye_descriptions.csv)**
+
 So, let's have a look at what a messy dataset can often look like. 
 
 ```{r data_real, echo=FALSE, message=FALSE} 

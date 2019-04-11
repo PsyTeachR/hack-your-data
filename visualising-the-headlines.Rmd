@@ -60,7 +60,9 @@ library(viridis)
 
 ```
 
-Now let's load in our data...
+Now let's download and load in our data...
+
+**Dataset: [correlations_heatmap.csv](files/visualising-the-headlines/correlations_heatmap.csv)**
 
 ```{r realprep, echo=FALSE, message=FALSE}
 correlations_heatmap <- read_csv("files/visualising-the-headlines/correlations_heatmap.csv")
@@ -153,7 +155,9 @@ We can see here from the little bar at the side, that the closer the colour of t
 
 We can also visualise the strength of these relationships using a function called corrplot which has so many great, intuitive ways of explaining correlations. 
 
-Let's firstly get our data into the format this function likes. Previously we have been working with data frames, but corrplot takes another form of data type called a matrix. Let's make that here. 
+Let's firstly get our data into the format this function likes. Previously we have been working with data frames, but corrplot takes another form of data type called a matrix. Let's make that here, from the `scores.csv` dataset. 
+
+**Dataset: [scores.csv](files/visualising-the-headlines/scores.csv)**
 
 ```{r, echo=FALSE}
 correlations_corrplot <- read_csv("files/visualising-the-headlines/scores.csv") %>%
