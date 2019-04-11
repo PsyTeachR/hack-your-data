@@ -4,13 +4,15 @@ output_dir: "docs"
 exclude: ["*.xls", "*.csv","*.R"]
 output:
   html_document:
-    toc: no
+    toc: true
     toc_float: yes
-    toc_depth: 4
+    toc_depth: 2
     df_print: paged
     theme: flatly
     highlight: tango
     css: style.css
+    includes:
+      in_header: "favicon.html"
 navbar:
   title: "Hack Your Data Beautiful"
   left:
@@ -19,15 +21,28 @@ navbar:
     href: /
   - text: "Monday"  
     menu: 
+    - text: "Introduction to R"
+      href: intro-to-r.html
+    - text: "Intro to Tidy Data"
+      href: intro-to-tidy-data.html
     - text: "Intro to R Markdown"
       href: rmarkdown_1.html
+    - text: "Quantitative Data Visualisation"
+      href: quant-data-vis.html
+    - text: "Qualitative Data Visualization"
+      href: qual-data-vis.html
   - text: "Tuesday"  
     menu: 
+    - text: "Visualising the Headlines"
+      href: visualising-the-headlines.html
+    - text: "Twitter Data"
+      href: scrape-twitter.html
     - text: "R Markdown Websites"
       href: rmarkdown_2.html
   - text: "Wednesday"
     menu:
-    - text: "Your data and Viualizations" 
+    - text: "Your Data and Visualisations" 
+      href: your-data-and-vis.html
   right:
     - text: "Installing R"
       href: r_instructions.html

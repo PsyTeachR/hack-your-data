@@ -1,13 +1,11 @@
 ---
 title: "Websites with R Markdown"
-output: 
-  html_document:
-    toc: true
 ---
 
 # Aim of this Session
 
-<img src="img/rmarkdown.png" align="right" width=150 style="margin:0px 20px"></img>
+<img src="img/hex.png" class="hex">
+<img src="img/rmarkdown.png" class="hex">
 
 In this session we are going to be building on our skills with R Markdown to show how you can make a clean and professional looking website by using the R Markdown skills that we have been working with. This session is a starter- not a comprehensive guide- but aims to give you some of the resources you need to continue moving forward on your own after you leave us.
 
@@ -15,11 +13,11 @@ When you come to play in R Markdown, you might want to consult the [R Markdown C
 
 # Setting Up
 
-We'll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them [here](files/RMarkdown_2.pdf).
+We'll need to do a few things before we can get started with the creation of our website. If you want to refer back to the slides at any point you can find them [here](files/rmarkdown_2/RMarkdown_2.pdf).
 
 ## Folders
 
-Create a new folder somewhere and give it and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like `images` or `media`.
+Create a new folder somewhere and give it an appropriate name. This is where we will be saving all of our files. If you want to use images or other media not hosted elsewhere on the web then you might want to create another folder for those. Give it a sensible name, like `images` or `media`.
 
 # Create the YAML file for the site
 
@@ -111,7 +109,7 @@ For this section we are going to be editing the `_site.yml` file.
 
 ## The Title
 
-Under the section `navbar` there is another options for `title`. Delete the first part that says "My First Webpage" and replace it with your name surrounded by quotation marks.
+Under the section `navbar` there is another option for `title`. Delete the first part that says "My First Webpage" and replace it with your name surrounded by quotation marks.
 
 ## Themes
 
@@ -183,6 +181,8 @@ Remember each `.Rmd` generates a `.html` file when you render the site. The name
 # Further Resources
 
 ## Hosting
+
+At the moment your website is living on your computer. That's not really what we were aiming for. To put your website on the web you will need to find somewhere to "host it".
 
 You can host your website for free on [GitHub](https://github.com/) by setting up a free account. An account here also comes with a whole host of other benefits, such as code sharing, collaborative coding, version control etc. 
 

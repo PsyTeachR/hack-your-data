@@ -1,13 +1,11 @@
 ---
 title: "Introduction to R Markdown"
-output: 
-  html_document:
-    toc: true
 ---
 
 # Aim of this Session 
 
-<img src="img/rmarkdown.png" align="right" width=150 style="margin:10px 20px"></img>
+<img src="img/hex.png" class="hex">
+<img src="img/rmarkdown.png" class="hex">
 
 Today has been a bit of a running start to cover the basics, so we will now have a recap and apply those skills we learned in conjunction with the R Markdown Material.
 
@@ -19,9 +17,9 @@ R Markdown documents are used to produce documents intended for human consumptio
 
 # Getting the Materials
 
-First, download the data [Metal Bands by Nation](files/metal_bands_2017.csv). This is downloaded from [Kaggle](https://www.kaggle.com/mrpantherson/metal-by-nation), and is available under a CC0 licence. I am redistributing it here so that you are not required to create a Kaggle account.
+First, download the data [Metal Bands by Nation](files/rmarkdown_1/metal_bands_2017.csv). This is downloaded from [Kaggle](https://www.kaggle.com/mrpantherson/metal-by-nation), and is available under a CC0 licence. I am redistributing it here so that you are not required to create a Kaggle account.
 
-Next, right click and select "Save Link As" to download the [template R Markdown document](files/metal_bands_blank_final.Rmd).
+Next, right click and select "Save Link As" to download the [template R Markdown document](files/rmarkdown_1/metal_bands_blank_final.Rmd).
 
 Create a new folder somewhere and put both of these files into it. 
 
@@ -40,13 +38,15 @@ If you run into problems:
 
 You will be given a little bit of time to do each of the tasks, and then we will move forward together. 
 
+When we are done I will upload the code I write here for you to refer back to in future.
+
 # Extras
 
-There are some extras on the slides for this session to proide you with a little more information going forward.
+There are some extras on the slides for this session to provide you with a little more information going forward.
 
-You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting "save link as" [here](files/metal.bib), and the APA citation style file [here](files/apa-5th-edition.csl). 
+You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting "save link as" [here](files/rmarkdown_1/metal.bib), and the APA citation style file [here](files/rmarkdown_1/apa-5th-edition.csl). 
 
-Your R Markdown documents are intended for consumption by a human reader, and referencing is a huge part of any academic work, so why not practice by incorporating the reference for the data set into the document we have been making to practice? The [slides](files/RMarkdown_1.pdf) for the session have a slide dedicated to showing you how to incorporate them.
+Your R Markdown documents are intended for consumption by a human reader, and referencing is a huge part of any academic work, so why not practice by incorporating the reference for the data set into the document we have been making to practice? The [slides](files/rmarkdown_1/RMarkdown_1.pdf) for the session have a slide dedicated to showing you how to incorporate them.
 
 ## Free R Books
 

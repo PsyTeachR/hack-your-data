@@ -25,9 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="img/hex.png">
 
 
 
@@ -61,9 +61,7 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -88,6 +86,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -102,7 +103,6 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
-
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -122,6 +122,43 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -143,18 +180,75 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -168,7 +262,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -243,6 +337,16 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -282,7 +386,19 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="intro-to-r.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="intro-to-tidy-data.html">Intro to Tidy Data</a>
+    </li>
+    <li>
       <a href="rmarkdown_1.html">Intro to R Markdown</a>
+    </li>
+    <li>
+      <a href="quant-data-vis.html">Quantitative Data Visualisation</a>
+    </li>
+    <li>
+      <a href="qual-data-vis.html">Qualitative Data Visualization</a>
     </li>
   </ul>
 </li>
@@ -293,6 +409,12 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="visualising-the-headlines.html">Visualising the Headlines</a>
+    </li>
+    <li>
+      <a href="scrape-twitter.html">Twitter Data</a>
+    </li>
     <li>
       <a href="rmarkdown_2.html">R Markdown Websites</a>
     </li>
@@ -305,7 +427,9 @@ div.tocify {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Your data and Viualizations</li>
+    <li>
+      <a href="your-data-and-vis.html">Your Data and Visualisations</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -329,7 +453,7 @@ div.tocify {
 
 <div id="aim-of-this-session" class="section level1">
 <h1>Aim of this Session</h1>
-<p><img src="img/rmarkdown.png" align="right" width=150 style="margin:10px 20px"></img></p>
+<p><img src="img/hex.png" class="hex"> <img src="img/rmarkdown.png" class="hex"></p>
 <p>Today has been a bit of a running start to cover the basics, so we will now have a recap and apply those skills we learned in conjunction with the R Markdown Material.</p>
 <p>This morning with Carolyn and Shannon we covered dealing with a computer, coding and tidy data.</p>
 <p>When working with these we used scripts. Now we are going to perform some tasks which are incredibly similar, but with a new data set and doing it in an R Markdown document.</p>
@@ -337,8 +461,8 @@ div.tocify {
 </div>
 <div id="getting-the-materials" class="section level1">
 <h1>Getting the Materials</h1>
-<p>First, download the data <a href="files/metal_bands_2017.csv">Metal Bands by Nation</a>. This is downloaded from <a href="https://www.kaggle.com/mrpantherson/metal-by-nation">Kaggle</a>, and is available under a CC0 licence. I am redistributing it here so that you are not required to create a Kaggle account.</p>
-<p>Next, right click and select “Save Link As” to download the <a href="files/metal_bands_blank_final.Rmd">template R Markdown document</a>.</p>
+<p>First, download the data <a href="files/rmarkdown_1/metal_bands_2017.csv">Metal Bands by Nation</a>. This is downloaded from <a href="https://www.kaggle.com/mrpantherson/metal-by-nation">Kaggle</a>, and is available under a CC0 licence. I am redistributing it here so that you are not required to create a Kaggle account.</p>
+<p>Next, right click and select “Save Link As” to download the <a href="files/rmarkdown_1/metal_bands_blank_final.Rmd">template R Markdown document</a>.</p>
 <p>Create a new folder somewhere and put both of these files into it.</p>
 </div>
 <div id="getting-stuck-in" class="section level1">
@@ -354,12 +478,13 @@ div.tocify {
 <li>Google! The R community is very active and supportive, try googling your error messages for clues on how to resolve issues.</li>
 </ul>
 <p>You will be given a little bit of time to do each of the tasks, and then we will move forward together.</p>
+<p>When we are done I will upload the code I write here for you to refer back to in future.</p>
 </div>
 <div id="extras" class="section level1">
 <h1>Extras</h1>
-<p>There are some extras on the slides for this session to proide you with a little more information going forward.</p>
-<p>You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting “save link as” <a href="files/metal.bib">here</a>, and the APA citation style file <a href="files/apa-5th-edition.csl">here</a>.</p>
-<p>Your R Markdown documents are intended for consumption by a human reader, and referencing is a huge part of any academic work, so why not practice by incorporating the reference for the data set into the document we have been making to practice? The <a href="files/RMarkdown_1.pdf">slides</a> for the session have a slide dedicated to showing you how to incorporate them.</p>
+<p>There are some extras on the slides for this session to provide you with a little more information going forward.</p>
+<p>You can see an example of a .bib file by downloading the .bib file containing the referencing information for the data set Metal Bands by Nation by right clicking and selecting “save link as” <a href="files/rmarkdown_1/metal.bib">here</a>, and the APA citation style file <a href="files/rmarkdown_1/apa-5th-edition.csl">here</a>.</p>
+<p>Your R Markdown documents are intended for consumption by a human reader, and referencing is a huge part of any academic work, so why not practice by incorporating the reference for the data set into the document we have been making to practice? The <a href="files/rmarkdown_1/RMarkdown_1.pdf">slides</a> for the session have a slide dedicated to showing you how to incorporate them.</p>
 <div id="free-r-books" class="section level2">
 <h2>Free R Books</h2>
 <p>The R community is an incredibly open, welcoming and encouraging place. You will likely never be required to actually purchase any materials to level your skills up as there are many great resources online that have been provided by experts for absolutely free.</p>
