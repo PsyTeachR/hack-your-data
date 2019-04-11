@@ -5,26 +5,31 @@ title: "Your Data and Visualisations"
 <img src="img/hex.png" class="hex">
 <img src="img/ggplot2.png" class="hex">
 
-```{r setup, message=FALSE}
+In this session, we will be thrown from one real-life dataset to another to make quick judgments about which visualisation is most appropriate and how to construct it.
+
+The datasets have been sourced from the political poll website [FiveThirtyEight](https://data.fivethirtyeight.com/), founded by America's most famous data analyst, [Nate Silver](https://en.wikipedia.org/wiki/Nate_Silver). If you want to hone your skills further, you can find many more CC-licensed datasets there.
+
+We have cleaned the data for you and will show you a snippet of what its structure looks like. Based on that structure, in groups of three:
+
+* discuss *which* visualisation would be appropriate (there is no unique right answer here) 
+
+* implement it in `ggplot2` by choosing the aesthetics and geom objects
+
+* bonus points if you add sensible labels and axes
+
+Think of it as a "visualiz-athon", but don't stress about finishing all of them. In fact, feel free to pick and choose whichever dataset tickles your fancy.
+
+First, however, we will need to install and attach the following libraries. We install using, for example, `install.packages("tidyverse")`.
+
+```{r setup, include=FALSE}
 library(tidyverse)
-library(RCurl)
+library(RCurl) #Case-sensitive
 library(ggmap)
 library(maps)
 library(network)
 library(sna)
 library(GGally)
 ```
-
-In this session, we will be thrown from one real-life dataset to another to make quick judgments about which visualisation is most appropriate and how to construct it.
-
-The datasets have been sourced from the political poll website [FiveThirtyEight](https://data.fivethirtyeight.com/), founded by America's most famous data analyst, [Nate Silver](https://en.wikipedia.org/wiki/Nate_Silver). If you want to hone your skills further, you can find many more CC-licensed datasets there.
-
-We have cleaned the data for you and will show you a snippet of what it's structure looks like. Based on that structure, in groups of three:
-* discuss *which* visualisation would be appropriate (there is no unique right answer here) 
-* implement it in `ggplot2` by choosing the aesthetics and geom objects. 
-* bonus points if you add sensible labels and axes
-
-Think of it as a "visualiz-athon"", but don't stress about finishing all of them. In fact, feel free to pick and choose whichever dataset tickles your fancy.
 
 ## 1. What predicts hate crimes in America?
 
@@ -33,6 +38,8 @@ Think of it as a "visualiz-athon"", but don't stress about finishing all of them
 The US has an acute problem with hate crimes. In the week following Trump's 2016 election night, the hate crimes famously spiked compared with the long-running average.
 
 Sociologists argue that it is not a uniformly distributed problem, however. They suspect that it could be related to factors like inequality, urban living and median income.
+
+<img src="img/hatecrime.png" alt="Hatecrime" style="float:right;">
 
 They have data on the average number of hate crimes (per 100,000 people) in USA between 2010 and 2015 for each American state. They also have a measurement for inequality called gini_index, the proportion of people living in metro areas, and the median income of the state.
 
@@ -45,7 +52,7 @@ hatedata <- read.csv("files/your-data-and-vis/hate_crimes.csv", header = T)
 hatedata <- hatedata %>% select(state, median_household_income, gini_index, share_population_in_metro_areas, avg_hatecrimes_per_100k_fbi)
 
 #head(hatedata)
-head(as_tibble(hatedata)) #%>% knitr::kable(digits = 5, caption = "Hate crime data")
+head(as_tibble(hatedata)) %>% knitr::kable(digits = 5, caption = "Hate crime data")
 
 ```
 
@@ -54,7 +61,7 @@ What would be a suitable visualization for sociologists to investigate whether t
 
 ```{r, eval=FALSE}
 
-ggplot(hatedata, aes(x=____, y=_____)) + ______
+ggplot(hatedata, aes(x=____, y=_____)) + geom___()
 
 
 
@@ -67,6 +74,8 @@ ggplot(hatedata, aes(x=____, y=_____)) + ______
 
 The finest honour any investigative journalist could aspire to is called the Pulitzer Prize. The owners of the newspaper they work for surely wouldn't mind either, as this could lead to a boost in circulation. But is there empirical evidence to support their assumption that Pulitzers matter for sales?
 
+<img src="img/pulitzer.jpg" alt="Pulitzer" style="float:right;width:300px;">
+
 In the dataset below, called `puldata`, there is information on the size of their circulation in 2004 (` Daily.Circulation..2004`), the percentage by which it grew or declined between 2004 and 2013 (`Change.in.Daily.Circulation`) and finally how many Pulitzer Prize winners worked at the newspaper between those years (`Pulitzer.Prize.Winners.and.Finalists..2004.2014`).
 
 
@@ -78,8 +87,8 @@ puldata <- puldata %>% select(Daily.Circulation..2004, Change.in.Daily.Circulati
 
 puldata$Daily.Circulation..2004 <- as.numeric(sub(",", "", puldata$Daily.Circulation..2004, fixed = TRUE))
 
-head(as_tibble(puldata))
-#as_tibble(puldata) %>% knitr::kable(digits = 5, caption = "Pulitzer and Newspaper data")
+head(as_tibble(puldata)) %>% knitr::kable(digits = 5, caption = "Pulitzer and Newspaper data")
+#as_tibble(puldata) 
 
 ```
 
@@ -98,6 +107,8 @@ ggplot(puldata, aes(x=________________)) + geom______()
 
 Now to American politics and their principal arena: the Twitter-verse. 
 
+<img src="img/trumptweet.jpg" alt="Trump" style="float:right;width:300px;">
+
 Trump boasts an impressive following of more than 150 million accounts (perhaps with a few Russian bots included), but follower numbers never give a full story. Political scientists may want to have a closer look at the number of interactions, and specifically how many people like (or 'favorite') his tweets. 
 
 In the `trumpdata` prepared below, there is a `url` giving the link to his tweet, `replies`, `retweets`, and `favorites`.
@@ -107,8 +118,8 @@ trumpdata <- read.csv("files/your-data-and-vis/realDonaldTrump.csv", header = T)
 
 trumpdata <- trumpdata %>% select(url,replies, retweets, favorites)
 
-head(as_tibble(trumpdata))
-#as_tibble(trumpdata) %>% knitr::kable(digits = 5, caption = "Trump Twitter data")
+head(as_tibble(trumpdata)) %>% knitr::kable(digits = 5, caption = "Trump Twitter data")
+#as_tibble(trumpdata) 
 
 ```
 
@@ -125,6 +136,8 @@ ggplot(trumpdata, aes(x=_____)) + geom______()
 
 On the same political note, but on a different platform, data from the musical lyrics website [Genius.com](www.genius.com) reveals that politcians are a favourite topic in rap songs. This popularity stretches decades back. 
 
+<img src="img/rapper.jpg" alt="Rapper" style="float:right;width:300px;">
+
 Clever social scientists studying this phenomenon have applied a technique called *sentiment analysis* to determine whether the rapper's attitude towards the politician is positive, negative or neutral.
 
 Have a look at the `hiphopdata` set below, and its three fields `candidate`, `song`, `artist`, and `sentiment`.
@@ -134,8 +147,8 @@ hiphopdata <- read.csv("files/your-data-and-vis/genius_hip_hop_lyrics.csv", head
 
 hiphopdata <- hiphopdata %>% select(candidate, song, artist, sentiment)
 
-head(as_tibble(hiphopdata))
-#as_tibble(hiphopdata) %>% knitr::kable(digits = 5, caption = "Hiphop Politics Data")
+head(as_tibble(hiphopdata)) %>% knitr::kable(digits = 5, caption = "Hiphop Politics Data")
+#as_tibble(hiphopdata) 
 
 ```
 
@@ -152,7 +165,9 @@ ggplot(hiphopdata, aes(x=_____, fill=______)) + geom_____(____)
 
 **Dataset: [comma-survey.csv](files/your-data-and-vis/comma-survey.csv)**
 
-Now for a controversial, English-related debate. As you may know, the *Oxford comma* refers to whether, at the end of a listing, you should add a comma or not before the last item. For example, is it right to say *It's important for a person to be honest, kind and loyal.* or would you rather have it as *It's important for a person to be honest, kind, and loyal.*.
+Now for a controversial, English-related debate. As you may know, the *Oxford comma* refers to whether, at the end of a listing, you should add a comma or not before the last item. For example, is it right to say *It's important for a person to be honest, kind and loyal.* or would you rather have it as *It's important for a person to be honest, kind, and loyal*.
+
+<img src="img/comma.jpg" alt="Comma" style="float:right;width:300px;">
 
 To settle the matter via democratic processes, a poll was conducted that asked people which option they preferred. The pollsters also asked about their education background, thinking that perhaps postgraduates would be more pedantic in the matter.
 
@@ -169,8 +184,8 @@ commadata <- rename(commadata, Opinion = In.your.opinion..which.sentence.is.more
 
 commaperc <- commadata %>% group_by(Education, Opinion) %>% summarise (n = n()) %>% mutate(freq = n/sum(n))
 
-head(as_tibble(commaperc))
-#as_tibble(commaperc) %>% knitr::kable(digits = 5, caption = "Oxford Comma Opinions")
+head(as_tibble(commaperc)) %>% knitr::kable(digits = 5, caption = "Oxford Comma Opinions")
+#as_tibble(commaperc) 
 
 ```
 
@@ -197,8 +212,8 @@ airdata <- read.csv("files/your-data-and-vis/airline-safety.csv", header = T)
 
 airdata <- arrange(airdata, desc(fatalities_00_14))
 
-head(as_tibble(airdata))
-#as_tibble(airdata) %>% knitr::kable(digits = 5, caption = "Airport fatality data")
+head(as_tibble(airdata)) %>% knitr::kable(digits = 5, caption = "Airport fatality data")
+#as_tibble(airdata) 
 ```
 
 This data has already been sorted from high-to-low. We wonder of course whether we could summarise visually which airline we should avoid in the future, assuming that their past incidents has something to say about their future safety.
@@ -217,6 +232,8 @@ ggplot(airdata, aes(y=_____, x=_____)) + geom___()
 
 Many communities struggle with youth drug use, which could be carried over to later stages of life. To monitor the shares of people at different ages using drugs, authorities have collected cross-sectional data showing, for each drug, how many percent use it in each age interval.
 
+<img src="img/drugs.jpg" alt="Drugs" style="float:right;width:300px;">
+
 This data is found in `drugdata`, which has the fields `drug` and `percentage`.
 
 
@@ -232,15 +249,15 @@ colnames(drugdata) <- col_new
 
 drugdata <- drugdata %>% gather(drug, percentage, cocaine:sedative) 
 
-head(as_tibble(drugdata))
-#as_tibble(drugdata) %>% knitr::kable(digits = 5, caption = "Drug use data")
+head(as_tibble(drugdata)) %>% knitr::kable(digits = 5, caption = "Drug use data")
+#as_tibble(drugdata) 
 
 ```
 
 How could we look into the trends in different drugs' popularity over the life span? How could we minimise the visual confusion in doing so? 
 
 ```{r, eval=FALSE}
-ggplot(_____, aes(x=____ , group=____, y=______)) + geom_____(___________)
+ggplot(drugdata, aes(x=____ , group=____, y=______)) + geom_____(___________)
 
 ```
 
@@ -251,6 +268,8 @@ ggplot(_____, aes(x=____ , group=____, y=______)) + geom_____(___________)
 
 Abraham Lincoln, Winston Churchill, and Freddie Mercury have all been the subject of a biographical motion picture, also known as *biopic*. Every Great Man of History seems to have led a Hollywood actor to an Oscar. But where are all the Women of History?
 
+<img src="img/meryl.jpg" alt="Meryl" style="float:right;width:300px;">
+
 Film nerds have collected the following data `biopics` which shows the year of release (`year_release`), the gender of the subject (`subject_sex`), the `title`, the `subject` name and the `lead_actor_actress` who played them.
 
 ```{r biopics, echo=FALSE , warning=FALSE}
@@ -260,15 +279,15 @@ biopicdata <- read.csv("files/your-data-and-vis/biopics.csv", header = T)
 biopicdata <- biopicdata %>% select(year_release, subject_sex, title, subject, lead_actor_actress )
 
 
-head(as_tibble(biopicdata))
-#as_tibble(biopicdata) %>% knitr::kable(digits = 5, caption = "Biopic subject sex data")
+head(as_tibble(biopicdata)) %>% knitr::kable(digits = 5, caption = "Biopic subject sex data")
+#as_tibble(biopicdata) 
 
 ```
 
 Is there a convenient way for us to visualize how this proportion in gender has changed over the last decades? Are female biopics on the rise or has it stayed constant?
 
 ```{r, eval=FALSE}
-ggplot(_______, aes(x=_______, fill=______)) + geom_____(____) 
+ggplot(biopicdata, aes(x=_______, fill=______)) + geom_____(____) 
 
 ```
 
@@ -277,6 +296,8 @@ ggplot(_______, aes(x=_______, fill=______)) + geom_____(____)
 **Dataset: [cousin-marriage-data.csv](files/your-data-and-vis/cousin-marriage-data.csv)**
 
 People born and bred in UK may be surprised to learn that marrying second cousins is a common practice. There are many reasons for doing so: staying close to the family and community, minimising the disruption of marriage, keeping property among consanguines...
+
+<img src="img/wedding.jpg" alt="Wedding" style="float:right;width:300px;">
 
 We would therefore expect this to have a relationship with factors like poverty. In the data below, a dataframe containing the (`long`,`lat`) coordinates that define the corners of some countries has been merged with data that gives the `Percent` of how many people marry their second cousins.
 
@@ -288,8 +309,8 @@ map <- map_data("world")
 
 map2 <- full_join(map, cousindata, by=c('region' = 'Country'))
 
-head(as_tibble(map2))
-#as_tibble(map2) %>% knitr::kable(digits = 5, caption = "Map data")
+head(as_tibble(map2)) %>% knitr::kable(digits = 5, caption = "Map data")
+#as_tibble(map2) 
 ```
 
 Moving into the territory of geospatial data visualization, could you figure out a way of showing in an overlay of the world map, how many people in each country engage in this practice?
@@ -309,6 +330,8 @@ ggplot(map2, aes(x=___, y=____, group=_____, fill=______)) + geom______()
 
 If you ever found yourself watching the romcom *Love, Actually* on Christmas, then you may have marvelled at how the screenwriters managed to weave together such a complex ensemble script. You may wonder if they ever used some kind of network visualization to map out all the character interactions.
 
+<img src="img/loveactually.jpg" alt="Love" style="float:right;width:300px;">
+
 Unfortunately, `ggplot` does not provide convenient support for networks, but via a set of libraries called `networks`, `sna` and `GGally` we could nevertheless cobble together a dataframe where the two first columns (`actor` and `actors`) give the characters in an interaction, and the third (`number`) gives the interaction frequency.
 
 ```{r cars, echo=FALSE, warning=FALSE}
@@ -324,9 +347,9 @@ ladata <- ladata %>%
 
 lanet <- as.network(ladata, directed=FALSE, matrix.type = "edgelist")
 
-head(as_tibble(ladata))
+head(as_tibble(ladata)) %>% knitr::kable(digits = 5, caption = "Love Actually data")
 
-#as_tibble(ladata) %>% knitr::kable(digits = 5, caption = "Love Actually data")
+#as_tibble(ladata) 
 ```
 
 Using the function `ggnet2` we could simply feed the network to it. Now you know! (no exercise for this one :) )
