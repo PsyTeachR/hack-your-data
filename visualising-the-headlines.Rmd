@@ -51,7 +51,7 @@ Let's have a look at the data I collected for my MSc thesis. In this study, I wa
 
 Let's get our packages ready! 
 
-```{r prep}
+```{r prep, message=FALSE}
 
 library(tidyverse)
 library(corrplot)

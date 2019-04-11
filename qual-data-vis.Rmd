@@ -24,15 +24,15 @@ library(rgexf) #To create graph files
 
 Firstly, we need to open up the text file. We have opened .csv before, opening a text file is slightly different using the read.table function. Once the file is loaded... let's have a peek at some of the data. 
 
-```{r opening_file_real, warning=FALSE, echo=FALSE}
-glasgowData <- read.table("files/qual-data-vis/Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
+```{r opening_file, warning=FALSE, eval=FALSE}
+glasgowData <- read.table("Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
 
 print(head(glasgowData), 1)
 
 ```
 
-```{r opening_file, warning=FALSE, eval=FALSE}
-glasgowData <- read.table("Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
+```{r opening_file_real, warning=FALSE, echo=FALSE}
+glasgowData <- read.table("files/qual-data-vis/Glasgow.txt", header = FALSE, fill = TRUE, encoding = "UTF-8")
 
 print(head(glasgowData), 1)
 
@@ -238,9 +238,9 @@ DiagrammeR works by plotting diagrams as **journeys** (edges) going **from** and
 
 There is a transparent audit trail for this diagram, we chose not to plot `x[5]` "Hate it" because a minority of participants conversations clustered around this. Visualiasing qualitative data in this way helps us to be more transparent about decisions that we make at different steps along the research journey. 
 
-```{r qual1_real, warning=FALSE, message=FALSE, echo=FALSE}
+```{r qual1, warning=FALSE, message=FALSE, eval=FALSE}
 
-x <- scan("files/qual-data-vis/peanut.txt", what="", sep="\n", quiet = TRUE)
+x <- scan("peanut.txt", what="", sep="\n", quiet = TRUE)
 
 
 from=c(x[1], x[1], x[1])
@@ -254,9 +254,9 @@ render_graph(title = "Themes From Interviews", layout = "tree")
 
 ```
 
-```{r qual1, warning=FALSE, message=FALSE, eval=FALSE}
+```{r qual1_real, warning=FALSE, message=FALSE, echo=FALSE}
 
-x <- scan("peanut.txt", what="", sep="\n", quiet = TRUE)
+x <- scan("files/qual-data-vis/peanut.txt", what="", sep="\n", quiet = TRUE)
 
 
 from=c(x[1], x[1], x[1])
