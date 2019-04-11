@@ -23,7 +23,7 @@ Think of it as a "visualiz-athon", but don't stress about finishing all of them.
 
 First, however, we will need to install and attach the following libraries. We install using, for example, `install.packages("tidyverse")`.
 
-```{r setup, include=FALSE}
+```{r setup, message=FALSE}
 library(tidyverse)
 library(RCurl) #Case-sensitive
 library(ggmap)
