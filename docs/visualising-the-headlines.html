@@ -577,7 +577,8 @@ div.tocify {
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(corrplot)</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(psych)</a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(viridis)</a></code></pre></div>
-<p>Now let’s load in our data…</p>
+<p>Now let’s download and load in our data…</p>
+<p><strong>Dataset: <a href="files/visualising-the-headlines/correlations_heatmap.csv">correlations_heatmap.csv</a></strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">correlations_heatmap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;correlations_heatmap.csv&quot;</span>)</a></code></pre></div>
 <p>…and have a look at it.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">head</span>(correlations_heatmap)</a></code></pre></div>
@@ -628,7 +629,8 @@ div.tocify {
 <div id="corrplot" class="section level2">
 <h2>corrplot()</h2>
 <p>We can also visualise the strength of these relationships using a function called corrplot which has so many great, intuitive ways of explaining correlations.</p>
-<p>Let’s firstly get our data into the format this function likes. Previously we have been working with data frames, but corrplot takes another form of data type called a matrix. Let’s make that here.</p>
+<p>Let’s firstly get our data into the format this function likes. Previously we have been working with data frames, but corrplot takes another form of data type called a matrix. Let’s make that here, from the <code>scores.csv</code> dataset.</p>
+<p><strong>Dataset: <a href="files/visualising-the-headlines/scores.csv">scores.csv</a></strong></p>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Ability_Comparison = col_double(),
