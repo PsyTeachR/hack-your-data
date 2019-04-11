@@ -14,10 +14,10 @@ The importance of communicating your findings in this way is highlighted by the 
 
 Social media use is an important form of social interaction for young people, with social media becoming the primary form of communication for young people in the UK (Ofcom, 2017) and beyond (Pew Research Center, 2015). Published negative associations between increased social media use, poor mental wellbeing, and sleep problems (Kelly et al., 2019; Sampasa-Kanyinga et al., 2018; Twenge et al., 2017; Woods & Scott, 2016) have been covered widely in the national and international media - thereby contributing to public understanding of the relationship between social media use and wellbeing in young people. 
 
-![Kelly et al (2019)](images/kelly.png)
-![Sampasa-Kanyinga et al (2018)](images/sampasa.png)
-![Twenge et al (2017)](images/twenge.png)
-![Woods & Scott (2016)](images/woods_scott.png)
+![Kelly et al (2019)](img/kelly.png)
+![Sampasa-Kanyinga et al (2018)](img/sampasa.png)
+![Twenge et al (2017)](img/twenge.png)
+![Woods & Scott (2016)](img/woods_scott.png)
 
 Something that these headlines have in common is that they all present a causal link between social media use and wellbeing in young people. In other words, social media is viewed as **causing** mental health problems or **causing** sleep problems. But, the truth is, we don't know that yet. 
 
@@ -162,7 +162,7 @@ correlations_corrplot <- read_csv("files/visualising-the-headlines/scores.csv") 
 ```
 
 
-```{r prep2, eval=FALSE, message=FALSE}
+```{r prep3, eval=FALSE, message=FALSE}
 
 correlations_corrplot <- read_csv("scores.csv") %>%
   select(Ability_Comparison, Passive, Emo_Invest, Rumination, Sleep_Condition) %>%
