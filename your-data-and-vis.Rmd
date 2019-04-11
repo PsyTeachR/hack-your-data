@@ -5,6 +5,8 @@ title: "Your Data and Visualisations"
 <img src="img/hex.png" class="hex">
 <img src="img/ggplot2.png" class="hex">
 
+# Exercises
+
 In this session, we will be thrown from one real-life dataset to another to make quick judgments about which visualisation is most appropriate and how to construct it.
 
 The datasets have been sourced from the political poll website [FiveThirtyEight](https://data.fivethirtyeight.com/), founded by America's most famous data analyst, [Nate Silver](https://en.wikipedia.org/wiki/Nate_Silver). If you want to hone your skills further, you can find many more CC-licensed datasets there.
@@ -359,3 +361,8 @@ ggnet2(lanet, label = TRUE, label.size = 5)
 
 ```
 
+# Solutions
+
+The solutions to all these questions can be downloaded here:
+
+**[Solutions.Rmd](files/your-data-and-vis/Solutions.Rmd)**
