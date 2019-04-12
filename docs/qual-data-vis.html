@@ -36,66 +36,41 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 
 </style>
 <script>
@@ -550,151 +525,144 @@ div.tocify {
 <h1>Setting Up</h1>
 <div id="packages" class="section level2">
 <h2>Packages</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidytext) <span class="co"># for transforming data</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(tidyverse) <span class="co"># for data wrangling</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(Cairo) <span class="co"># for ggwordcloud package to run</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(ggwordcloud) <span class="co"># to render wordclouds</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">library</span>(DiagrammeR) <span class="co"># to make qual coding</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">library</span>(rgexf) <span class="co">#To create graph files</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidytext) <span class="co"># for transforming data</span>
+<span class="kw">library</span>(tidyverse) <span class="co"># for data wrangling</span>
+<span class="kw">library</span>(Cairo) <span class="co"># for ggwordcloud package to run</span>
+<span class="kw">library</span>(ggwordcloud) <span class="co"># to render wordclouds</span>
+<span class="kw">library</span>(DiagrammeR) <span class="co"># to make qual coding</span>
+<span class="kw">library</span>(rgexf) <span class="co">#To create graph files</span></code></pre></div>
 </div>
 <div id="opening-file" class="section level2">
 <h2>Opening File</h2>
 <p>Firstly, we need to open up the text file. We have opened .csv before, opening a text file is slightly different using the read.table function. Once the file is loaded… let’s have a peek at some of the data.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">glasgowData &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;Glasgow.txt&quot;</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">print</span>(<span class="kw">head</span>(glasgowData), <span class="dv">1</span>)</a></code></pre></div>
-<pre><code>##          V1                                V2      V3
-## 1   Glasgow (/&#39;gl&lt;U+0251&gt;&lt;U+02D0&gt;zgo&lt;U+028A&gt;, &#39;glæz-,
-## 2   Glasgow                              grew    from
-## 3      With                               the   onset
-## 4        In                               the    late
-## 5   Glasgow                            hosted     the
-## 6 Etymology                                          
-##                       V4             V5         V6          V7
-## 1 &#39;gl&lt;U+0251&gt;&lt;U+02D0&gt;s-, &#39;glæs-/;[4][5]     Scots:      Glesga
-## 2                      a          small      rural  settlement
-## 3                     of            the Industrial Revolution,
-## 4                   19th            and      early        20th
-## 5                   2014   Commonwealth      Games         and
-## 6                                                             
-##                  V8         V9        V10           V11              V12
-## 1 [&#39;glezg&lt;U+0259&gt;];   Scottish    Gaelic:       Glaschu [&#39;kl&lt;U+032A&gt;&lt;cb&gt;
-## 2                on        the      River         Clyde               to
-## 3               the population        and       economy               of
-## 4        centuries,  Glasgow&#39;s population          grew         rapidly,
-## 5               the      first   European Championships               in
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">glasgowData &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;Glasgow.txt&quot;</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)
+
+<span class="kw">print</span>(<span class="kw">head</span>(glasgowData), <span class="dv">1</span>)</code></pre></div>
+<pre><code>##          V1           V2      V3       V4             V5         V6
+## 1   Glasgow (/ˈɡlɑːzɡoʊ, ˈɡlæz-, ˈɡlɑːs-, ˈɡlæs-/;[4][5]     Scots:
+## 2   Glasgow         grew    from        a          small      rural
+## 3      With          the   onset       of            the Industrial
+## 4        In          the    late     19th            and      early
+## 5   Glasgow       hosted     the     2014   Commonwealth      Games
+## 6 Etymology                                                        
+##            V7         V8         V9        V10           V11          V12
+## 1      Glesga [ˈɡlezɡə];   Scottish    Gaelic:       Glaschu [ˈkl̪ˠas̪əxu])
+## 2  settlement         on        the      River         Clyde           to
+## 3 Revolution,        the population        and       economy           of
+## 4        20th centuries,  Glasgow&#39;s population          grew     rapidly,
+## 5         and        the      first   European Championships           in
+## 6                                                                        
+##        V13 V14     V15         V16       V17       V18       V19       V20
+## 1       is the    most    populous      city        in Scotland,       and
+## 2   become the largest     seaport        in Scotland,       and     tenth
+## 3  Glasgow and     the surrounding    region  expanded   rapidly        to
+## 4 reaching   a    peak          of 1,127,825    people        in 1938.[10]
+## 5    2018; and      is        also      well     known        in       the
+## 6                                                                         
+##             V21   V22     V23      V24           V25         V26     V27
+## 1           the third    most populous          city          in     the
+## 2       largest    by tonnage       in      Britain.   Expanding    from
+## 3        become   one      of      the       world&#39;s pre-eminent centres
+## 4 Comprehensive urban renewal projects            in         the  1960s,
+## 5      sporting world     for football (particularly         the     Old
 ## 6                                                                       
-##                              V13 V14     V15         V16       V17
-## 1 &lt;U+00A0&gt;as&lt;U+032A&gt;&lt;U+0259&gt;xu])  is     the        most  populous
-## 2                         become the largest     seaport        in
-## 3                        Glasgow and     the surrounding    region
-## 4                       reaching   a    peak          of 1,127,825
-## 5                          2018; and      is        also      well
-## 6                                                                 
-##         V18     V19       V20           V21   V22     V23      V24
-## 1      city      in Scotland,           and   the   third     most
-## 2 Scotland,     and     tenth       largest    by tonnage       in
-## 3  expanded rapidly        to        become   one      of      the
-## 4    people      in 1938.[10] Comprehensive urban renewal projects
-## 5     known      in       the      sporting world     for football
-## 6                                                                 
-##             V25         V26     V27       V28        V29         V30
-## 1      populous        city      in       the     United    Kingdom,
-## 2      Britain.   Expanding    from       the   medieval   bishopric
-## 3       world&#39;s pre-eminent centres        of chemicals,    textiles
-## 4            in         the  1960s, resulting         in large-scale
-## 5 (particularly         the     Old      Firm    rivalry     between
+##         V28        V29         V30        V31          V32       V33
+## 1    United   Kingdom,          as         of          the      2017
+## 2       the   medieval   bishopric        and        royal    burgh,
+## 3        of chemicals,    textiles        and engineering;      most
+## 4 resulting         in large-scale relocation           of    people
+## 5      Firm    rivalry     between     Celtic          and Rangers),
 ## 6                                                                   
-##          V31          V32       V33     V34        V35     V36
-## 1         as           of       the    2017  estimated    city
-## 2        and        royal    burgh,     and        the   later
-## 3        and engineering;      most notably         in     the
-## 4 relocation           of    people      to designated     new
-## 5     Celtic          and Rangers),  rugby, athletics, tennis,
-## 6                                                             
-##             V37  V38       V39          V40         V41     V42
-## 1    population   of  621,020. Historically        part      of
-## 2 establishment   of       the   University          of Glasgow
-## 3  shipbuilding  and    marine  engineering   industry,   which
-## 4        towns; such        as Cumbernauld, Livingston,    East
-## 5          golf  and swimming.                                 
-## 6                                                              
-##            V43  V44        V45      V46      V47      V48        V49
-## 1 Lanarkshire,  the       city      now    forms      the    Glasgow
-## 2           in  the  fifteenth century,       it   became          a
-## 3     produced many innovative      and   famous vessels.    Glasgow
-## 4     Kilbride  and peripheral suburbs, followed       by successive
-## 5                                                                   
-## 6                                                                   
-##        V50      V51                               V52 V53        V54
-## 1     City  council                             area, one         of
-## 2    major   centre                                of the   Scottish
-## 3      was      the Second City of the British Empire for       much
-## 4 boundary changes,                           reduced the population
-## 5                                                                   
-## 6                                                                   
-##             V55 V56       V57        V58      V59       V60     V61
-## 1           the  32   council      areas       of Scotland;     the
-## 2 Enlightenment  in       the eighteenth century.      From     the
-## 3            of the Victorian        era      and Edwardian period,
-## 4            of the      City         of  Glasgow   council    area
-## 5                                                                  
-## 6                                                                  
-##          V62       V63       V64      V65  V66       V67     V68
-## 1      local authority        is  Glasgow City  Council. Glasgow
-## 2 eighteenth   century  onwards,      the city      also    grew
-## 3   although      many    cities    argue  the     title     was
-## 4         to        an estimated 615,070, with 1,209,143  people
-## 5                                                               
-## 6                                                               
-##                   V69      V70 V71     V72       V73   V74       V75 V76
-## 1                  is situated  on     the     River Clyde        in the
-## 2                  as      one  of   Great Britain&#39;s  main      hubs  of
-## 3 theirs.[6][7][8][9]                                                   
-## 4              living       in the Greater   Glasgow urban area.[11] The
-## 5                                                                       
-## 6                                                                       
-##             V77          V78     V79       V80         V81 V82  V83
-## 1     country&#39;s         West Central Lowlands. Inhabitants  of  the
-## 2 transatlantic        trade    with     North     America and  the
-## 3                                                                  
-## 4         wider metropolitan    area        is        home  to over
-## 5                                                                  
-## 6                                                                  
-##         V84     V85      V86 V87    V88         V89 V90        V91
-## 1      city     are referred  to     as Glaswegians  or    Weegies
-## 2      West Indies.                                               
-## 3                                                                 
-## 4 1,800,000 people, equating  to around         33%  of Scotland&#39;s
-## 5                                                                 
-## 6                                                                 
-##           V92 V93  V94 V95    V96  V97     V98     V99      V100 V101
-## 1           .  It   is the fourth most visited    city        in  the
-## 2                                                                    
-## 3                                                                    
-## 4 population. The city has    one   of     the highest densities   of
-## 5                                                                    
+##         V34        V35        V36           V37      V38          V39
+## 1 estimated       city population            of 621,020. Historically
+## 2       and        the      later establishment       of          the
+## 3   notably         in        the  shipbuilding      and       marine
+## 4        to designated        new        towns;     such           as
+## 5    rugby, athletics,    tennis,          golf      and    swimming.
 ## 6                                                                    
-##          V102     V103    V104     V105 V106       V107 V108 V109    V110
-## 1 UK[citation needed]. Glasgow       is also      known  for  the Glasgow
-## 2                                                                        
-## 3                                                                        
-## 4         any locality      in Scotland   at 4,023/km2.                  
+##            V40         V41          V42      V43  V44        V45      V46
+## 1         part          of Lanarkshire,      the city        now    forms
+## 2   University          of      Glasgow       in  the  fifteenth century,
+## 3  engineering   industry,        which produced many innovative      and
+## 4 Cumbernauld, Livingston,         East Kilbride  and peripheral suburbs,
 ## 5                                                                        
 ## 6                                                                        
-##      V111 V112     V113    V114 V115 V116  V117     V118 V119 V120  V121
-## 1 patter,    a distinct dialect   of  the Scots language that   is noted
-## 2                                                                       
-## 3                                                                       
-## 4                                                                       
+##        V47      V48        V49      V50      V51
+## 1      the  Glasgow       City  council    area,
+## 2       it   became          a    major   centre
+## 3   famous vessels.    Glasgow      was      the
+## 4 followed       by successive boundary changes,
+## 5                                               
+## 6                                               
+##                                 V52 V53        V54           V55     V56
+## 1                               one  of        the            32 council
+## 2                                of the   Scottish Enlightenment      in
+## 3 Second City of the British Empire for       much            of     the
+## 4                           reduced the population            of     the
 ## 5                                                                       
 ## 6                                                                       
-##   V122  V123      V124 V125       V126 V127  V128 V129    V130 V131  V132
-## 1  for being difficult   to understand   by those from outside  the city.
-## 2                                                                        
-## 3                                                                        
-## 4                                                                        
-## 5                                                                        
+##         V57        V58       V59       V60     V61        V62     V63
+## 1     areas         of Scotland;       the   local  authority      is
+## 2       the eighteenth  century.      From     the eighteenth century
+## 3 Victorian        era       and Edwardian period,   although    many
+## 4      City         of   Glasgow   council    area         to      an
+## 5                                                                    
+## 6                                                                    
+##         V64      V65      V66       V67    V68                 V69 V70 V71
+## 1   Glasgow     City Council.   Glasgow     is            situated  on the
+## 2  onwards,      the     city      also   grew                  as one  of
+## 3    cities    argue      the     title    was theirs.[6][7][8][9]        
+## 4 estimated 615,070,     with 1,209,143 people              living  in the
+## 5                                                                         
+## 6                                                                         
+##       V72       V73   V74       V75       V76           V77          V78
+## 1   River     Clyde    in       the country&#39;s          West      Central
+## 2   Great Britain&#39;s  main      hubs        of transatlantic        trade
+## 3                                                                       
+## 4 Greater   Glasgow urban area.[11]       The         wider metropolitan
+## 5                                                                       
+## 6                                                                       
+##         V79         V80     V81 V82  V83       V84      V85      V86 V87
+## 1 Lowlands. Inhabitants      of the city       are referred       to  as
+## 2      with       North America and  the      West  Indies.             
+## 3                                                                       
+## 4      area          is    home  to over 1,800,000  people, equating  to
+## 5                                                                       
+## 6                                                                       
+##           V88 V89     V90        V91         V92 V93  V94    V95  V96
+## 1 Glaswegians  or Weegies          .          It  is  the fourth most
+## 2                                                                    
+## 3                                                                    
+## 4      around 33%      of Scotland&#39;s population. The city    has  one
+## 5                                                                    
+## 6                                                                    
+##       V97  V98     V99      V100        V101     V102     V103 V104
+## 1 visited city      in       the UK[citation needed].  Glasgow   is
+## 2                                                                  
+## 3                                                                  
+## 4      of  the highest densities          of      any locality   in
+## 5                                                                  
+## 6                                                                  
+##       V105  V106       V107 V108    V109    V110 V111     V112    V113
+## 1     also known        for  the Glasgow patter,    a distinct dialect
+## 2                                                                     
+## 3                                                                     
+## 4 Scotland    at 4,023/km2.                                           
+## 5                                                                     
+## 6                                                                     
+##   V114 V115  V116     V117 V118 V119  V120 V121  V122      V123 V124
+## 1   of  the Scots language that   is noted  for being difficult   to
+## 2                                                                   
+## 3                                                                   
+## 4                                                                   
+## 5                                                                   
+## 6                                                                   
+##         V125 V126  V127 V128    V129 V130  V131
+## 1 understand   by those from outside  the city.
+## 2                                              
+## 3                                              
+## 4                                              
+## 5                                              
 ## 6</code></pre>
 </div>
 </div>
@@ -717,31 +685,31 @@ div.tocify {
 <p><code>unique(tidy_glasgow$word)</code> picks out each unique word.</p>
 <p>However, we are not interested in what the words are - just the number</p>
 <p>Pipe (%&gt;%) and then the <code>length()</code> function to discover we have 5120 unique words in total. <strong>Note</strong> if you are using windows it might read as 5123 because of how some characters are rendered.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">tidy_glasgow &lt;-<span class="st"> </span><span class="kw">gather</span>(glasgowData, key, word) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(word)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#checks how many unique words there are in total</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">unique</span>(tidy_glasgow<span class="op">$</span>word) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="st">  </span><span class="kw">length</span>()</a></code></pre></div>
-<pre><code>## [1] 5123</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_glasgow &lt;-<span class="st"> </span><span class="kw">gather</span>(glasgowData, key, word) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(word)
+
+<span class="co">#checks how many unique words there are in total</span>
+
+<span class="kw">unique</span>(tidy_glasgow<span class="op">$</span>word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">length</span>()</code></pre></div>
+<pre><code>## [1] 5120</code></pre>
 <div id="tidying-data---tidytext" class="section level2">
 <h2>Tidying Data - Tidytext</h2>
 <p>Now that we have our words in long format we can tokenize, reduce our dataframe down down to only unique observations (in this case, words), and count the number of each observation.</p>
 <p><code>unnest_tokens(word, word)</code> transforms our data to be one word per row. Also strips punctuation. <code>count(word, sort = TRUE)</code> counts up the total amount of each word, sort = TRUE then places them in order. <code>ungroup()</code> count has grouped the data by word, we have now ungrouped so tokens is not grouped by word.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">tokens &lt;-<span class="st"> </span>tidy_glasgow <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, word) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tokens &lt;-<span class="st"> </span>tidy_glasgow <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">unnest_tokens</span>(word, word) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>()</code></pre></div>
 </div>
 <div id="exploring-what-words-are-most-frequent." class="section level2">
 <h2>Exploring what words are most frequent.</h2>
 <p>Now we have cleaned the document up, let us see what words are the most frequent.</p>
 <p><code>head()</code> is a handy function built into R, which lets us peek at the top values. Let’s see what the top ten are.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">top_<span class="dv">10</span> &lt;-<span class="st"> </span>tokens <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">knitr<span class="op">::</span><span class="kw">kable</span>(top_<span class="dv">10</span>, <span class="dt">caption =</span> <span class="st">&quot;Top ten all words table&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">top_<span class="dv">10</span> &lt;-<span class="st"> </span>tokens <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>)
+
+knitr<span class="op">::</span><span class="kw">kable</span>(top_<span class="dv">10</span>, <span class="dt">caption =</span> <span class="st">&quot;Top ten all words table&quot;</span>)</code></pre></div>
 <table>
 <caption>Top ten all words table</caption>
 <thead>
@@ -805,28 +773,28 @@ div.tocify {
 <p><code>str_detect</code> to detect pre-defined strings (again, telling R to look in the word column). In this case we are filtering out numbers and returning a dataframe with all the rows containing all the unique numbers in the data set.</p>
 <p><code>anti_join</code> to return all rows that do not feature the data we want to remove. We will use it three times to remove common stopwords, numbers and also our unique words.</p>
 <p>Then we can look at the top ten words again and see how it looks compared to before. Much better.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># removing stop words with built in tidytext package</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">data</span>(<span class="st">&quot;stop_words&quot;</span>)</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">tokens_clean &lt;-<span class="st"> </span>tokens <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw">anti_join</span>(stop_words)</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co"># removing numbers</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9">nums &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;^[0-9]&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>()</a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">tokens_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="st">  </span><span class="kw">anti_join</span>(nums, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)</a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">unique_stopwords &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">word =</span> <span class="kw">c</span>(<span class="st">&quot;glasgow&#39;s&quot;</span>,<span class="st">&quot;city&#39;s&quot;</span>, <span class="st">&quot;scottish&quot;</span>))</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb8-16" data-line-number="16">tokens_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="st">  </span><span class="kw">anti_join</span>(unique_stopwords, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb8-19" data-line-number="19">top_<span class="dv">10</span>_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-20" data-line-number="20"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) </a>
-<a class="sourceLine" id="cb8-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb8-22" data-line-number="22">knitr<span class="op">::</span><span class="kw">kable</span>(top_<span class="dv">10</span>_clean, <span class="dt">caption =</span> <span class="st">&quot;Top ten clean table&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># removing stop words with built in tidytext package</span>
+
+<span class="kw">data</span>(<span class="st">&quot;stop_words&quot;</span>)
+tokens_clean &lt;-<span class="st"> </span>tokens <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">anti_join</span>(stop_words)
+
+<span class="co"># removing numbers</span>
+
+nums &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;^[0-9]&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>()
+
+tokens_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">anti_join</span>(nums, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)
+
+unique_stopwords &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">word =</span> <span class="kw">c</span>(<span class="st">&quot;glasgow&#39;s&quot;</span>,<span class="st">&quot;city&#39;s&quot;</span>, <span class="st">&quot;scottish&quot;</span>))
+
+tokens_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">anti_join</span>(unique_stopwords, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)
+
+top_10_clean &lt;-<span class="st"> </span>tokens_clean <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) 
+
+knitr<span class="op">::</span><span class="kw">kable</span>(top_10_clean, <span class="dt">caption =</span> <span class="st">&quot;Top ten clean table&quot;</span>)</code></pre></div>
 <table>
 <caption>Top ten clean table</caption>
 <thead>
@@ -886,25 +854,24 @@ div.tocify {
 <h2>Creating a Wordcloud</h2>
 <p>We can now create a wordcloud using the ggwordcloud package.</p>
 <p>Success, a word cloud with a title. We have chosen to show the top 50 words.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">wordcloudplot &lt;-<span class="st"> </span><span class="kw">head</span>(tokens_clean, <span class="dv">50</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">label =</span> word, <span class="dt">color =</span> word, <span class="dt">size =</span> n)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">    </span><span class="kw">geom_text_wordcloud_area</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">    </span><span class="kw">scale_size_area</span>(<span class="dt">max_size =</span> <span class="dv">20</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Glasgow Word Cloud&quot;</span>) </a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">wordcloudplot</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wordcloudplot &lt;-<span class="st"> </span><span class="kw">head</span>(tokens_clean, <span class="dv">50</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">label =</span> word, <span class="dt">color =</span> word, <span class="dt">size =</span> n)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_text_wordcloud_area</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_size_area</span>(<span class="dt">max_size =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Glasgow Word Cloud&quot;</span>) 
+
+wordcloudplot</code></pre></div>
 <p><img src="qual-data-vis_files/figure-html/wordscloud-1.png" width="672" /></p>
 </div>
 <div id="task-1" class="section level2">
 <h2>Task 1</h2>
 <p>Have a go at creating a word cloud with the top 200 words.</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">head</span>(tokens_clean, <span class="dv">200</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">label =</span> word, <span class="dt">color =</span> word, <span class="dt">size =</span> n)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">    </span><span class="kw">geom_text_wordcloud_area</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">    </span><span class="kw">scale_size_area</span>(<span class="dt">max_size =</span> <span class="dv">20</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Glasgow Word Cloud&quot;</span>)</a></code></pre></div>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(tokens_clean, <span class="dv">200</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">label =</span> word, <span class="dt">color =</span> word, <span class="dt">size =</span> n)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_text_wordcloud_area</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_size_area</span>(<span class="dt">max_size =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Glasgow Word Cloud&quot;</span>)</code></pre></div>
 <p><img src="qual-data-vis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 <div id="reminder" class="section level2">
@@ -935,35 +902,34 @@ div.tocify {
 <p><code>create_graph</code> creates a graph which we can render.</p>
 <p><code>layout = &quot;tree&quot;</code> is important because it creates the hierarchal nature, if you are curious - try removing it and see what happens.</p>
 <p>There is a transparent audit trail for this diagram, we chose not to plot <code>x[5]</code> “Hate it” because a minority of participants conversations clustered around this. Visualiasing qualitative data in this way helps us to be more transparent about decisions that we make at different steps along the research journey.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">scan</span>(<span class="st">&quot;peanut.txt&quot;</span>, <span class="dt">what=</span><span class="st">&quot;&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">from=<span class="kw">c</span>(x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">to=<span class="kw">c</span>(x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>])</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">nodesn=<span class="kw">c</span>(x[<span class="dv">1</span>],x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>])</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7">nodes &lt;-<span class="st"> </span><span class="kw">create_node_df</span>(<span class="dt">n=</span><span class="kw">length</span>(nodesn), <span class="dt">label=</span>nodesn,  <span class="dt">width=</span><span class="fl">0.9</span>, <span class="dt">shape =</span> <span class="st">&quot;rectangle&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;#983E82&quot;</span>, <span class="dt">fillcolor =</span> <span class="st">&quot;white&quot;</span>) </a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">edges &lt;-<span class="st"> </span><span class="kw">create_edge_df</span>(<span class="dt">from =</span> <span class="kw">factor</span>(from, <span class="dt">levels=</span>nodesn), <span class="dt">to =</span> <span class="kw">factor</span>(to, <span class="dt">levels=</span>nodesn), <span class="dt">arrowhead =</span> <span class="st">&quot;arrow&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)   </a>
-<a class="sourceLine" id="cb11-9" data-line-number="9">graph &lt;-<span class="st"> </span><span class="kw">create_graph</span>(<span class="dt">nodes_df =</span> nodes, <span class="dt">edges_df =</span> edges, <span class="dt">directed =</span> <span class="ot">FALSE</span>) </a>
-<a class="sourceLine" id="cb11-10" data-line-number="10">graph <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="kw">render_graph</span>(<span class="dt">title =</span> <span class="st">&quot;Themes From Interviews&quot;</span>, <span class="dt">layout =</span> <span class="st">&quot;tree&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-20cb5bf2ee971cc89a16" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-20cb5bf2ee971cc89a16">{"x":{"diagram":"graph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \"Themes From Interviews\",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Peanut Butter\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,2!\"] \n  \"2\" [label = \"Jelly Time\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"0,1!\"] \n  \"3\" [label = \"Dogs like it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,1!\"] \n  \"4\" [label = \"Allergies\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"2,1!\"] \n\"1\"--\"2\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"3\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"4\" [arrowhead = \"arrow\", color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">scan</span>(<span class="st">&quot;peanut.txt&quot;</span>, <span class="dt">what=</span><span class="st">&quot;&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)
+
+
+from=<span class="kw">c</span>(x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>])
+to=<span class="kw">c</span>(x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>])
+nodesn=<span class="kw">c</span>(x[<span class="dv">1</span>],x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>])
+nodes &lt;-<span class="st"> </span><span class="kw">create_node_df</span>(<span class="dt">n=</span><span class="kw">length</span>(nodesn), <span class="dt">label=</span>nodesn,  <span class="dt">width=</span><span class="fl">0.9</span>, <span class="dt">shape =</span> <span class="st">&quot;rectangle&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;#983E82&quot;</span>, <span class="dt">fillcolor =</span> <span class="st">&quot;white&quot;</span>) 
+edges &lt;-<span class="st"> </span><span class="kw">create_edge_df</span>(<span class="dt">from =</span> <span class="kw">factor</span>(from, <span class="dt">levels=</span>nodesn), <span class="dt">to =</span> <span class="kw">factor</span>(to, <span class="dt">levels=</span>nodesn), <span class="dt">arrowhead =</span> <span class="st">&quot;arrow&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)   
+graph &lt;-<span class="st"> </span><span class="kw">create_graph</span>(<span class="dt">nodes_df =</span> nodes, <span class="dt">edges_df =</span> edges, <span class="dt">directed =</span> <span class="ot">FALSE</span>) 
+graph <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="kw">render_graph</span>(<span class="dt">title =</span> <span class="st">&quot;Themes From Interviews&quot;</span>, <span class="dt">layout =</span> <span class="st">&quot;tree&quot;</span>)</code></pre></div>
+<div id="htmlwidget-a13d409f67cc1efea6a7" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a13d409f67cc1efea6a7">{"x":{"diagram":"graph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \"Themes From Interviews\",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Peanut Butter\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,2!\"] \n  \"2\" [label = \"Jelly Time\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"0,1!\"] \n  \"3\" [label = \"Dogs like it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,1!\"] \n  \"4\" [label = \"Allergies\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"2,1!\"] \n\"1\"--\"2\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"3\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"4\" [arrowhead = \"arrow\", color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="task-2" class="section level2">
 <h2>Task 2</h2>
 <p>Add in “Hate it” to the coding diagram. <strong>Hint</strong> remember if there are four “journeys” then there need to be four defined places to start from.</p>
-<details>
-<p><summary>Show Solution…</summary></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">from=<span class="kw">c</span>(x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">to=<span class="kw">c</span>(x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>], x[<span class="dv">5</span>])</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">nodesn=<span class="kw">c</span>(x[<span class="dv">1</span>],x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>], x[<span class="dv">5</span>])</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">nodes &lt;-<span class="st"> </span><span class="kw">create_node_df</span>(<span class="dt">n=</span><span class="kw">length</span>(nodesn), <span class="dt">label=</span>nodesn,  <span class="dt">width=</span><span class="fl">0.9</span>, <span class="dt">shape =</span> <span class="st">&quot;rectangle&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;#983E82&quot;</span>, <span class="dt">fillcolor =</span> <span class="st">&quot;white&quot;</span>) </a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">edges &lt;-<span class="st"> </span><span class="kw">create_edge_df</span>(<span class="dt">from =</span> <span class="kw">factor</span>(from, <span class="dt">levels=</span>nodesn), <span class="dt">to =</span> <span class="kw">factor</span>(to, <span class="dt">levels=</span>nodesn), <span class="dt">arrowhead =</span> <span class="st">&quot;arrow&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)   </a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">graph &lt;-<span class="st"> </span><span class="kw">create_graph</span>(<span class="dt">nodes_df =</span> nodes, <span class="dt">edges_df =</span> edges, <span class="dt">directed =</span> <span class="ot">FALSE</span>) </a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">graph <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="kw">render_graph</span>(<span class="dt">title =</span> <span class="st">&quot;Themes From Interviews&quot;</span>, <span class="dt">layout =</span> <span class="st">&quot;tree&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-a855d53f5dec90ce090a" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a855d53f5dec90ce090a">{"x":{"diagram":"graph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \"Themes From Interviews\",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Peanut Butter\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1.5,2!\"] \n  \"2\" [label = \"Jelly Time\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"0,1!\"] \n  \"3\" [label = \"Dogs like it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,1!\"] \n  \"4\" [label = \"Allergies\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"2,1!\"] \n  \"5\" [label = \"Hate it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"3,1!\"] \n\"1\"--\"2\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"3\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"4\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"5\" [arrowhead = \"arrow\", color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p><details> <summary>Show Solution…</summary></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">from=<span class="kw">c</span>(x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>], x[<span class="dv">1</span>])
+to=<span class="kw">c</span>(x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>], x[<span class="dv">5</span>])
+nodesn=<span class="kw">c</span>(x[<span class="dv">1</span>],x[<span class="dv">2</span>],x[<span class="dv">3</span>],x[<span class="dv">4</span>], x[<span class="dv">5</span>])
+nodes &lt;-<span class="st"> </span><span class="kw">create_node_df</span>(<span class="dt">n=</span><span class="kw">length</span>(nodesn), <span class="dt">label=</span>nodesn,  <span class="dt">width=</span><span class="fl">0.9</span>, <span class="dt">shape =</span> <span class="st">&quot;rectangle&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;#983E82&quot;</span>, <span class="dt">fillcolor =</span> <span class="st">&quot;white&quot;</span>) 
+edges &lt;-<span class="st"> </span><span class="kw">create_edge_df</span>(<span class="dt">from =</span> <span class="kw">factor</span>(from, <span class="dt">levels=</span>nodesn), <span class="dt">to =</span> <span class="kw">factor</span>(to, <span class="dt">levels=</span>nodesn), <span class="dt">arrowhead =</span> <span class="st">&quot;arrow&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)   
+graph &lt;-<span class="st"> </span><span class="kw">create_graph</span>(<span class="dt">nodes_df =</span> nodes, <span class="dt">edges_df =</span> edges, <span class="dt">directed =</span> <span class="ot">FALSE</span>) 
+graph <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="kw">render_graph</span>(<span class="dt">title =</span> <span class="st">&quot;Themes From Interviews&quot;</span>, <span class="dt">layout =</span> <span class="st">&quot;tree&quot;</span>)</code></pre></div>
+<div id="htmlwidget-bf83619cf737bf6ed4e2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bf83619cf737bf6ed4e2">{"x":{"diagram":"graph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\",\n       label = \"Themes From Interviews\",\n       labelloc = \"t\",\n       labeljust = \"c\",\n       fontname = \"Helvetica\",\n       fontcolor = \"gray30\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Peanut Butter\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1.5,2!\"] \n  \"2\" [label = \"Jelly Time\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"0,1!\"] \n  \"3\" [label = \"Dogs like it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"1,1!\"] \n  \"4\" [label = \"Allergies\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"2,1!\"] \n  \"5\" [label = \"Hate it\", width = \"0.9\", shape = \"rectangle\", color = \"#983E82\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\", pos = \"3,1!\"] \n\"1\"--\"2\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"3\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"4\" [arrowhead = \"arrow\", color = \"black\"] \n\"1\"--\"5\" [arrowhead = \"arrow\", color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="references" class="section level1">

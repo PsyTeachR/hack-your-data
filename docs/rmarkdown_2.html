@@ -32,66 +32,41 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 
 </style>
 <script>
@@ -558,29 +533,29 @@ div.tocify {
 <div id="create-the-yaml-file-for-the-site" class="section level1">
 <h1>Create the YAML file for the site</h1>
 <p>Just like your R Markdown documents, your website needs configuration information. We do this by creating a text file in R. Copy and paste the following text into it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">name<span class="op">:</span><span class="st"> &quot;mywebpage&quot;</span>  </a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">author<span class="op">:</span><span class="st"> &quot;YOUR NAME&quot;</span>  </a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">output_dir<span class="op">:</span><span class="st"> &quot;docs&quot;</span>  </a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">output<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="st">  </span>html_document<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  </a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">    theme<span class="op">:</span><span class="st"> </span>flatly  </a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">navbar<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="st">  </span>title<span class="op">:</span><span class="st"> &quot;My First Webpage&quot;</span> </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">name<span class="op">:</span><span class="st"> &quot;mywebpage&quot;</span>  
+author<span class="op">:</span><span class="st"> &quot;YOUR NAME&quot;</span>  
+output_dir<span class="op">:</span><span class="st"> &quot;docs&quot;</span>  
+output<span class="op">:</span><span class="st">  </span>
+<span class="st">  </span>html_document<span class="op">:</span><span class="st">  </span>
+<span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  
+    theme<span class="op">:</span><span class="st"> </span>flatly  
+navbar<span class="op">:</span><span class="st">  </span>
+<span class="st">  </span>title<span class="op">:</span><span class="st"> &quot;My First Webpage&quot;</span> </code></pre></div>
 <p>Save it in the folder that you created before, and save it as <code>_site.yml</code>, this name is non-negotiable. Keep the file open.</p>
 <div id="index-page" class="section level2">
 <h2>Index page</h2>
 <p>Open a new R Markdown file. This will be the front page of our website. Delete all of the text from the new file and insert:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="op">---</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">title<span class="op">:</span><span class="st"> &quot;My Website Name&quot;</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="op">---</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">---</span>
+title<span class="op">:</span><span class="st"> &quot;My Website Name&quot;</span>
+<span class="op">---</span></code></pre></div>
 <p>Save the file in the folder you made as <code>index.Rmd</code>. Again, the website needs this name to be this exact text.</p>
 </div>
 </div>
 <div id="adding-content" class="section level1">
 <h1>Adding content</h1>
 <p>Now that we have a (single page) website, we can see how it looks. Ensure that both <code>index.Rmd</code> and <code>_site.yml</code> are saved. Type the following into the console and run it:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rmarkdown<span class="op">::</span><span class="kw">render_site</span>()</code></pre></div>
 <p>This code renders the website in its current form. For each .Rmd file you have as part of your website, it will create a corresponding <code>.html</code> file. As we currently only have <code>index.Rmd</code> we will only create <code>index.html</code>. As we add more pages we will get more HTML documents when we render the site.</p>
 <p>It does this in a file called “docs” in your original folder that will contain the website. Navigate to it and double click it to have a look. It is barren, but we will get to adding content now.</p>
 <p>You should check what your website looks like regularly. A large part of coding is changing things and seeing what happens.</p>
@@ -592,18 +567,18 @@ div.tocify {
 <div id="hyperlinks" class="section level2">
 <h2>Hyperlinks</h2>
 <p>We can use the same R Markdown code for hyperlinks too:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">[Text That will be the link](URL of the site you want to link to)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[Text That will be the link](URL of the site you want to link to)</code></pre></div>
 <p>You can also use the HTML code if you prefer:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&lt;</span>a href=<span class="st">&quot;URL of the site you want to link to&quot;</span><span class="op">&gt;</span>Text that will be the link<span class="op">&lt;</span><span class="er">/</span>a<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&lt;</span>a href=<span class="st">&quot;URL of the site you want to link to&quot;</span><span class="op">&gt;</span>Text that will be the link<span class="op">&lt;</span><span class="er">/</span>a<span class="op">&gt;</span></code></pre></div>
 </div>
 <div id="images" class="section level2">
 <h2>Images</h2>
 <p>If you want to include an image you need to know where that image is. This “location” can be either a web address, or if your image is not hosted online, the location within your files system. This is why I asked you to make an extra folder for them at the beginning.</p>
 <p>Again, there are two ways that you can embed images.</p>
 <p>The R Markdown way:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="op">!</span>[Explanatory Text](path<span class="op">/</span>to<span class="op">/</span>image.jpg)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">!</span>[Explanatory Text](path<span class="op">/</span>to<span class="op">/</span>image.jpg)</code></pre></div>
 <p>The HTML way:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="op">&lt;</span>img src=<span class="st">&quot;path/to/image.jpg&quot;</span><span class="op">&gt;</span><span class="er">&lt;/</span>img<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&lt;</span>img src=<span class="st">&quot;path/to/image.jpg&quot;</span><span class="op">&gt;</span><span class="er">&lt;/</span>img<span class="op">&gt;</span></code></pre></div>
 <p>I have gotten used to doing it the HTML way, because within the <code>img</code> tag you can make adjustments to size, alignment, margins around the image and such.</p>
 </div>
 </div>
@@ -635,31 +610,31 @@ div.tocify {
 <p>Themes also include changes to fonts, text size etc. You might want to consider aspects such as readability of text when you are choosing a theme.</p>
 <p>You don’t have to settle with these options if you don’t want to, but you would need to learn a little bit of CSS to create your own theme. CSS (cascading style sheets) are used to apply the same formatting across the whole site. You would write a CSS file in a text file (as you did with the <code>_site.yml</code> file), but this time save is as a file with the extension <code>.css</code> in the same folder as your webpage.</p>
 <p>You would then call this file in the <code>_site.yml</code> file as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">  html_document<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  </a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">    theme<span class="op">:</span><span class="st"> </span>flatly  <span class="co"># if you just want to use a standard theme</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">    css<span class="op">:</span><span class="st"> </span>style.css <span class="co"># this is the addition to the code, citing the CSS file I want to use</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  html_document<span class="op">:</span><span class="st">  </span>
+<span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  
+    theme<span class="op">:</span><span class="st"> </span>flatly  <span class="co"># if you just want to use a standard theme</span>
+    css<span class="op">:</span><span class="st"> </span>style.css <span class="co"># this is the addition to the code, citing the CSS file I want to use</span></code></pre></div>
 <p>There are many places online to learn more about CSS. <a href="https://www.codecademy.com/catalog/language/html-css">Codeacademy</a> and <a href="https://www.w3schools.com/css/">W3Schools</a> are two good starting points if you want to learn some more.</p>
 </div>
 <div id="navigation" class="section level2">
 <h2>Navigation</h2>
 <p>Some pages can be really long (like this one), and forcing users to scroll up and down continuously is not good web design. We can add a table of contents to our pages to help avoid frustration.</p>
 <p>Just like we did in the previous session with R Markdown, we can add a table of contents by adding to the configuration info. Changing the <code>_site.yml</code> file again to:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">output<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span>html_document<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  </a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">    theme<span class="op">:</span><span class="st"> </span>flatly  </a>
-<a class="sourceLine" id="cb9-5" data-line-number="5">    toc<span class="op">:</span><span class="st"> </span>true <span class="co"># adds a table of contents</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output<span class="op">:</span><span class="st">  </span>
+<span class="st">  </span>html_document<span class="op">:</span><span class="st">  </span>
+<span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>no  
+    theme<span class="op">:</span><span class="st"> </span>flatly  
+    toc<span class="op">:</span><span class="st"> </span>true <span class="co"># adds a table of contents</span></code></pre></div>
 </div>
 <div id="adding-more-pages" class="section level2">
 <h2>Adding More Pages</h2>
 <p>You can make more pages, in the same way that you created <code>index.Rmd</code>. This time you can call them whatever you want, as long as you don’t violate any naming conventions (such as including special characters, not beginning them with numbers etc.).</p>
 <p>Once you have created additional pages you will need to tell the configuration file what to do with them. You do this by making the following changes to the <code>_site.yml</code> file:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">navbar<span class="op">:</span><span class="st">  </span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span>title<span class="op">:</span><span class="st"> &quot;Websites with R Markdown&quot;</span> </a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  left<span class="op">:</span><span class="st"> </span><span class="co"># alignment of the links on the navbar</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">    </span><span class="op">-</span><span class="st"> </span>text<span class="op">:</span><span class="st"> &quot;Text&quot;</span> <span class="co"># text to appear on the Navbar at the top of the page</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">      href<span class="op">:</span><span class="st"> </span>text.html <span class="co"># link to the new page</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">navbar<span class="op">:</span><span class="st">  </span>
+<span class="st">  </span>title<span class="op">:</span><span class="st"> &quot;Websites with R Markdown&quot;</span> 
+  left<span class="op">:</span><span class="st"> </span><span class="co"># alignment of the links on the navbar</span>
+<span class="st">    </span><span class="op">-</span><span class="st"> </span>text<span class="op">:</span><span class="st"> &quot;Text&quot;</span> <span class="co"># text to appear on the Navbar at the top of the page</span>
+      href<span class="op">:</span><span class="st"> </span>text.html <span class="co"># link to the new page</span></code></pre></div>
 <p>The <code>text</code> is the text for a link to be created on the nav bar at the top of the page. This is the text that will be displayed to the user.</p>
 <p>The <code>href</code> refers to the <code>.html</code> file that will be created when we render the site, not the <code>.Rmd</code> file that we currently have. It is the new web address to navigate to when the <code>text</code> has been clicked.</p>
 <p>Remember each <code>.Rmd</code> generates a <code>.html</code> file when you render the site. The name stays the same, but te extension changes. This means you can pre-empt what will be created and you will be able to effectively link between them before rendering them.</p>
