@@ -67,27 +67,6 @@ code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 
 </style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -124,7 +103,9 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -143,14 +124,8 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
-.html-widget {
-  margin-bottom: 20px;
-}
 button.code-folding-btn:focus {
   outline: none;
-}
-summary {
-  display: list-item;
 }
 </style>
 
@@ -166,6 +141,7 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
+
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -185,43 +161,6 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -243,75 +182,18 @@ $(document).ready(function () {
 });
 </script>
 
+
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -399,16 +281,6 @@ div.tocify {
 
 
 </style>
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -537,12 +409,14 @@ div.tocify {
 <p>We can download up to 3200 of lego grad student’s most recent tweets.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Download all recent tweets of account</span>
 lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span class="st">&quot;@legogradstudent&quot;</span>, <span class="dt">n=</span><span class="dv">3200</span>)</code></pre></div>
+
 <p>Let’s have a look at the dataframe. You can use <code>view(lego)</code> or click on the lego object in the environment.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Look at the dataframe</span>
 <span class="kw">view</span>(lego)</code></pre></div>
 <p>Take a moment to explore this dataframe, have a look at what kind of variables there are and which ones might be interesting to explore later on. If you want to get a quick overview of a dataframe you can use <code>head()</code>, which returns the first few rows and tells you how many variables there are in total.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># get first few rows</span>
 <span class="kw">head</span>(lego)</code></pre></div>
+
 <pre><code>## # A tibble: 6 x 88
 ##   user_id status_id created_at          screen_name text  source
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
@@ -585,6 +459,7 @@ lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span cla
 ## #   profile_expanded_url &lt;chr&gt;, account_lang &lt;chr&gt;,
 ## #   profile_banner_url &lt;chr&gt;, profile_background_url &lt;chr&gt;,
 ## #   profile_image_url &lt;chr&gt;</code></pre>
+
 </div>
 <div id="tidy-tweets" class="section level2">
 <h2>Tidy tweets</h2>
@@ -693,6 +568,7 @@ all_stop_words &lt;-<span class="st"> </span>stop_words <span class="op">%&gt;%<
 <span class="co"># Remove numbers</span>
 no_numbers &lt;-<span class="st"> </span>tidy_tweets <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">is.na</span>(<span class="kw">as.numeric</span>(word))) <span class="co"># remember filter() returns rows where conditions are true</span></code></pre></div>
+
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
 <p>Don’t worry about the warning message you are receiving here, the <code>as.numeric</code> function gives a warning when it tries to turn non-number words into numbers, which is what we are looking to do here. The warnings we receive from R should be read for meaning. They can be useful clues as to why you are stuck. You can use the help function in R (<code>?as.numeric()</code>) or google the error message if you are unsure what is going on.</p>
 <p>Now we get rid of the combined stop words by using <code>anti_join()</code>. We used this already in one of the previous sessions, but if you are unsure about what <code>anti_join()</code> does you can read more about it <a href="https://gupsych.github.io/data_skills/06_joins.html#anti_join" target="_blank">here</a> or call the help function in the R console <code>?anti_join()</code>.</p>

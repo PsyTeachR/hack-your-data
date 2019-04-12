@@ -5,7 +5,19 @@ title: "Qualitative Data Visualisation"
 <img src="img/hex.png" class="hex">
 <img src="img/ggplot2.png" class="hex">
 
+## Aims of this Session
+
+This session will be split into two sections. Firstly, we’ll expand upon what you've learned about `ggplot2` syntax and functions and introduce `tidytext`. For the second half, we’ll have a go at visualising themes. We hope that you'll have fun and feel free to ask any questions.
+
 # Setting Up
+
+## Materials
+
+* **[The data](files/qual-data-vis/Glasgow.txt)** - first data set we'll be using for the first section
+
+* **[The data](files/qual-data-vis/peanut.txt)** - second data set we'll be using for the second section.
+
+Please download both, right click on each of the above files and select 'save as'.
 
 ## Packages
 
@@ -19,6 +31,7 @@ library(DiagrammeR) # to make qual coding
 library(rgexf) #To create graph files
 
 ```
+
 
 ## Opening File
 
