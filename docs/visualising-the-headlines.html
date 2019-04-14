@@ -30,7 +30,7 @@
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
@@ -66,6 +66,7 @@ code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Doc
 code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
 </style>
 <style type="text/css">
   pre:not([class]) {
@@ -420,11 +421,8 @@ div.tocify {
 <p>Let’s get our packages ready!</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(corrplot)
-<span class="kw">library</span>(psych)</code></pre></div>
-<pre><code>## Warning: package &#39;psych&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(viridis)</code></pre></div>
-<pre><code>## Warning: package &#39;viridis&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 3.4.3</code></pre>
+<span class="kw">library</span>(psych)
+<span class="kw">library</span>(viridis)</code></pre></div>
 <p>Now let’s download and load in our data…</p>
 <p><strong>Dataset: <a href="files/visualising-the-headlines/correlations_heatmap.csv">correlations_heatmap.csv</a></strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">correlations_heatmap &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;correlations_heatmap.csv&quot;</span>)</code></pre></div>

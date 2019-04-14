@@ -30,7 +30,7 @@
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
@@ -66,6 +66,7 @@ code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Doc
 code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
 </style>
 <style type="text/css">
   pre:not([class]) {
@@ -400,16 +401,12 @@ div.tocify {
 <p>Think of it as a “visualiz-athon”, but don’t stress about finishing all of them. In fact, feel free to pick and choose whichever dataset tickles your fancy.</p>
 <p>First, however, we will need to install and attach the following libraries. We install using, for example, <code>install.packages(&quot;tidyverse&quot;)</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(RCurl) <span class="co">#Case-sensitive</span></code></pre></div>
-<pre><code>## Warning: package &#39;RCurl&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggmap)</code></pre></div>
-<pre><code>## Warning: package &#39;ggmap&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
-<span class="kw">library</span>(network)</code></pre></div>
-<pre><code>## Warning: package &#39;network&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sna)
+<span class="kw">library</span>(RCurl) <span class="co">#Case-sensitive</span>
+<span class="kw">library</span>(ggmap)
+<span class="kw">library</span>(maps)
+<span class="kw">library</span>(network)
+<span class="kw">library</span>(sna)
 <span class="kw">library</span>(GGally)</code></pre></div>
-<pre><code>## Warning: package &#39;GGally&#39; was built under R version 3.4.4</code></pre>
 <div id="what-predicts-hate-crimes-in-america" class="section level2">
 <h2>1. What predicts hate crimes in America?</h2>
 <p><strong>Dataset: <a href="files/your-data-and-vis/hate_crimes.csv">hate_crimes.csv</a></strong></p>
