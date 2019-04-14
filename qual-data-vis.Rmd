@@ -19,6 +19,8 @@ This session will be split into two sections. Firstly, we’ll expand upon what 
 
 Please download both, right click on each of the above files and select 'save as'.
 
+* **[Powerpoint slides](files/qual-data-vis/HackYourDataQual.pptx)**
+
 ## Packages
 
 ```{r setup, include=TRUE, warning=FALSE, message=FALSE}
