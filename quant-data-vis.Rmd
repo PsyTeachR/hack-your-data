@@ -10,7 +10,7 @@ title: "Quantitative Data Visualisation"
 
 * **[The data](files/quant-data-vis/haggis.csv)** - the data which we'll be using for the exercises in this session
 
-* **[The powerpoint](files/quant-data-vis/Quantitative_Data_Visualisation.pptx)** - this page includes the same information, but you might prefer to follow along with the slides
+* **The slides, in [.pdf](files/quant-data-vis/Quantitative_Data_Visualisation.pdf) [.pptx](files/quant-data-vis/Quantitative_Data_Visualisation.pptx) format** - this page includes the same information, but you might prefer to follow along with the slides
 
 # Aim of this Session
 
