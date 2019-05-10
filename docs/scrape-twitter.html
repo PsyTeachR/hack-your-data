@@ -23,12 +23,13 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="shortcut icon" href="img/hex.png">
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
@@ -64,7 +65,29 @@ code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Doc
 code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -101,9 +124,7 @@ h6 {
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -122,8 +143,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -139,7 +166,6 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
-
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -159,6 +185,43 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -180,18 +243,75 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -280,6 +400,16 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -325,7 +455,7 @@ div.tocify {
       <a href="intro-to-tidy-data.html">Intro to Tidy Data</a>
     </li>
     <li>
-      <a href="rmarkdown_1.html">Intro to R Markdown</a>
+      <a href="metal_bands_actual.html">Intro to R Markdown</a>
     </li>
     <li>
       <a href="quant-data-vis.html">Quantitative Data Visualisation</a>
@@ -385,15 +515,14 @@ div.tocify {
 
 
 <p><img src="img/hex.png" class="hex"> <img src="img/rtweet.png" class="hex"></p>
+<p><strong><a href="files/rtweet/rtweet_2019_AH.pdf">The slides</a></strong> - this page includes the same information, but you might prefer to follow along with the slides.</p>
 <div id="packages" class="section level2">
 <h2>Packages</h2>
 <p>This section loads the <code>rtweet</code>, <code>tidytext</code>, <code>ggpubr</code> and the <code>tidyverse</code> packages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rtweet) </code></pre></div>
-<pre><code>## Warning: package &#39;rtweet&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidytext)
-<span class="kw">library</span>(ggpubr) </code></pre></div>
-<pre><code>## Warning: package &#39;ggpubr&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rtweet) 
+<span class="kw">library</span>(tidytext)
+<span class="kw">library</span>(ggpubr) 
+<span class="kw">library</span>(tidyverse) </code></pre></div>
 </div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
@@ -409,8 +538,6 @@ div.tocify {
 <p>We can download up to 3200 of lego grad student’s most recent tweets.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Download all recent tweets of account</span>
 lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span class="st">&quot;@legogradstudent&quot;</span>, <span class="dt">n=</span><span class="dv">3200</span>)</code></pre></div>
-<pre><code>## Warning in strptime(x, fmt, tz = &quot;GMT&quot;): unknown timezone &#39;zone/tz/2018i.
-## 1.0/zoneinfo/Europe/London&#39;</code></pre>
 <p>Let’s have a look at the dataframe. You can use <code>view(lego)</code> or click on the lego object in the environment.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Look at the dataframe</span>
 <span class="kw">view</span>(lego)</code></pre></div>
@@ -420,12 +547,12 @@ lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span cla
 <pre><code>## # A tibble: 6 x 88
 ##   user_id status_id created_at          screen_name text  source
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-## 1 744046… 11163995… 2019-04-11 17:56:13 legogradst… @S_H… Twitt…
-## 2 744046… 11160261… 2019-04-10 17:12:35 legogradst… Atte… Twitt…
-## 3 744046… 11152971… 2019-04-08 16:55:31 legogradst… @agl… Twitt…
-## 4 744046… 11152961… 2019-04-08 16:51:35 legogradst… @cry… Twitt…
-## 5 744046… 11152950… 2019-04-08 16:47:05 legogradst… &quot;A m… Twitt…
-## 6 744046… 11142222… 2019-04-05 17:44:30 legogradst… I&#39;m … Twitt…
+## 1 744046… 11244146… 2019-05-03 20:45:25 legogradst… @LEM… Twitt…
+## 2 744046… 11244090… 2019-05-03 20:23:05 legogradst… @ane… Twitt…
+## 3 744046… 11244053… 2019-05-03 20:08:24 legogradst… Happ… Twitt…
+## 4 744046… 11226350… 2019-04-28 22:53:49 legogradst… @jan… Twitt…
+## 5 744046… 11214210… 2019-04-25 14:29:56 legogradst… I ju… Twitt…
+## 6 744046… 11212074… 2019-04-25 00:20:50 legogradst… @ewe… Twitt…
 ## # … with 82 more variables: display_text_width &lt;dbl&gt;,
 ## #   reply_to_status_id &lt;chr&gt;, reply_to_user_id &lt;chr&gt;,
 ## #   reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;, is_retweet &lt;lgl&gt;,
@@ -567,13 +694,12 @@ all_stop_words &lt;-<span class="st"> </span>stop_words <span class="op">%&gt;%<
 <span class="co"># Remove numbers</span>
 no_numbers &lt;-<span class="st"> </span>tidy_tweets <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">is.na</span>(<span class="kw">as.numeric</span>(word))) <span class="co"># remember filter() returns rows where conditions are true</span></code></pre></div>
-<pre><code>## Warning in rlang::eval_tidy(~is.na(as.numeric(word)), &lt;environment&gt;): NAs
-## introduced by coercion</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
 <p>Don’t worry about the warning message you are receiving here, the <code>as.numeric</code> function gives a warning when it tries to turn non-number words into numbers, which is what we are looking to do here. The warnings we receive from R should be read for meaning. They can be useful clues as to why you are stuck. You can use the help function in R (<code>?as.numeric()</code>) or google the error message if you are unsure what is going on.</p>
 <p>Now we get rid of the combined stop words by using <code>anti_join()</code>. We used this already in one of the previous sessions, but if you are unsure about what <code>anti_join()</code> does you can read more about it <a href="https://gupsych.github.io/data_skills/06_joins.html#anti_join" target="_blank">here</a> or call the help function in the R console <code>?anti_join()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">no_stop_words &lt;-<span class="st"> </span>no_numbers <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">anti_join</span>(all_stop_words, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)</code></pre></div>
-<p>We started with 58572 words and are now left with 21083 words. Over half the tweeted words turned out to be stop words. Removing the stop words is important for later visualization and the sentiment analysis - we only want to plot and analyze the ‘interesting’ tweets.</p>
+<p>We started with 58658 words and are now left with 21104 words. Over half the tweeted words turned out to be stop words. Removing the stop words is important for later visualization and the sentiment analysis - we only want to plot and analyze the ‘interesting’ tweets.</p>
 </div>
 </div>
 <div id="sentiment-analysis" class="section level1">
@@ -633,9 +759,9 @@ wordcloudplot <span class="co"># show word cloud</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">#### Getting the devtools package - uncomment below code to run ####
 
 <span class="co"># install.packages(&quot;devtools&quot;)</span>
-<span class="kw">library</span>(devtools)</code></pre></div>
-<pre><code>## Warning: package &#39;usethis&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">#### Getting the emo package - uncomment below code to run ####
+<span class="kw">library</span>(devtools)
+
+#### Getting the emo package - uncomment below code to run ####
 <span class="co"># devtools::install_github(&quot;hadley/emo&quot;)</span>
 <span class="kw">library</span>(emo)</code></pre></div>
 <p>With the emo package we can render emojis in R Markdown!</p>
@@ -683,11 +809,11 @@ emoji</code></pre></div>
 <pre><code>## # A tibble: 5 x 2
 ##   text                                                       favorite_count
 ##   &lt;chr&gt;                                                               &lt;int&gt;
-## 1 &quot;All Balkan governments lie to their citizens\n\nBut\n\nS…            145
-## 2 &quot;My first viral #rstats meme on @rstatsmemes (even though…             26
-## 3 A follow up note on our web scraping tutorial https://t.c…             25
-## 4 &quot;How #IBMWatson Overpromised and Underdelivered on AI Hea…             20
-## 5 MailR SMTP Setup (Gmail, Outlook, Yahoo) | STARTTLS https…             17</code></pre>
+## 1 My favorite discovery of this week: there’s a new #rstats…             66
+## 2 Happy to announce that stplanr, the #rstats package I wro…             18
+## 3 .@rebeccmart and I are excited to welcome our new #rstats…             16
+## 4 &quot;Automated Identification of Benthic Epifauna with Comput…             11
+## 5 &quot;Top Popular Programming Languages: Tiobe Index for May 2…             11</code></pre>
 <p></details>   </p>
 </div>
 </div>

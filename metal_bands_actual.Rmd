@@ -27,7 +27,7 @@ In the following code chunk load Tidyverse and load the data file for the tasks 
 
 library(tidyverse)
 
-band_dat <- read_csv("metal_bands_2017.csv")
+band_dat <- read_csv("files/rmarkdown_1/metal_bands_2017.csv")
 
 ```
 
