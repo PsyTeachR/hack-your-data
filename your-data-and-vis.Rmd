@@ -5,6 +5,8 @@ title: "Your Data and Visualisations"
 <img src="img/hex.png" class="hex">
 <img src="img/ggplot2.png" class="hex">
 
+**[The slides](files/your-data-and-vis/yourdata.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+
 # Exercises
 
 In this session, we will be thrown from one real-life dataset to another to make quick judgments about which visualisation is most appropriate and how to construct it.

@@ -26,7 +26,7 @@ navbar:
     - text: "Intro to Tidy Data"
       href: intro-to-tidy-data.html
     - text: "Intro to R Markdown"
-      href: rmarkdown_1.html
+      href: metal_bands_actual.html
     - text: "Quantitative Data Visualisation"
       href: quant-data-vis.html
     - text: "Qualitative Data Visualization"

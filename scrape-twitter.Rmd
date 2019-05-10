@@ -8,6 +8,8 @@ output:
 <img src="img/hex.png" class="hex">
 <img src="img/rtweet.png" class="hex">
 
+**[The slides](files/rtweet/rtweet_2019_AH.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+
 ## Packages
 
 This section loads the `rtweet`, `tidytext`, `ggpubr` and the `tidyverse` packages.
@@ -21,7 +23,7 @@ library(tidyverse)
 
 # Introduction
 
-In the previous sessions, we have already had some practice with `ggplot2` and with `tidytext`. Now we are going to learn how to scrape data from Twitter with the `rtweet` package and use this in conjunction with our new text wrangling skills. All that is needed is a Twitter account, and we are good to go. Along with this tutorial, you can also refer back to the [slides](files/rtweet/rtweet_2019_AH.pdf) for this session.
+In the previous sessions, we have already had some practice with `ggplot2` and with `tidytext`. Now we are going to learn how to scrape data from Twitter with the `rtweet` package and use this in conjunction with our new text wrangling skills. All that is needed is a Twitter account, and we are good to go. 
 
 * After loading the rtweet package, you will need to open up Twitter in your browser for the authentication process (allowing RStudio to interact with Twitter's API).  
 * `rtweet` will only work via a desktop RStudio connection, and won't work if you run it in for example RStudio Cloud or via a server connection. 
