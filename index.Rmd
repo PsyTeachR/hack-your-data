@@ -43,13 +43,13 @@ Please install R in advance by following [instructions for Installing R on Your 
 09.30 - [Welcome](files/HYDB_Welcome.pdf) (Dale Barr and Team HYDB)  
 09.45 - [Thinking like a Computer](intro-to-r.html) (Carolyn Saund)  
 10.30 - [Introduction to Tidy Data](intro-to-tidy-data.html) (Shannon McNee)   
-11.30 - [R Markdown](rmarkdown_1.html) (Rebecca Lai)   
+11.30 - [R Markdown](metal_bands_actual.html) (Rebecca Lai)   
 14.00 - [Quantitative Data Visualisation](quant-data-vis.html) (Jack Taylor)  
 15.15 - [Qualitative Data Visualisation](qual-data-vis.html) (Stephanie Allan)  
 
 ### Tuesday, the 16th of April (second day)
 
-09.45 - [Shiny App Live Coding](https://debruine.github.io/shiny-tutorials/) (Lisa DeBruine)  
+09.45 - [Shiny App Live Coding](http://shiny.psy.gla.ac.uk/debruine/wordcloud/) (Lisa DeBruine)  
 11.30 - [Visualising the Headlines](visualising-the-headlines.html) (Shannon McNee)   
 14.00 - [Scraping and Visualising Twitter data](scrape-twitter.html) (Anna Henschel)   
 15.45 - [R Markdown Websites](rmarkdown_2.html) (Rebecca Lai)  

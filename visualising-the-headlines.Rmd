@@ -4,6 +4,8 @@ title: "Visualising the Headlines"
 
 <img src="img/hex.png" class="hex">
 
+**[The slides](files/visualising-the-headlines/headlines.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+
 ## The Importance of Transparency 
 
 Typically, our aim as researchers is to conduct meaningful work which will be shared with the public, whether that be in the form of a journal article, presentation, or book chapter - for example. As a researcher, you have a responsibility to ensure that your conclusions follow logically from the data you have analysed. It is also your responsibility to ensure you communicate your findings in a clear, accessible way for general audiences. 

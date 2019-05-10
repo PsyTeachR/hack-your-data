@@ -5,6 +5,8 @@ subtitle: '"Thinking like a Computer"'
 
 <img src="img/hex.png" class="hex">
 
+**[The slides](files/intro-to-r/Thinking_Like_A_Computer.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+
 # Introduction
 
 This is the most basic introduction to R that has ever been comrpised. Lots of this is shamelessly lifted from Lisa DeBruine and Dale Barr's work designing the data skills course for RMPS students. Find lots and lots of useful resources here: https://gupsych.github.io/data_skills/01_intro.html

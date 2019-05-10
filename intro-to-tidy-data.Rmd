@@ -5,6 +5,8 @@ title: "Introduction to Tidy Data"
 <img src="img/hex.png" class="hex">
 <img src="img/tidyverse.png" class="hex">
 
+**[The slides](files/intro-to-tidy-data/Tidy_Data.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+
 ## Loading Libraries 
 
 ```{r, message = FALSE}
