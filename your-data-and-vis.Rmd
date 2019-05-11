@@ -367,4 +367,4 @@ ggnet2(lanet, label = TRUE, label.size = 5)
 
 The solutions to all these questions can be downloaded here:
 
-**[Solutions.Rmd](files/your-data-and-vis/Solutions.Rmd)**
+**[Solutions.Rmd](files/your-data-and-vis/Solutions.Rmd)**  
