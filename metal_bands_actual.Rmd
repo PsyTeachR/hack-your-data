@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**[The slides](files/rmarkdown_1/RMarkdown.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
+**[The slides](files/rmarkdown_1/RMarkdown_1.pdf)** - this page includes the same information, but you might prefer to follow along with the slides.  
 
 ## Exercises
 
