@@ -495,6 +495,18 @@ div.tocify {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Podcast
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="podcast.html">Podcast</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -547,12 +559,12 @@ lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span cla
 <pre><code>## # A tibble: 6 x 88
 ##   user_id status_id created_at          screen_name text  source
 ##   &lt;chr&gt;   &lt;chr&gt;     &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-## 1 744046… 11244146… 2019-05-03 20:45:25 legogradst… @LEM… Twitt…
-## 2 744046… 11244090… 2019-05-03 20:23:05 legogradst… @ane… Twitt…
-## 3 744046… 11244053… 2019-05-03 20:08:24 legogradst… Happ… Twitt…
-## 4 744046… 11226350… 2019-04-28 22:53:49 legogradst… @jan… Twitt…
-## 5 744046… 11214210… 2019-04-25 14:29:56 legogradst… I ju… Twitt…
-## 6 744046… 11212074… 2019-04-25 00:20:50 legogradst… @ewe… Twitt…
+## 1 744046… 11393616… 2019-06-14 02:39:08 legogradst… @nan… Twitt…
+## 2 744046… 11392144… 2019-06-13 16:54:16 legogradst… Havi… Twitt…
+## 3 744046… 11363349… 2019-06-05 18:12:09 legogradst… @Gae… Twitt…
+## 4 744046… 11363116… 2019-06-05 16:39:39 legogradst… &quot;One… Twitt…
+## 5 744046… 11353079… 2019-06-02 22:11:13 legogradst… @sch… Twitt…
+## 6 744046… 11352772… 2019-06-02 20:09:32 legogradst… &quot;@da… Twitt…
 ## # … with 82 more variables: display_text_width &lt;dbl&gt;,
 ## #   reply_to_status_id &lt;chr&gt;, reply_to_user_id &lt;chr&gt;,
 ## #   reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;, is_retweet &lt;lgl&gt;,
@@ -583,7 +595,7 @@ lego&lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span cla
 ## #   protected &lt;lgl&gt;, followers_count &lt;int&gt;, friends_count &lt;int&gt;,
 ## #   listed_count &lt;int&gt;, statuses_count &lt;int&gt;, favourites_count &lt;int&gt;,
 ## #   account_created_at &lt;dttm&gt;, verified &lt;lgl&gt;, profile_url &lt;chr&gt;,
-## #   profile_expanded_url &lt;chr&gt;, account_lang &lt;chr&gt;,
+## #   profile_expanded_url &lt;chr&gt;, account_lang &lt;lgl&gt;,
 ## #   profile_banner_url &lt;chr&gt;, profile_background_url &lt;chr&gt;,
 ## #   profile_image_url &lt;chr&gt;</code></pre>
 </div>
@@ -699,7 +711,7 @@ no_numbers &lt;-<span class="st"> </span>tidy_tweets <span class="op">%&gt;%</sp
 <p>Now we get rid of the combined stop words by using <code>anti_join()</code>. We used this already in one of the previous sessions, but if you are unsure about what <code>anti_join()</code> does you can read more about it <a href="https://gupsych.github.io/data_skills/06_joins.html#anti_join" target="_blank">here</a> or call the help function in the R console <code>?anti_join()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">no_stop_words &lt;-<span class="st"> </span>no_numbers <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">anti_join</span>(all_stop_words, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)</code></pre></div>
-<p>We started with 58658 words and are now left with 21104 words. Over half the tweeted words turned out to be stop words. Removing the stop words is important for later visualization and the sentiment analysis - we only want to plot and analyze the ‘interesting’ tweets.</p>
+<p>We started with 58610 words and are now left with 21092 words. Over half the tweeted words turned out to be stop words. Removing the stop words is important for later visualization and the sentiment analysis - we only want to plot and analyze the ‘interesting’ tweets.</p>
 </div>
 </div>
 <div id="sentiment-analysis" class="section level1">
@@ -809,11 +821,11 @@ emoji</code></pre></div>
 <pre><code>## # A tibble: 5 x 2
 ##   text                                                       favorite_count
 ##   &lt;chr&gt;                                                               &lt;int&gt;
-## 1 My favorite discovery of this week: there’s a new #rstats…             66
-## 2 Happy to announce that stplanr, the #rstats package I wro…             18
-## 3 .@rebeccmart and I are excited to welcome our new #rstats…             16
-## 4 &quot;Automated Identification of Benthic Epifauna with Comput…             11
-## 5 &quot;Top Popular Programming Languages: Tiobe Index for May 2…             11</code></pre>
+## 1 &quot;👩‍🏫 If you haven&#39;t seen @minebocek&#39;s Pickard Lecture, it…             145
+## 2 Erkek çocuklara en çok hangi isim veriliyor? 1980&#39;den bu …             83
+## 3 You know those nice looking #Rstats code screenshots you&#39;…             46
+## 4 &quot;Get the ggplot code for 7 types of data visualizations y…             29
+## 5 &quot;With the speed of developments in #OpenScience &amp;amp; rel…             24</code></pre>
 <p></details>   </p>
 </div>
 </div>

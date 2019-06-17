@@ -43,6 +43,10 @@ navbar:
     menu:
     - text: "Your Data and Visualisations" 
       href: your-data-and-vis.html
+  - text: "Podcast"
+    menu:
+    - text: "Podcast" 
+      href: podcast.html
   right:
     - text: "Installing R"
       href: r_instructions.html
