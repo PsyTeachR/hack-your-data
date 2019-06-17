@@ -1,0 +1,24 @@
+---
+title: "Podcast"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### What have we learned?
+#### Before the workshop
+
+<audio controls style="float: right;"><source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
+
+Before the start of the workshop, [Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners. 
+
+#### After the workshop
+
+<audio controls style="float: right;"><source src="files/hack_your_data_podcast_follow_up.mp3" type="audio/mpeg"></audio>
+
+Amelia, the members of the Hack Your Data Beautiful team and the participants reflect on what they found surprising about R, their learning experience at the workshop and their future plans for coding with R. 
+
+#### Thank you to Psych Soc O'Clock!
+We are ['Psych Soc O'Clock' - The Glasgow University Psychology Society podcast](https://anchor.fm/psychsococlock). Each month we bring you a thought-provoking podcast discussing our chosen theme and apply psychological research to real life. We also record monthly Researcher Interviews related to theme, so you can hear academics delve deeper into exciting research. You can find us also on [Twitter](https://twitter.com/GUPsychSoc).

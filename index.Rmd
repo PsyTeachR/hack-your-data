@@ -59,15 +59,6 @@ Please install R in advance by following [instructions for Installing R on Your 
 09.45 - [Your Data and Visualisations](your-data-and-vis.html) (Lovisa Sundin)  
 11.15 - Wrap up (Team HYDB)  
 
-
-### Podcast
-
-<audio controls style="float: right;"><source src="files/hack_your_data_podcast_2.mp3" type="audio/mpeg"></audio>
-
-[Amelia Hilton](https://open.spotify.com/show/4xm16tF5ib3w4FWWz0ZOAg){target="_blank"} interviewed the Hack Your Data Beautiful team about their first coding experiences in R and what tips they would give beginners.  
-
-
-
 ## Introduction
 
 Coding is a skill that can be picked up by people from all backgrounds, for any kind of data. Everyone can be a data scientist! Coding skills provide tools to enhance communicating your data and ideas to a wide range of audiences and disciplines. If you’ve ever wanted to learn how to make your own website or to visualise your data in a way that is engaging and rigorous, coding is for you. In addition, showcasing your findings in new ways may help you look at your data from a different perspective and lead to a deeper understanding of data.
