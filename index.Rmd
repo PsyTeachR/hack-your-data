@@ -49,7 +49,7 @@ Please install R in advance by following [instructions for Installing R on Your 
 
 ### Tuesday, the 16th of April (second day)
 
-09.45 - [Shiny App Live Coding](http://shiny.psy.gla.ac.uk/debruine/wordcloud/) (Lisa DeBruine)  
+09.45 - [Shiny App Live Coding](https://shiny.psy.gla.ac.uk/debruine/wordcloud/) (Lisa DeBruine)  
 11.30 - [Visualising the Headlines](visualising-the-headlines.html) (Shannon McNee)   
 14.00 - [Scraping and Visualising Twitter data](scrape-twitter.html) (Anna Henschel)   
 15.45 - [R Markdown Websites](rmarkdown_2.html) (Rebecca Lai)  
